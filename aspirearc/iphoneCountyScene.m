@@ -287,7 +287,7 @@
     
 }
 
-- (void) startMovingAgain: (id) sender
+- (void) startMovingAgain: (ccTime) sender
 {
     [self unschedule:@selector(startMovingAgain:)];
     
@@ -442,7 +442,7 @@
     [delegate replaceTheScene];
 }
 
-- (void) buttonPressed: (id) sender
+- (void) buttonPressed: (ccTime) sender
 {
     [self unschedule:@selector(buttonPressed:)];
 

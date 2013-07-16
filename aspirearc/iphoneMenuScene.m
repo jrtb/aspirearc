@@ -160,6 +160,14 @@
 	return self;
 }
 
+- (void)dismissReaderViewController:(ReaderViewController *)viewController
+{
+    [[SimpleAudioEngine sharedEngine] playEffect:@"click2.caf"];
+
+    [readerViewController dismissModalViewControllerAnimated:NO];
+	[readerViewController.view removeFromSuperview];
+}
+
 - (void) aAction: (id)sender
 {
     //AppController *delegate  = (AppController*) [[UIApplication sharedApplication] delegate];
@@ -185,6 +193,29 @@
     label.color = ccWHITE;
     
     //AppController *delegate  = (AppController*) [[UIApplication sharedApplication] delegate];
+    
+    NSString *phrase = nil; // Document password (for unlocking most encrypted PDF files)
+    
+	NSArray *pdfs = [[NSBundle mainBundle] pathsForResourcesOfType:@"pdf" inDirectory:nil];
+    
+	NSString *filePath = [pdfs lastObject]; assert(filePath != nil); // Path to last PDF file
+    
+	ReaderDocument *document = [ReaderDocument withDocumentFilePath:filePath password:phrase];
+    
+	if (document != nil) // Must have a valid ReaderDocument object in order to proceed with things
+	{
+		readerViewController = [[ReaderViewController alloc] initWithReaderDocument:document];
+        
+		readerViewController.delegate = self; // Set the ReaderViewController delegate to self
+        
+		//[self.navigationController pushViewController:readerViewController animated:YES];
+        
+		readerViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+		readerViewController.modalPresentationStyle = UIModalPresentationFullScreen;
+        
+        [[CCDirector sharedDirector] presentViewController:readerViewController animated:YES completion:nil];
+
+    }
     
     //[delegate setScreenToggle:INTRO];
     

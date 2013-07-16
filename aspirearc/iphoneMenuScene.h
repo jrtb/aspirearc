@@ -9,9 +9,10 @@
 // When you import this file, you import all the cocos2d classes
 #import "cocos2d.h"
 #import "SimpleAudioEngine.h"
+#import "ReaderViewController.h"
 
 // HelloWorldLayer
-@interface iphoneMenuScene : CCLayer
+@interface iphoneMenuScene : CCLayer <ReaderViewControllerDelegate>
 {
     
     ALuint                      soundID;
@@ -22,6 +23,7 @@
     
     NSMutableArray              *items;
 
+    ReaderViewController        *readerViewController;
 }
 
 // returns a CCScene that contains the HelloWorldLayer as the only child

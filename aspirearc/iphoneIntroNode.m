@@ -64,7 +64,7 @@
 	
     //AppController *delegate  = (AppController*) [[UIApplication sharedApplication] delegate];
     
-    [self schedule: @selector(start:) interval:2.0f];
+    [self schedule: @selector(start2:) interval:2.0f];
 
     [self setTouchEnabled:YES];
 
