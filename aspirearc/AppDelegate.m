@@ -13,11 +13,37 @@
 #import "iphoneMenuScene.h"
 #import "iphoneCountyScene.h"
 #import "iphoneSocialScene.h"
-#import "SimpleAudioEngine.h"
+#import "iphoneAboutMenuScene.h"
 
 #import "iphoneIntroNode.h"
 
+#import "SimpleAudioEngine.h"
+
 // http://bentrengrove.com/blog/2012/10/23/the-easiest-way-to-enable-arc-for-cocos2d
+
+/*
+ I. About ASPIRE
+ a. overview of ASPIRE (pg 1 and 2)
+ b. Brochure (pg 1 and 2)
+ c. ASPIRE Application
+ d. Student packet
+ e. Website
+ 2. About CALS
+ a. where are you going pdf
+ b. all the pdf's we gave you last week?
+ 3. ACT Practice Q's
+ Emailed PR today and they said they are still waiting to hear back from their IT people
+ 4. Schedules and Class locations
+ a. Pick a county?
+ i. PDF for each county- at top of each PDF there is the location
+ 5. Social Media
+ a. Facebook
+ b. Twitter
+ c. Message board- emailed Kim Cox about this and waiting to hear back
+ 6. Contact your teacher
+ a. Select your county again?
+ i. PDF info for each teacher
+*/
 
 @implementation MyNavigationController
 
@@ -65,7 +91,7 @@
 
 @synthesize window=window_, navController=navController_, director=director_;
 
-@synthesize screenToggle, deviceMode, deviceLevel, isRetina, muted, nextScreen, selectedCounty;
+@synthesize screenToggle, deviceMode, deviceLevel, isRetina, muted, nextScreen, selectedCounty, currentMenuItem;
 
 -(void) replaceTheScene
 {
@@ -80,6 +106,9 @@
                 break;
             case MENU:
                 [[CCDirector sharedDirector] replaceScene: [iphoneMenuScene scene]];
+                break;
+            case ABOUT:
+                [[CCDirector sharedDirector] replaceScene: [iphoneAboutMenuScene scene]];
                 break;
             case COUNTY:
                 [[CCDirector sharedDirector] replaceScene: [iphoneCountyScene scene]];
@@ -114,6 +143,8 @@
 		deviceMode = IPHONE;
 		
 	}
+    
+    currentMenuItem = 0;
 
 	// CCGLView creation
 	// viewWithFrame: size of the OpenGL view. For full screen use [_window bounds]

@@ -11,8 +11,43 @@
 #import "AppDelegate.h"
 #import "SimpleAudioEngine.h"
 
+@interface CCMenu (UnselectSelectedItem)
+- (void) unselectSelectedItem;
+@end
+
+@implementation CCMenu (UnselectSelectedItem)
+
+- (void) unselectSelectedItem
+{
+	if(_state == kCCMenuStateTrackingTouch)
+	{
+		[_selectedItem unselected];
+		_state = kCCMenuStateWaiting;
+		_selectedItem = nil;
+	}
+}
+
+@end
+
+#pragma mark -
+
+@interface iphoneMenuScene (ScrollLayerCreation)
+
+- (NSArray *) scrollLayerPages;
+- (CustomScrollLayer *) scrollLayer;
+- (void) updateFastPageChangeMenu;
+
+@end
+
 // HelloWorldLayer implementation
 @implementation iphoneMenuScene
+
+enum nodeTags
+{
+	kScrollLayer = 256,
+	kAdviceLabel = 257,
+	kFastPageChangeMenu = 258,
+};
 
 +(CCScene *) scene
 {
@@ -38,6 +73,7 @@
 		
         printf("menu scene loading\n");
         
+        pages = [[NSMutableArray alloc] init];
         items = [[NSMutableArray alloc] init];
 
         isTouchable = NO;
@@ -52,15 +88,14 @@
         CCSprite *mainBack = [CCSprite spriteWithFile:@"main_menu_bg.pvr.gz"];
         mainBack.anchorPoint = ccp(0.5,1.0);
         mainBack.position = ccp(size.width*.5,size.height);
-        [self addChild:mainBack z:2];
+        [self addChild:mainBack z:0];
 
-        if (IS_IPHONE5) {
-            CCSprite *calsNew = [CCSprite spriteWithFile:@"cals_new.pvr.gz"];
-            calsNew.anchorPoint = ccp(1.0,0.0);
-            calsNew.position = ccp(size.width,12);
-            [self addChild:calsNew z:2];
-        }
+        CCSprite *sliderLine = [CCSprite spriteWithFile:@"main_menu_cellbg.pvr.gz"];
+        sliderLine.position = ccp(160.0,68.0+iphoneAddY*2);
+        [self addChild:sliderLine z:0];
+
         
+        /*
         float menuStartY = 300.5+iphoneAddY*2;
         float sepY = 38.0;
         
@@ -155,6 +190,10 @@
         labelF.position = menuF.position;
         [self addChild:labelF z:3];
         [items addObject:labelF];
+         */
+        
+        // Do initial positioning & create scrollLayer.
+		[self updateForScreenReshape];
 
 	}
 	return self;
@@ -176,9 +215,9 @@
     [[SimpleAudioEngine sharedEngine] playEffect:@"click2.caf"];
     //}
     
-    CCLabelBMFont *label = [items objectAtIndex:0];
+    CCMenuItemSprite *aMenuItem = [items objectAtIndex:0];
     
-    label.color = ccc3(170, 170, 170);
+    aMenuItem.color = ccc3(170, 170, 170);
     
     [self schedule:@selector(buttonPressedA:) interval:0.1];
 
@@ -188,17 +227,45 @@
 {
     [self unschedule:@selector(buttonPressedA:)];
     
-    CCLabelBMFont *label = [items objectAtIndex:0];
+    CCMenuItemSprite *aMenuItem = [items objectAtIndex:0];
+    
+    aMenuItem.color = ccc3(255, 255, 255);
+    
+    AppController *delegate  = (AppController*) [[UIApplication sharedApplication] delegate];
+    
+    [delegate setScreenToggle:ABOUT];
+    
+    [delegate replaceTheScene];
+    
+}
+
+- (void) bAction: (id)sender
+{
+    //AppController *delegate  = (AppController*) [[UIApplication sharedApplication] delegate];
+    
+    //if (![appDelegate muted]) {
+    [[SimpleAudioEngine sharedEngine] playEffect:@"click2.caf"];
+    //}
+    
+    CCMenuItemSprite *label = [items objectAtIndex:1];
+    
+    label.color = ccc3(170, 170, 170);
+    
+    [self schedule:@selector(buttonPressedB:) interval:0.1];
+    
+}
+
+- (void) buttonPressedB: (ccTime)sender
+{
+    [self unschedule:@selector(buttonPressedB:)];
+    
+    CCMenuItemSprite *label = [items objectAtIndex:1];
     
     label.color = ccWHITE;
     
-    //AppController *delegate  = (AppController*) [[UIApplication sharedApplication] delegate];
-    
     NSString *phrase = nil; // Document password (for unlocking most encrypted PDF files)
     
-	NSArray *pdfs = [[NSBundle mainBundle] pathsForResourcesOfType:@"pdf" inDirectory:nil];
-    
-	NSString *filePath = [pdfs lastObject]; assert(filePath != nil); // Path to last PDF file
+	NSString *filePath = [[NSBundle mainBundle] pathForResource:@"ASPIREbooklet" ofType:@"pdf"]; assert(filePath != nil); // Path to last PDF file
     
 	ReaderDocument *document = [ReaderDocument withDocumentFilePath:filePath password:phrase];
     
@@ -214,44 +281,8 @@
 		readerViewController.modalPresentationStyle = UIModalPresentationFullScreen;
         
         [[CCDirector sharedDirector] presentViewController:readerViewController animated:YES completion:nil];
-
+        
     }
-    
-    //[delegate setScreenToggle:INTRO];
-    
-    //[delegate replaceTheScene];
-    
-}
-
-- (void) bAction: (id)sender
-{
-    //AppController *delegate  = (AppController*) [[UIApplication sharedApplication] delegate];
-    
-    //if (![appDelegate muted]) {
-    [[SimpleAudioEngine sharedEngine] playEffect:@"click2.caf"];
-    //}
-    
-    CCLabelBMFont *label = [items objectAtIndex:1];
-    
-    label.color = ccc3(170, 170, 170);
-    
-    [self schedule:@selector(buttonPressedB:) interval:0.1];
-    
-}
-
-- (void) buttonPressedB: (ccTime)sender
-{
-    [self unschedule:@selector(buttonPressedB:)];
-    
-    CCLabelBMFont *label = [items objectAtIndex:1];
-    
-    label.color = ccWHITE;
-    
-    //AppController *delegate  = (AppController*) [[UIApplication sharedApplication] delegate];
-    
-    //[delegate setScreenToggle:INTRO];
-    
-    //[delegate replaceTheScene];
     
 }
 
@@ -263,7 +294,7 @@
     [[SimpleAudioEngine sharedEngine] playEffect:@"click2.caf"];
     //}
     
-    CCLabelBMFont *label = [items objectAtIndex:2];
+    CCMenuItemSprite *label = [items objectAtIndex:2];
     
     label.color = ccc3(170, 170, 170);
     
@@ -275,7 +306,7 @@
 {
     [self unschedule:@selector(buttonPressedC:)];
     
-    CCLabelBMFont *label = [items objectAtIndex:2];
+    CCMenuItemSprite *label = [items objectAtIndex:2];
     
     label.color = ccWHITE;
     
@@ -295,7 +326,7 @@
     [[SimpleAudioEngine sharedEngine] playEffect:@"click2.caf"];
     //}
     
-    CCLabelBMFont *label = [items objectAtIndex:3];
+    CCMenuItemSprite *label = [items objectAtIndex:3];
     
     label.color = ccc3(170, 170, 170);
     
@@ -307,7 +338,7 @@
 {
     [self unschedule:@selector(buttonPressedD:)];
     
-    CCLabelBMFont *label = [items objectAtIndex:3];
+    CCMenuItemSprite *label = [items objectAtIndex:3];
     
     label.color = ccWHITE;
     
@@ -327,7 +358,7 @@
     [[SimpleAudioEngine sharedEngine] playEffect:@"click2.caf"];
     //}
     
-    CCLabelBMFont *label = [items objectAtIndex:4];
+    CCMenuItemSprite *label = [items objectAtIndex:4];
     
     label.color = ccc3(170, 170, 170);
     
@@ -339,7 +370,7 @@
 {
     [self unschedule:@selector(buttonPressedE:)];
     
-    CCLabelBMFont *label = [items objectAtIndex:4];
+    CCMenuItemSprite *label = [items objectAtIndex:4];
     
     label.color = ccWHITE;
     
@@ -359,7 +390,7 @@
     [[SimpleAudioEngine sharedEngine] playEffect:@"click2.caf"];
     //}
     
-    CCLabelBMFont *label = [items objectAtIndex:5];
+    CCMenuItemSprite *label = [items objectAtIndex:5];
     
     label.color = ccc3(170, 170, 170);
     
@@ -371,7 +402,7 @@
 {
     [self unschedule:@selector(buttonPressedF:)];
     
-    CCLabelBMFont *label = [items objectAtIndex:5];
+    CCMenuItemSprite *label = [items objectAtIndex:5];
     
     label.color = ccWHITE;
     
@@ -389,8 +420,322 @@
     
     //CGSize screenSize = [CCDirector sharedDirector].winSize;
 
+    [self schedule:@selector(checkTouches:) interval:4.0];
+
     [self setTouchEnabled:YES];
          
+}
+
+- (void) checkTouches: (ccTime) sender
+{
+    [self unschedule:@selector(checkTouches:)];
+    [self schedule:@selector(checkTouches:) interval:4.0];
+
+    CustomScrollLayer *scrollLayer = (CustomScrollLayer *)[self getChildByTag:kScrollLayer];
+    
+    int nextScreen = [scrollLayer currentScreen] + 1;
+    if (nextScreen >= [scrollLayer totalScreens])
+        nextScreen = 0;
+    
+    [scrollLayer selectPage: nextScreen];
+
+}
+
+// Removes old "0 1 2" menu and creates new for actual pages count.
+- (void) updateFastPageChangeMenu
+{
+	// Remove fast page change menu if it exists.
+	[self removeChildByTag:kFastPageChangeMenu cleanup:YES];
+	
+	// Get total current pages count.
+	int pagesCount = [[self scrollLayerPages]count];
+	CustomScrollLayer *scroller = (CustomScrollLayer *)[self getChildByTag:kScrollLayer];
+	if (scroller)
+	{
+		pagesCount = [[scroller pages] count];
+	}
+	
+	// Create & add fast-page-change menu.
+	CCMenu *fastPageChangeMenu = [CCMenu menuWithItems: nil];
+	for (int i = 0; i < pagesCount ; ++i)
+	{
+		NSString *numberString = [NSString stringWithFormat:@"%d", i+1];
+		CCLabelTTF *labelWithNumber = [CCLabelTTF labelWithString:numberString fontName:@"Marker Felt" fontSize:22];
+		CCMenuItemLabel *item = [CCMenuItemLabel itemWithLabel:labelWithNumber target:self selector:@selector(fastMenuItemPressed:)];
+		[fastPageChangeMenu addChild: item z: 0 tag: i];
+	}
+	[fastPageChangeMenu alignItemsHorizontally];
+	[self addChild: fastPageChangeMenu z: 0 tag: kFastPageChangeMenu];
+	
+	// Position fast page change menu without calling updateForScreenReshape.
+	CGSize screenSize = [CCDirector sharedDirector].winSize;
+	fastPageChangeMenu.position = ccp( 0.5f * screenSize.width, 15.0f);
+}
+
+// Positions children of CustomScrollLayerTestLayer.
+// ScrollLayer is updated via deleting old and creating new one.
+// (Cause it's created with pages - normal CCLayer, which contentSize = winSize)
+- (void) updateForScreenReshape
+{
+	CGSize screenSize = [CCDirector sharedDirector].winSize;
+	
+	CCNode *fastPageChangeMenu = [self getChildByTag:kFastPageChangeMenu];
+	//CCNode *adviceLabel = [self getChildByTag:kAdviceLabel];
+	
+	fastPageChangeMenu.position = ccp( 0.5f * screenSize.width, 15.0f);
+	//adviceLabel.anchorPoint = ccp(0.5f, 1.0f);
+	//adviceLabel.position = ccp(0.5f * screenSize.width, screenSize.height);
+	
+	// ReCreate Scroll Layer for each Screen Reshape (slow, but easy).
+	CustomScrollLayer *scrollLayer = (CustomScrollLayer *)[self getChildByTag:kScrollLayer];
+	if (scrollLayer)
+	{
+		[self removeChild:scrollLayer cleanup:YES];
+	}
+	
+    AppController *delegate  = (AppController*) [[UIApplication sharedApplication] delegate];
+
+	scrollLayer = [self scrollLayer];
+	[self addChild: scrollLayer z: 0 tag: kScrollLayer];
+	[scrollLayer selectPage: [delegate currentMenuItem]];
+	scrollLayer.delegate = self;
+    
+}
+
+#pragma mark ScrollLayer Creation
+
+// Returns array of CCLayers - pages for ScrollLayer.
+- (NSArray *) scrollLayerPages
+{
+        
+    CCLayer *page01 = [CCLayer node];
+    
+    CCSprite *small01 = [CCSprite spriteWithFile:@"slider_01.pvr.gz"];
+    small01.color = ccc3(255,255,255);
+    
+    CCMenuItemSprite *item01 = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithFile:@"slider_01.pvr.gz"]
+                                                       selectedSprite:small01
+                                                               target:self
+                                                             selector:@selector(aAction:)];
+    
+    [items addObject:item01];
+    
+    CCMenu  *menu01 = [CCMenu menuWithItems:item01, nil];
+    [menu01 setPosition:ccp(160.0,196.0+iphoneAddY*2)];
+    [page01 addChild:menu01 z:2];
+    
+    [pages addObject:page01];
+
+    CCLayer *page02 = [CCLayer node];
+    
+    CCSprite *small02 = [CCSprite spriteWithFile:@"slider_02.pvr.gz"];
+    small02.color = ccc3(255,255,255);
+    
+    CCMenuItemSprite *item02 = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithFile:@"slider_02.pvr.gz"]
+                                                       selectedSprite:small02
+                                                               target:self
+                                                             selector:@selector(bAction:)];
+    
+    [items addObject:item02];
+    
+    CCMenu  *menu02 = [CCMenu menuWithItems:item02, nil];
+    [menu02 setPosition:ccp(160.0,196.0+iphoneAddY*2)];
+    [page02 addChild:menu02 z:2];
+    
+    [pages addObject:page02];
+
+    CCLayer *page03 = [CCLayer node];
+    
+    CCSprite *small03 = [CCSprite spriteWithFile:@"slider_03.pvr.gz"];
+    small03.color = ccc3(255,255,255);
+    
+    CCMenuItemSprite *item03 = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithFile:@"slider_03.pvr.gz"]
+                                                       selectedSprite:small03
+                                                               target:self
+                                                             selector:@selector(cAction:)];
+    
+    [items addObject:item03];
+    
+    CCMenu  *menu03 = [CCMenu menuWithItems:item03, nil];
+    [menu03 setPosition:ccp(160.0,196.0+iphoneAddY*2)];
+    [page03 addChild:menu03 z:2];
+    
+    [pages addObject:page03];
+
+    CCLayer *page04 = [CCLayer node];
+    
+    CCSprite *small04 = [CCSprite spriteWithFile:@"slider_04.pvr.gz"];
+    small04.color = ccc3(255,255,255);
+    
+    CCMenuItemSprite *item04 = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithFile:@"slider_04.pvr.gz"]
+                                                       selectedSprite:small04
+                                                               target:self
+                                                             selector:@selector(dAction:)];
+    
+    [items addObject:item04];
+    
+    CCMenu  *menu04 = [CCMenu menuWithItems:item04, nil];
+    [menu04 setPosition:ccp(160.0,196.0+iphoneAddY*2)];
+    [page04 addChild:menu04 z:2];
+    
+    [pages addObject:page04];
+
+    CCLayer *page05 = [CCLayer node];
+    
+    CCSprite *small05 = [CCSprite spriteWithFile:@"slider_05.pvr.gz"];
+    small05.color = ccc3(255,255,255);
+    
+    CCMenuItemSprite *item05 = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithFile:@"slider_05.pvr.gz"]
+                                                       selectedSprite:small05
+                                                               target:self
+                                                             selector:@selector(eAction:)];
+    
+    [items addObject:item05];
+    
+    CCMenu  *menu05 = [CCMenu menuWithItems:item05, nil];
+    [menu05 setPosition:ccp(160.0,196.0+iphoneAddY*2)];
+    [page05 addChild:menu05 z:2];
+    
+    [pages addObject:page05];
+
+    CCLayer *page06 = [CCLayer node];
+    
+    CCSprite *small06 = [CCSprite spriteWithFile:@"slider_06.pvr.gz"];
+    small06.color = ccc3(255,255,255);
+    
+    CCMenuItemSprite *item06 = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithFile:@"slider_06.pvr.gz"]
+                                                       selectedSprite:small06
+                                                               target:self
+                                                             selector:@selector(fAction:)];
+    
+    [items addObject:item06];
+    
+    CCMenu  *menu06 = [CCMenu menuWithItems:item06, nil];
+    [menu06 setPosition:ccp(160.0,196.0+iphoneAddY*2)];
+    [page06 addChild:menu06 z:2];
+    
+    [pages addObject:page06];
+
+	return [NSArray arrayWithObjects: [pages objectAtIndex:0],
+            [pages objectAtIndex:1],
+            [pages objectAtIndex:2],
+            [pages objectAtIndex:3],
+            [pages objectAtIndex:4],
+            [pages objectAtIndex:5],
+            nil];
+}
+
+// Creates new Scroll Layer with pages returned from scrollLayerPages.
+- (CustomScrollLayer *) scrollLayer
+{
+	CGSize screenSize = [CCDirector sharedDirector].winSize;
+	
+	// Create the scroller and pass-in the pages (set widthOffset to 0 for fullscreen pages).
+	CustomScrollLayer *scroller = [CustomScrollLayer nodeWithLayers: [self scrollLayerPages] widthOffset: 0 pageSpriteFrameName:@"dot.png"];
+	scroller.pagesIndicatorPosition = ccp(screenSize.width * 0.5f, 17.0f+iphoneAddY*2);
+	
+    // New feature: margin offset - to slowdown scrollLayer when scrolling out of it contents.
+    // Comment this line or change marginOffset to screenSize.width to disable this effect.
+    scroller.marginOffset = 0.5f * screenSize.width;
+    
+	return scroller;
+}
+
+#pragma mark Callbacks
+
+// "Add Page" Button Callback - adds new page & updates fast page change menu.
+- (void) addPagePressed: (CCNode *) sender
+{
+	NSLog(@"CustomScrollLayerTestLayer#addPagePressed: called!");
+	
+	// Add page with label with number.
+	CGSize screenSize = [CCDirector sharedDirector].winSize;
+	
+	CustomScrollLayer *scroller = (CustomScrollLayer *)[self getChildByTag:kScrollLayer];
+	
+	int x = [scroller.pages count] + 1;
+	CCLayer *pageX = [CCLayer node];
+	CCLabelTTF *label = [CCLabelTTF labelWithString: [NSString stringWithFormat:@"Page %d", x]
+										   fontName: @"GROBOLD"
+										   fontSize:44];
+	label.position =  ccp( screenSize.width /2 , screenSize.height/2 );
+	[pageX addChild:label];
+	
+	[scroller addPage: pageX];
+	
+	//Update fast page change menu.
+	//[self updateFastPageChangeMenu];
+}
+
+// "Remove page" menu callback - removes pages through running new action with delay.
+- (void) removePagePressed: (CCNode *) sender
+{
+	// Run action with page removal on cocos2d thread.
+	[self runAction:[CCSequence actions:
+					 [CCDelayTime actionWithDuration:0.2f],
+					 [CCCallFunc actionWithTarget:self selector:@selector(removePage)],
+					 nil]
+	 ];
+}
+
+- (void) removePage
+{
+	// Actually remove page.
+	CustomScrollLayer *scroller = (CustomScrollLayer *)[self getChildByTag:kScrollLayer];
+	[scroller removePageWithNumber: [scroller.pages count] - 1];
+	
+	// Update fast page change menu.
+	//[self updateFastPageChangeMenu];
+}
+
+// "0 1 2" menu callback - used for fast page change.
+- (void) fastMenuItemPressed: (CCNode *) sender
+{
+	CustomScrollLayer *scroller = (CustomScrollLayer *)[self getChildByTag:kScrollLayer];
+	
+	[scroller moveToPage: sender.tag];
+}
+
+#pragma mark Scroll Layer Callbacks
+
+// Unselects all selected menu items in node - used in scroll layer callbacks to
+// cancel menu items when scrolling started.
+-(void)unselectAllMenusInNode:(CCNode *)node
+{
+	for (CCNode *child in node.children)
+	{
+		if ([child isKindOfClass:[CCMenu class]])
+		{
+			// Child here is CCMenu subclass - unselect.
+			[(CCMenu *)child unselectSelectedItem];
+		}
+		else
+		{
+			// Child here is some other CCNode subclass.
+			[self unselectAllMenusInNode: child];
+		}
+	}
+}
+
+- (void) scrollLayerScrollingStarted:(CustomScrollLayer *) sender
+{
+	NSLog(@"CustomScrollLayerTestLayer#scrollLayerScrollingStarted: %@", sender);
+	
+    [self unschedule:@selector(checkTouches:)];
+    [self schedule:@selector(checkTouches:) interval:8.0];
+
+	// No buttons can be touched after scroll started.
+	[self unselectAllMenusInNode: self];
+}
+
+- (void) scrollLayer: (CustomScrollLayer *) sender scrolledToPageNumber: (int) page
+{
+	NSLog(@"CustomScrollLayerTestLayer#scrollLayer:scrolledToPageNumber: %@ %d", sender, page);
+    
+    AppController *delegate  = (AppController*) [[UIApplication sharedApplication] delegate];
+
+    [delegate setCurrentMenuItem:page];
+    
 }
 
 // on "dealloc" you need to release all your retained objects

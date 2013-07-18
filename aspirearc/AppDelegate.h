@@ -18,6 +18,7 @@
 #define MENU 152
 #define COUNTY 153
 #define SOCIAL 154
+#define ABOUT 155
 
 // Added only for iOS 6 support
 @interface MyNavigationController : UINavigationController <CCDirectorDelegate>
@@ -36,12 +37,16 @@
     BOOL                muted;
     
     NSString            *selectedCounty;
+    
+    int                 currentMenuItem;
 
 	UIWindow *window_;
 	MyNavigationController *navController_;
 
 	CCDirectorIOS	*__unsafe_unretained director_;							// weak ref
 }
+
+@property int currentMenuItem;
 
 @property int screenToggle;
 @property int nextScreen;

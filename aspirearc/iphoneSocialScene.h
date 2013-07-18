@@ -12,7 +12,7 @@
 #import "CCUIViewWrapper.h"
 
 // HelloWorldLayer
-@interface iphoneSocialScene : CCLayer
+@interface iphoneSocialScene : CCLayer <UIWebViewDelegate>
 {
     
     ALuint                      soundID;
@@ -27,6 +27,10 @@
     BOOL                        wrapperOpen;
 
     CCLabelBMFont               *labelBottom;
+
+    UIActivityIndicatorView     *spinner;
+    
+    BOOL                        showingSpinner;
 }
 
 // returns a CCScene that contains the HelloWorldLayer as the only child

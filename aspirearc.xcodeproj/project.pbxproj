@@ -41,10 +41,32 @@
 		E7BB6C3D1795D4DE008334D7 /* Reader-Print@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7BB6C2F1795D4DE008334D7 /* Reader-Print@2x.png */; };
 		E7BB6C3E1795D4DE008334D7 /* Reader-Thumbs.png in Resources */ = {isa = PBXBuildFile; fileRef = E7BB6C301795D4DE008334D7 /* Reader-Thumbs.png */; };
 		E7BB6C3F1795D4DE008334D7 /* Reader-Thumbs@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7BB6C311795D4DE008334D7 /* Reader-Thumbs@2x.png */; };
-		E7BB6C421795D4EC008334D7 /* Ashefall2013schedule.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E7BB6C401795D4EC008334D7 /* Ashefall2013schedule.pdf */; };
-		E7BB6C431795D4EC008334D7 /* ASPIREbooklet.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E7BB6C411795D4EC008334D7 /* ASPIREbooklet.pdf */; };
 		E7BB6C451795D581008334D7 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7BB6C441795D581008334D7 /* ImageIO.framework */; };
 		E7BB6C471795D586008334D7 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7BB6C461795D586008334D7 /* MessageUI.framework */; };
+		E7C30560179847CC007357C5 /* slider_06-hd.pvr.gz in Resources */ = {isa = PBXBuildFile; fileRef = E7C30554179847CC007357C5 /* slider_06-hd.pvr.gz */; };
+		E7C30561179847CC007357C5 /* slider_06.pvr.gz in Resources */ = {isa = PBXBuildFile; fileRef = E7C30555179847CC007357C5 /* slider_06.pvr.gz */; };
+		E7C30562179847CC007357C5 /* slider_04-hd.pvr.gz in Resources */ = {isa = PBXBuildFile; fileRef = E7C30556179847CC007357C5 /* slider_04-hd.pvr.gz */; };
+		E7C30563179847CC007357C5 /* slider_04.pvr.gz in Resources */ = {isa = PBXBuildFile; fileRef = E7C30557179847CC007357C5 /* slider_04.pvr.gz */; };
+		E7C30564179847CC007357C5 /* slider_05-hd.pvr.gz in Resources */ = {isa = PBXBuildFile; fileRef = E7C30558179847CC007357C5 /* slider_05-hd.pvr.gz */; };
+		E7C30565179847CC007357C5 /* slider_05.pvr.gz in Resources */ = {isa = PBXBuildFile; fileRef = E7C30559179847CC007357C5 /* slider_05.pvr.gz */; };
+		E7C30566179847CC007357C5 /* slider_02-hd.pvr.gz in Resources */ = {isa = PBXBuildFile; fileRef = E7C3055A179847CC007357C5 /* slider_02-hd.pvr.gz */; };
+		E7C30567179847CC007357C5 /* slider_02.pvr.gz in Resources */ = {isa = PBXBuildFile; fileRef = E7C3055B179847CC007357C5 /* slider_02.pvr.gz */; };
+		E7C30568179847CC007357C5 /* slider_03-hd.pvr.gz in Resources */ = {isa = PBXBuildFile; fileRef = E7C3055C179847CC007357C5 /* slider_03-hd.pvr.gz */; };
+		E7C30569179847CC007357C5 /* slider_03.pvr.gz in Resources */ = {isa = PBXBuildFile; fileRef = E7C3055D179847CC007357C5 /* slider_03.pvr.gz */; };
+		E7C3056A179847CC007357C5 /* slider_01-hd.pvr.gz in Resources */ = {isa = PBXBuildFile; fileRef = E7C3055E179847CC007357C5 /* slider_01-hd.pvr.gz */; };
+		E7C3056B179847CC007357C5 /* slider_01.pvr.gz in Resources */ = {isa = PBXBuildFile; fileRef = E7C3055F179847CC007357C5 /* slider_01.pvr.gz */; };
+		E7C3057017984866007357C5 /* CCScrollLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E7C3056D17984866007357C5 /* CCScrollLayer.m */; };
+		E7C3057117984866007357C5 /* CustomScrollLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E7C3056F17984866007357C5 /* CustomScrollLayer.m */; };
+		E7C3057417984A0A007357C5 /* dot-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E7C3057217984A0A007357C5 /* dot-hd.png */; };
+		E7C3057517984A0A007357C5 /* dot.png in Resources */ = {isa = PBXBuildFile; fileRef = E7C3057317984A0A007357C5 /* dot.png */; };
+		E7C3057917986458007357C5 /* iphoneAboutMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E7C3057817986458007357C5 /* iphoneAboutMenuScene.m */; };
+		E7C3057D179866CB007357C5 /* about_menu_bg-hd.pvr.gz in Resources */ = {isa = PBXBuildFile; fileRef = E7C3057B179866CB007357C5 /* about_menu_bg-hd.pvr.gz */; };
+		E7C3057E179866CB007357C5 /* about_menu_bg.pvr.gz in Resources */ = {isa = PBXBuildFile; fileRef = E7C3057C179866CB007357C5 /* about_menu_bg.pvr.gz */; };
+		E7C3058317986CD6007357C5 /* student packet2013.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E7C3057F17986CD6007357C5 /* student packet2013.pdf */; };
+		E7C3058417986CD6007357C5 /* brochure_students1.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E7C3058017986CD6007357C5 /* brochure_students1.pdf */; };
+		E7C3058517986CD6007357C5 /* Overview of the ASPIRE program fall 2013.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E7C3058117986CD6007357C5 /* Overview of the ASPIRE program fall 2013.pdf */; };
+		E7C3058617986CD6007357C5 /* ASPIRE Student Application.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E7C3058217986CD6007357C5 /* ASPIRE Student Application.pdf */; };
+		E7C3058817987433007357C5 /* ASPIREbooklet.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E7C3058717987433007357C5 /* ASPIREbooklet.pdf */; };
 		E7F526941795CC9B00859253 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F526931795CC9B00859253 /* QuartzCore.framework */; };
 		E7F526961795CC9B00859253 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F526951795CC9B00859253 /* OpenGLES.framework */; };
 		E7F526981795CC9B00859253 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F526971795CC9B00859253 /* OpenAL.framework */; };
@@ -281,10 +303,35 @@
 		E7BB6C2F1795D4DE008334D7 /* Reader-Print@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Reader-Print@2x.png"; path = "reader/Graphics/Reader-Print@2x.png"; sourceTree = SOURCE_ROOT; };
 		E7BB6C301795D4DE008334D7 /* Reader-Thumbs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Reader-Thumbs.png"; path = "reader/Graphics/Reader-Thumbs.png"; sourceTree = SOURCE_ROOT; };
 		E7BB6C311795D4DE008334D7 /* Reader-Thumbs@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Reader-Thumbs@2x.png"; path = "reader/Graphics/Reader-Thumbs@2x.png"; sourceTree = SOURCE_ROOT; };
-		E7BB6C401795D4EC008334D7 /* Ashefall2013schedule.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Ashefall2013schedule.pdf; sourceTree = SOURCE_ROOT; };
-		E7BB6C411795D4EC008334D7 /* ASPIREbooklet.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ASPIREbooklet.pdf; sourceTree = SOURCE_ROOT; };
 		E7BB6C441795D581008334D7 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		E7BB6C461795D586008334D7 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		E7C30554179847CC007357C5 /* slider_06-hd.pvr.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; name = "slider_06-hd.pvr.gz"; path = "images/slider_06-hd.pvr.gz"; sourceTree = SOURCE_ROOT; };
+		E7C30555179847CC007357C5 /* slider_06.pvr.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; name = slider_06.pvr.gz; path = images/slider_06.pvr.gz; sourceTree = SOURCE_ROOT; };
+		E7C30556179847CC007357C5 /* slider_04-hd.pvr.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; name = "slider_04-hd.pvr.gz"; path = "images/slider_04-hd.pvr.gz"; sourceTree = SOURCE_ROOT; };
+		E7C30557179847CC007357C5 /* slider_04.pvr.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; name = slider_04.pvr.gz; path = images/slider_04.pvr.gz; sourceTree = SOURCE_ROOT; };
+		E7C30558179847CC007357C5 /* slider_05-hd.pvr.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; name = "slider_05-hd.pvr.gz"; path = "images/slider_05-hd.pvr.gz"; sourceTree = SOURCE_ROOT; };
+		E7C30559179847CC007357C5 /* slider_05.pvr.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; name = slider_05.pvr.gz; path = images/slider_05.pvr.gz; sourceTree = SOURCE_ROOT; };
+		E7C3055A179847CC007357C5 /* slider_02-hd.pvr.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; name = "slider_02-hd.pvr.gz"; path = "images/slider_02-hd.pvr.gz"; sourceTree = SOURCE_ROOT; };
+		E7C3055B179847CC007357C5 /* slider_02.pvr.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; name = slider_02.pvr.gz; path = images/slider_02.pvr.gz; sourceTree = SOURCE_ROOT; };
+		E7C3055C179847CC007357C5 /* slider_03-hd.pvr.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; name = "slider_03-hd.pvr.gz"; path = "images/slider_03-hd.pvr.gz"; sourceTree = SOURCE_ROOT; };
+		E7C3055D179847CC007357C5 /* slider_03.pvr.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; name = slider_03.pvr.gz; path = images/slider_03.pvr.gz; sourceTree = SOURCE_ROOT; };
+		E7C3055E179847CC007357C5 /* slider_01-hd.pvr.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; name = "slider_01-hd.pvr.gz"; path = "images/slider_01-hd.pvr.gz"; sourceTree = SOURCE_ROOT; };
+		E7C3055F179847CC007357C5 /* slider_01.pvr.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; name = slider_01.pvr.gz; path = images/slider_01.pvr.gz; sourceTree = SOURCE_ROOT; };
+		E7C3056C17984866007357C5 /* CCScrollLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCScrollLayer.h; sourceTree = "<group>"; };
+		E7C3056D17984866007357C5 /* CCScrollLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCScrollLayer.m; sourceTree = "<group>"; };
+		E7C3056E17984866007357C5 /* CustomScrollLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomScrollLayer.h; sourceTree = "<group>"; };
+		E7C3056F17984866007357C5 /* CustomScrollLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomScrollLayer.m; sourceTree = "<group>"; };
+		E7C3057217984A0A007357C5 /* dot-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "dot-hd.png"; path = "images/dot-hd.png"; sourceTree = SOURCE_ROOT; };
+		E7C3057317984A0A007357C5 /* dot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dot.png; path = images/dot.png; sourceTree = SOURCE_ROOT; };
+		E7C3057717986458007357C5 /* iphoneAboutMenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iphoneAboutMenuScene.h; sourceTree = "<group>"; };
+		E7C3057817986458007357C5 /* iphoneAboutMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iphoneAboutMenuScene.m; sourceTree = "<group>"; };
+		E7C3057B179866CB007357C5 /* about_menu_bg-hd.pvr.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; name = "about_menu_bg-hd.pvr.gz"; path = "images/about_menu_bg-hd.pvr.gz"; sourceTree = SOURCE_ROOT; };
+		E7C3057C179866CB007357C5 /* about_menu_bg.pvr.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; name = about_menu_bg.pvr.gz; path = images/about_menu_bg.pvr.gz; sourceTree = SOURCE_ROOT; };
+		E7C3057F17986CD6007357C5 /* student packet2013.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "student packet2013.pdf"; sourceTree = SOURCE_ROOT; };
+		E7C3058017986CD6007357C5 /* brochure_students1.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = brochure_students1.pdf; sourceTree = SOURCE_ROOT; };
+		E7C3058117986CD6007357C5 /* Overview of the ASPIRE program fall 2013.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Overview of the ASPIRE program fall 2013.pdf"; sourceTree = SOURCE_ROOT; };
+		E7C3058217986CD6007357C5 /* ASPIRE Student Application.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "ASPIRE Student Application.pdf"; sourceTree = SOURCE_ROOT; };
+		E7C3058717987433007357C5 /* ASPIREbooklet.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ASPIREbooklet.pdf; sourceTree = SOURCE_ROOT; };
 		E7F526901795CC9B00859253 /* aspirearc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = aspirearc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7F526931795CC9B00859253 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		E7F526951795CC9B00859253 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -715,6 +762,18 @@
 			name = sources;
 			sourceTree = "<group>";
 		};
+		E7C3057A1798646A007357C5 /* Support Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E7BB6BE51795D4B2008334D7 /* pdf reader */,
+				E7C3056C17984866007357C5 /* CCScrollLayer.h */,
+				E7C3056D17984866007357C5 /* CCScrollLayer.m */,
+				E7C3056E17984866007357C5 /* CustomScrollLayer.h */,
+				E7C3056F17984866007357C5 /* CustomScrollLayer.m */,
+			);
+			name = "Support Classes";
+			sourceTree = "<group>";
+		};
 		E7F526871795CC9B00859253 = {
 			isa = PBXGroup;
 			children = (
@@ -754,9 +813,11 @@
 		E7F526A71795CC9B00859253 /* aspirearc */ = {
 			isa = PBXGroup;
 			children = (
-				E7BB6BE51795D4B2008334D7 /* pdf reader */,
+				E7C3057A1798646A007357C5 /* Support Classes */,
 				E7F528351795CC9D00859253 /* AppDelegate.h */,
 				E7F528361795CC9D00859253 /* AppDelegate.m */,
+				E7C3057717986458007357C5 /* iphoneAboutMenuScene.h */,
+				E7C3057817986458007357C5 /* iphoneAboutMenuScene.m */,
 				E7F528A91795CF6400859253 /* CCUIViewWrapper.h */,
 				E7F528AA1795CF6400859253 /* CCUIViewWrapper.m */,
 				E7F5289D1795CEA600859253 /* iphoneIntroNode.h */,
@@ -777,8 +838,11 @@
 		E7F526A81795CC9B00859253 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E7BB6C401795D4EC008334D7 /* Ashefall2013schedule.pdf */,
-				E7BB6C411795D4EC008334D7 /* ASPIREbooklet.pdf */,
+				E7C3058717987433007357C5 /* ASPIREbooklet.pdf */,
+				E7C3057F17986CD6007357C5 /* student packet2013.pdf */,
+				E7C3058017986CD6007357C5 /* brochure_students1.pdf */,
+				E7C3058117986CD6007357C5 /* Overview of the ASPIRE program fall 2013.pdf */,
+				E7C3058217986CD6007357C5 /* ASPIRE Student Application.pdf */,
 				E7F528431795CE1800859253 /* assets */,
 				E7F526A91795CC9B00859253 /* Default.png */,
 				E7F526AB1795CC9B00859253 /* Default@2x.png */,
@@ -1202,6 +1266,22 @@
 		E7F5286C1795CE4200859253 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				E7C3057B179866CB007357C5 /* about_menu_bg-hd.pvr.gz */,
+				E7C3057C179866CB007357C5 /* about_menu_bg.pvr.gz */,
+				E7C3057217984A0A007357C5 /* dot-hd.png */,
+				E7C3057317984A0A007357C5 /* dot.png */,
+				E7C30554179847CC007357C5 /* slider_06-hd.pvr.gz */,
+				E7C30555179847CC007357C5 /* slider_06.pvr.gz */,
+				E7C30556179847CC007357C5 /* slider_04-hd.pvr.gz */,
+				E7C30557179847CC007357C5 /* slider_04.pvr.gz */,
+				E7C30558179847CC007357C5 /* slider_05-hd.pvr.gz */,
+				E7C30559179847CC007357C5 /* slider_05.pvr.gz */,
+				E7C3055A179847CC007357C5 /* slider_02-hd.pvr.gz */,
+				E7C3055B179847CC007357C5 /* slider_02.pvr.gz */,
+				E7C3055C179847CC007357C5 /* slider_03-hd.pvr.gz */,
+				E7C3055D179847CC007357C5 /* slider_03.pvr.gz */,
+				E7C3055E179847CC007357C5 /* slider_01-hd.pvr.gz */,
+				E7C3055F179847CC007357C5 /* slider_01.pvr.gz */,
 				E7F5286D1795CE5500859253 /* bottom_bar-hd.pvr.gz */,
 				E7F5286E1795CE5500859253 /* bottom_bar.pvr.gz */,
 				E7F5286F1795CE5500859253 /* cals_new-hd.pvr.gz */,
@@ -1350,8 +1430,27 @@
 				E7BB6C3D1795D4DE008334D7 /* Reader-Print@2x.png in Resources */,
 				E7BB6C3E1795D4DE008334D7 /* Reader-Thumbs.png in Resources */,
 				E7BB6C3F1795D4DE008334D7 /* Reader-Thumbs@2x.png in Resources */,
-				E7BB6C421795D4EC008334D7 /* Ashefall2013schedule.pdf in Resources */,
-				E7BB6C431795D4EC008334D7 /* ASPIREbooklet.pdf in Resources */,
+				E7C30560179847CC007357C5 /* slider_06-hd.pvr.gz in Resources */,
+				E7C30561179847CC007357C5 /* slider_06.pvr.gz in Resources */,
+				E7C30562179847CC007357C5 /* slider_04-hd.pvr.gz in Resources */,
+				E7C30563179847CC007357C5 /* slider_04.pvr.gz in Resources */,
+				E7C30564179847CC007357C5 /* slider_05-hd.pvr.gz in Resources */,
+				E7C30565179847CC007357C5 /* slider_05.pvr.gz in Resources */,
+				E7C30566179847CC007357C5 /* slider_02-hd.pvr.gz in Resources */,
+				E7C30567179847CC007357C5 /* slider_02.pvr.gz in Resources */,
+				E7C30568179847CC007357C5 /* slider_03-hd.pvr.gz in Resources */,
+				E7C30569179847CC007357C5 /* slider_03.pvr.gz in Resources */,
+				E7C3056A179847CC007357C5 /* slider_01-hd.pvr.gz in Resources */,
+				E7C3056B179847CC007357C5 /* slider_01.pvr.gz in Resources */,
+				E7C3057417984A0A007357C5 /* dot-hd.png in Resources */,
+				E7C3057517984A0A007357C5 /* dot.png in Resources */,
+				E7C3057D179866CB007357C5 /* about_menu_bg-hd.pvr.gz in Resources */,
+				E7C3057E179866CB007357C5 /* about_menu_bg.pvr.gz in Resources */,
+				E7C3058317986CD6007357C5 /* student packet2013.pdf in Resources */,
+				E7C3058417986CD6007357C5 /* brochure_students1.pdf in Resources */,
+				E7C3058517986CD6007357C5 /* Overview of the ASPIRE program fall 2013.pdf in Resources */,
+				E7C3058617986CD6007357C5 /* ASPIRE Student Application.pdf in Resources */,
+				E7C3058817987433007357C5 /* ASPIREbooklet.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1496,6 +1595,9 @@
 				E7BB6C211795D4D1008334D7 /* ThumbsMainToolbar.m in Sources */,
 				E7BB6C221795D4D1008334D7 /* ThumbsViewController.m in Sources */,
 				E7BB6C231795D4D1008334D7 /* UIXToolbarView.m in Sources */,
+				E7C3057017984866007357C5 /* CCScrollLayer.m in Sources */,
+				E7C3057117984866007357C5 /* CustomScrollLayer.m in Sources */,
+				E7C3057917986458007357C5 /* iphoneAboutMenuScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

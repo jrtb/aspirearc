@@ -38,6 +38,8 @@
 		
         printf("social scene loading\n");
         
+        showingSpinner = NO;
+
         wrapperOpen = NO;
         
         isTouchable = NO;
@@ -160,11 +162,28 @@
     
     CGRect frame = CGRectMake(0, 64, size.width, size.height-64-24);
     webView = [[UIWebView alloc] initWithFrame:frame];
+    webView.delegate = self;
     [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://twitter.com/aspirencstate"]]];
     
     // put a wrappar around the slider
 	webViewWrapper = [CCUIViewWrapper wrapperForUIView:webView];
 	[self addChild:webViewWrapper];
+    
+    if (showingSpinner) {
+        showingSpinner = NO;
+        [spinner stopAnimating];
+        [spinner removeFromSuperview];
+        //[spinner release];
+        //spinner = nil;
+    }
+    showingSpinner = YES;
+    spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    spinner.color = [UIColor grayColor];
+    spinner.hidesWhenStopped = YES;
+    [spinner startAnimating];
+    spinner.frame = CGRectMake(160-60, 240-60, 120, 120);
+    
+    [[[CCDirector sharedDirector] view] addSubview:spinner];
     
     //[webView release];
     
@@ -206,11 +225,28 @@
 
     CGRect frame = CGRectMake(0, 64, size.width, size.height-64-24);
     webView = [[UIWebView alloc] initWithFrame:frame];
+    webView.delegate = self;
     [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.facebook.com/pages/ACT-Supplemental-Preparation-in-Rural-Education/436155226481887?fref=ts"]]];
     
     // put a wrappar around the slider
 	webViewWrapper = [CCUIViewWrapper wrapperForUIView:webView];
 	[self addChild:webViewWrapper];
+
+    if (showingSpinner) {
+        showingSpinner = NO;
+        [spinner stopAnimating];
+        [spinner removeFromSuperview];
+        //[spinner release];
+        //spinner = nil;
+    }
+    showingSpinner = YES;
+    spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    spinner.color = [UIColor grayColor];
+    spinner.hidesWhenStopped = YES;
+    [spinner startAnimating];
+    spinner.frame = CGRectMake(160-60, 240-60, 120, 120);
+    
+    [[[CCDirector sharedDirector] view] addSubview:spinner];
 
     //[webView release];
 
@@ -232,14 +268,54 @@
     
     CGRect frame = CGRectMake(0, 64, size.width, size.height-64-24);
     webView = [[UIWebView alloc] initWithFrame:frame];
+    webView.delegate = self;
+    webView.scalesPageToFit = YES;
     [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://harvest.cals.ncsu.edu/aspire/"]]];
     
     // put a wrappar around the slider
 	webViewWrapper = [CCUIViewWrapper wrapperForUIView:webView];
 	[self addChild:webViewWrapper];
     
+    if (showingSpinner) {
+        showingSpinner = NO;
+        [spinner stopAnimating];
+        [spinner removeFromSuperview];
+        //[spinner release];
+        //spinner = nil;
+    }
+    showingSpinner = YES;
+    spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    spinner.color = [UIColor grayColor];
+    spinner.hidesWhenStopped = YES;
+    [spinner startAnimating];
+    spinner.frame = CGRectMake(160-60, 240-60, 120, 120);
+    
+    [[[CCDirector sharedDirector] view] addSubview:spinner];
+
     //[webView release];
 
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    if (showingSpinner) {
+        showingSpinner = NO;
+        [spinner stopAnimating];
+        [spinner removeFromSuperview];
+        //[spinner release];
+        //spinner = nil;
+    }
+}
+
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error
+{
+    if (showingSpinner) {
+        showingSpinner = NO;
+        [spinner stopAnimating];
+        [spinner removeFromSuperview];
+        //[spinner release];
+        //spinner = nil;
+    }
 }
 
 -(void) onEnterTransitionDidFinish
