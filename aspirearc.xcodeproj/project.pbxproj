@@ -7,6 +7,55 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E70C5D6C179982E4008D1B81 /* short_whoosh.caf in Resources */ = {isa = PBXBuildFile; fileRef = E70C5D6A179982E4008D1B81 /* short_whoosh.caf */; };
+		E70C5D6D179982E4008D1B81 /* knock.caf in Resources */ = {isa = PBXBuildFile; fileRef = E70C5D6B179982E4008D1B81 /* knock.caf */; };
+		E70C5D861799967A008D1B81 /* settings-hd.pvr.gz in Resources */ = {isa = PBXBuildFile; fileRef = E70C5D841799967A008D1B81 /* settings-hd.pvr.gz */; };
+		E70C5D871799967A008D1B81 /* settings.pvr.gz in Resources */ = {isa = PBXBuildFile; fileRef = E70C5D851799967A008D1B81 /* settings.pvr.gz */; };
+		E70C5DF017999F02008D1B81 /* Alexander County.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E70C5DC317999F02008D1B81 /* Alexander County.pdf */; };
+		E70C5DF117999F02008D1B81 /* Ashe County.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E70C5DC417999F02008D1B81 /* Ashe County.pdf */; };
+		E70C5DF217999F02008D1B81 /* Ashefall2013schedule.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E70C5DC517999F02008D1B81 /* Ashefall2013schedule.pdf */; };
+		E70C5DF317999F02008D1B81 /* ASPIRE Student Application.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E70C5DC617999F02008D1B81 /* ASPIRE Student Application.pdf */; };
+		E70C5DF417999F02008D1B81 /* ASPIREbooklet.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E70C5DC717999F02008D1B81 /* ASPIREbooklet.pdf */; };
+		E70C5DF517999F02008D1B81 /* brochure_students1.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E70C5DC817999F02008D1B81 /* brochure_students1.pdf */; };
+		E70C5DF617999F02008D1B81 /* Burke County.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E70C5DC917999F02008D1B81 /* Burke County.pdf */; };
+		E70C5DF717999F02008D1B81 /* Camden County.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E70C5DCA17999F02008D1B81 /* Camden County.pdf */; };
+		E70C5DF817999F02008D1B81 /* Catawba County.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E70C5DCB17999F02008D1B81 /* Catawba County.pdf */; };
+		E70C5DF917999F02008D1B81 /* Cherokee County.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E70C5DCC17999F02008D1B81 /* Cherokee County.pdf */; };
+		E70C5DFA17999F02008D1B81 /* Chowan County.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E70C5DCD17999F02008D1B81 /* Chowan County.pdf */; };
+		E70C5DFB17999F02008D1B81 /* Davidson County.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E70C5DCE17999F02008D1B81 /* Davidson County.pdf */; };
+		E70C5DFC17999F02008D1B81 /* Davie County.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E70C5DCF17999F02008D1B81 /* Davie County.pdf */; };
+		E70C5DFD17999F02008D1B81 /* DavieCountyASPIREfall2013.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E70C5DD017999F02008D1B81 /* DavieCountyASPIREfall2013.pdf */; };
+		E70C5DFE17999F02008D1B81 /* Haywood County.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E70C5DD117999F02008D1B81 /* Haywood County.pdf */; };
+		E70C5DFF17999F02008D1B81 /* Haywood fall 2013 schedule.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E70C5DD217999F02008D1B81 /* Haywood fall 2013 schedule.pdf */; };
+		E70C5E0017999F02008D1B81 /* Hertford County.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E70C5DD317999F02008D1B81 /* Hertford County.pdf */; };
+		E70C5E0117999F02008D1B81 /* HertfordFall2013Schedule.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E70C5DD417999F02008D1B81 /* HertfordFall2013Schedule.pdf */; };
+		E70C5E0217999F02008D1B81 /* Johnston County.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E70C5DD517999F02008D1B81 /* Johnston County.pdf */; };
+		E70C5E0317999F02008D1B81 /* Lincoln County.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E70C5DD617999F02008D1B81 /* Lincoln County.pdf */; };
+		E70C5E0417999F02008D1B81 /* LincolnCharter2013fallschedule.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E70C5DD717999F02008D1B81 /* LincolnCharter2013fallschedule.pdf */; };
+		E70C5E0517999F02008D1B81 /* LincolnPublicSchedulefall2013.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E70C5DD817999F02008D1B81 /* LincolnPublicSchedulefall2013.pdf */; };
+		E70C5E0617999F02008D1B81 /* Madison County.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E70C5DD917999F02008D1B81 /* Madison County.pdf */; };
+		E70C5E0717999F02008D1B81 /* Madisonfall2013schedule.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E70C5DDA17999F02008D1B81 /* Madisonfall2013schedule.pdf */; };
+		E70C5E0817999F02008D1B81 /* Mitchell County.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E70C5DDB17999F02008D1B81 /* Mitchell County.pdf */; };
+		E70C5E0917999F02008D1B81 /* Montgomery County.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E70C5DDC17999F02008D1B81 /* Montgomery County.pdf */; };
+		E70C5E0A17999F02008D1B81 /* Northampton County.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E70C5DDD17999F02008D1B81 /* Northampton County.pdf */; };
+		E70C5E0B17999F02008D1B81 /* Northampton fall 2013 schedule.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E70C5DDE17999F02008D1B81 /* Northampton fall 2013 schedule.pdf */; };
+		E70C5E0C17999F02008D1B81 /* Overview of the ASPIRE program fall 2013.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E70C5DDF17999F02008D1B81 /* Overview of the ASPIRE program fall 2013.pdf */; };
+		E70C5E0D17999F02008D1B81 /* Pasquotank County.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E70C5DE017999F02008D1B81 /* Pasquotank County.pdf */; };
+		E70C5E0E17999F02008D1B81 /* Pasquotank Fall 2013 schedule.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E70C5DE117999F02008D1B81 /* Pasquotank Fall 2013 schedule.pdf */; };
+		E70C5E0F17999F02008D1B81 /* Person County.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E70C5DE217999F02008D1B81 /* Person County.pdf */; };
+		E70C5E1017999F02008D1B81 /* Pitt County.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E70C5DE317999F02008D1B81 /* Pitt County.pdf */; };
+		E70C5E1117999F02008D1B81 /* Robeson County.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E70C5DE417999F02008D1B81 /* Robeson County.pdf */; };
+		E70C5E1217999F02008D1B81 /* Rowan County.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E70C5DE517999F02008D1B81 /* Rowan County.pdf */; };
+		E70C5E1317999F02008D1B81 /* Rowan summer 2013 schedule.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E70C5DE617999F02008D1B81 /* Rowan summer 2013 schedule.pdf */; };
+		E70C5E1417999F02008D1B81 /* Rutherford County.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E70C5DE717999F02008D1B81 /* Rutherford County.pdf */; };
+		E70C5E1517999F02008D1B81 /* Rutherford Fall 2013 Schedule.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E70C5DE817999F02008D1B81 /* Rutherford Fall 2013 Schedule.pdf */; };
+		E70C5E1617999F02008D1B81 /* Sampson County.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E70C5DE917999F02008D1B81 /* Sampson County.pdf */; };
+		E70C5E1717999F02008D1B81 /* Stanly County.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E70C5DEA17999F02008D1B81 /* Stanly County.pdf */; };
+		E70C5E1817999F02008D1B81 /* student packet2013.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E70C5DEB17999F02008D1B81 /* student packet2013.pdf */; };
+		E70C5E1917999F02008D1B81 /* Union County.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E70C5DEC17999F02008D1B81 /* Union County.pdf */; };
+		E70C5E1A17999F02008D1B81 /* Warren County.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E70C5DED17999F02008D1B81 /* Warren County.pdf */; };
+		E70C5E1B17999F02008D1B81 /* Wayne County.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E70C5DEE17999F02008D1B81 /* Wayne County.pdf */; };
+		E70C5E1C17999F02008D1B81 /* Wilson County.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E70C5DEF17999F02008D1B81 /* Wilson County.pdf */; };
 		E7BB6C101795D4D1008334D7 /* CGPDFDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BB6BFC1795D4D1008334D7 /* CGPDFDocument.m */; };
 		E7BB6C111795D4D1008334D7 /* ReaderConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BB6BFD1795D4D1008334D7 /* ReaderConstants.m */; };
 		E7BB6C121795D4D1008334D7 /* ReaderContentPage.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BB6BFE1795D4D1008334D7 /* ReaderContentPage.m */; };
@@ -62,11 +111,6 @@
 		E7C3057917986458007357C5 /* iphoneAboutMenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E7C3057817986458007357C5 /* iphoneAboutMenuScene.m */; };
 		E7C3057D179866CB007357C5 /* about_menu_bg-hd.pvr.gz in Resources */ = {isa = PBXBuildFile; fileRef = E7C3057B179866CB007357C5 /* about_menu_bg-hd.pvr.gz */; };
 		E7C3057E179866CB007357C5 /* about_menu_bg.pvr.gz in Resources */ = {isa = PBXBuildFile; fileRef = E7C3057C179866CB007357C5 /* about_menu_bg.pvr.gz */; };
-		E7C3058317986CD6007357C5 /* student packet2013.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E7C3057F17986CD6007357C5 /* student packet2013.pdf */; };
-		E7C3058417986CD6007357C5 /* brochure_students1.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E7C3058017986CD6007357C5 /* brochure_students1.pdf */; };
-		E7C3058517986CD6007357C5 /* Overview of the ASPIRE program fall 2013.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E7C3058117986CD6007357C5 /* Overview of the ASPIRE program fall 2013.pdf */; };
-		E7C3058617986CD6007357C5 /* ASPIRE Student Application.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E7C3058217986CD6007357C5 /* ASPIRE Student Application.pdf */; };
-		E7C3058817987433007357C5 /* ASPIREbooklet.pdf in Resources */ = {isa = PBXBuildFile; fileRef = E7C3058717987433007357C5 /* ASPIREbooklet.pdf */; };
 		E7F526941795CC9B00859253 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F526931795CC9B00859253 /* QuartzCore.framework */; };
 		E7F526961795CC9B00859253 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F526951795CC9B00859253 /* OpenGLES.framework */; };
 		E7F526981795CC9B00859253 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F526971795CC9B00859253 /* OpenAL.framework */; };
@@ -249,6 +293,55 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E70C5D6A179982E4008D1B81 /* short_whoosh.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = short_whoosh.caf; path = sounds/short_whoosh.caf; sourceTree = SOURCE_ROOT; };
+		E70C5D6B179982E4008D1B81 /* knock.caf */ = {isa = PBXFileReference; lastKnownFileType = file; name = knock.caf; path = sounds/knock.caf; sourceTree = SOURCE_ROOT; };
+		E70C5D841799967A008D1B81 /* settings-hd.pvr.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; name = "settings-hd.pvr.gz"; path = "images/settings-hd.pvr.gz"; sourceTree = SOURCE_ROOT; };
+		E70C5D851799967A008D1B81 /* settings.pvr.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; name = settings.pvr.gz; path = images/settings.pvr.gz; sourceTree = SOURCE_ROOT; };
+		E70C5DC317999F02008D1B81 /* Alexander County.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "Alexander County.pdf"; path = "pdfs/Alexander County.pdf"; sourceTree = SOURCE_ROOT; };
+		E70C5DC417999F02008D1B81 /* Ashe County.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "Ashe County.pdf"; path = "pdfs/Ashe County.pdf"; sourceTree = SOURCE_ROOT; };
+		E70C5DC517999F02008D1B81 /* Ashefall2013schedule.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = Ashefall2013schedule.pdf; path = pdfs/Ashefall2013schedule.pdf; sourceTree = SOURCE_ROOT; };
+		E70C5DC617999F02008D1B81 /* ASPIRE Student Application.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "ASPIRE Student Application.pdf"; path = "pdfs/ASPIRE Student Application.pdf"; sourceTree = SOURCE_ROOT; };
+		E70C5DC717999F02008D1B81 /* ASPIREbooklet.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = ASPIREbooklet.pdf; path = pdfs/ASPIREbooklet.pdf; sourceTree = SOURCE_ROOT; };
+		E70C5DC817999F02008D1B81 /* brochure_students1.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = brochure_students1.pdf; path = pdfs/brochure_students1.pdf; sourceTree = SOURCE_ROOT; };
+		E70C5DC917999F02008D1B81 /* Burke County.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "Burke County.pdf"; path = "pdfs/Burke County.pdf"; sourceTree = SOURCE_ROOT; };
+		E70C5DCA17999F02008D1B81 /* Camden County.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "Camden County.pdf"; path = "pdfs/Camden County.pdf"; sourceTree = SOURCE_ROOT; };
+		E70C5DCB17999F02008D1B81 /* Catawba County.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "Catawba County.pdf"; path = "pdfs/Catawba County.pdf"; sourceTree = SOURCE_ROOT; };
+		E70C5DCC17999F02008D1B81 /* Cherokee County.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "Cherokee County.pdf"; path = "pdfs/Cherokee County.pdf"; sourceTree = SOURCE_ROOT; };
+		E70C5DCD17999F02008D1B81 /* Chowan County.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "Chowan County.pdf"; path = "pdfs/Chowan County.pdf"; sourceTree = SOURCE_ROOT; };
+		E70C5DCE17999F02008D1B81 /* Davidson County.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "Davidson County.pdf"; path = "pdfs/Davidson County.pdf"; sourceTree = SOURCE_ROOT; };
+		E70C5DCF17999F02008D1B81 /* Davie County.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "Davie County.pdf"; path = "pdfs/Davie County.pdf"; sourceTree = SOURCE_ROOT; };
+		E70C5DD017999F02008D1B81 /* DavieCountyASPIREfall2013.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = DavieCountyASPIREfall2013.pdf; path = pdfs/DavieCountyASPIREfall2013.pdf; sourceTree = SOURCE_ROOT; };
+		E70C5DD117999F02008D1B81 /* Haywood County.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "Haywood County.pdf"; path = "pdfs/Haywood County.pdf"; sourceTree = SOURCE_ROOT; };
+		E70C5DD217999F02008D1B81 /* Haywood fall 2013 schedule.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "Haywood fall 2013 schedule.pdf"; path = "pdfs/Haywood fall 2013 schedule.pdf"; sourceTree = SOURCE_ROOT; };
+		E70C5DD317999F02008D1B81 /* Hertford County.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "Hertford County.pdf"; path = "pdfs/Hertford County.pdf"; sourceTree = SOURCE_ROOT; };
+		E70C5DD417999F02008D1B81 /* HertfordFall2013Schedule.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = HertfordFall2013Schedule.pdf; path = pdfs/HertfordFall2013Schedule.pdf; sourceTree = SOURCE_ROOT; };
+		E70C5DD517999F02008D1B81 /* Johnston County.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "Johnston County.pdf"; path = "pdfs/Johnston County.pdf"; sourceTree = SOURCE_ROOT; };
+		E70C5DD617999F02008D1B81 /* Lincoln County.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "Lincoln County.pdf"; path = "pdfs/Lincoln County.pdf"; sourceTree = SOURCE_ROOT; };
+		E70C5DD717999F02008D1B81 /* LincolnCharter2013fallschedule.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = LincolnCharter2013fallschedule.pdf; path = pdfs/LincolnCharter2013fallschedule.pdf; sourceTree = SOURCE_ROOT; };
+		E70C5DD817999F02008D1B81 /* LincolnPublicSchedulefall2013.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = LincolnPublicSchedulefall2013.pdf; path = pdfs/LincolnPublicSchedulefall2013.pdf; sourceTree = SOURCE_ROOT; };
+		E70C5DD917999F02008D1B81 /* Madison County.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "Madison County.pdf"; path = "pdfs/Madison County.pdf"; sourceTree = SOURCE_ROOT; };
+		E70C5DDA17999F02008D1B81 /* Madisonfall2013schedule.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = Madisonfall2013schedule.pdf; path = pdfs/Madisonfall2013schedule.pdf; sourceTree = SOURCE_ROOT; };
+		E70C5DDB17999F02008D1B81 /* Mitchell County.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "Mitchell County.pdf"; path = "pdfs/Mitchell County.pdf"; sourceTree = SOURCE_ROOT; };
+		E70C5DDC17999F02008D1B81 /* Montgomery County.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "Montgomery County.pdf"; path = "pdfs/Montgomery County.pdf"; sourceTree = SOURCE_ROOT; };
+		E70C5DDD17999F02008D1B81 /* Northampton County.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "Northampton County.pdf"; path = "pdfs/Northampton County.pdf"; sourceTree = SOURCE_ROOT; };
+		E70C5DDE17999F02008D1B81 /* Northampton fall 2013 schedule.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "Northampton fall 2013 schedule.pdf"; path = "pdfs/Northampton fall 2013 schedule.pdf"; sourceTree = SOURCE_ROOT; };
+		E70C5DDF17999F02008D1B81 /* Overview of the ASPIRE program fall 2013.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "Overview of the ASPIRE program fall 2013.pdf"; path = "pdfs/Overview of the ASPIRE program fall 2013.pdf"; sourceTree = SOURCE_ROOT; };
+		E70C5DE017999F02008D1B81 /* Pasquotank County.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "Pasquotank County.pdf"; path = "pdfs/Pasquotank County.pdf"; sourceTree = SOURCE_ROOT; };
+		E70C5DE117999F02008D1B81 /* Pasquotank Fall 2013 schedule.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "Pasquotank Fall 2013 schedule.pdf"; path = "pdfs/Pasquotank Fall 2013 schedule.pdf"; sourceTree = SOURCE_ROOT; };
+		E70C5DE217999F02008D1B81 /* Person County.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "Person County.pdf"; path = "pdfs/Person County.pdf"; sourceTree = SOURCE_ROOT; };
+		E70C5DE317999F02008D1B81 /* Pitt County.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "Pitt County.pdf"; path = "pdfs/Pitt County.pdf"; sourceTree = SOURCE_ROOT; };
+		E70C5DE417999F02008D1B81 /* Robeson County.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "Robeson County.pdf"; path = "pdfs/Robeson County.pdf"; sourceTree = SOURCE_ROOT; };
+		E70C5DE517999F02008D1B81 /* Rowan County.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "Rowan County.pdf"; path = "pdfs/Rowan County.pdf"; sourceTree = SOURCE_ROOT; };
+		E70C5DE617999F02008D1B81 /* Rowan summer 2013 schedule.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "Rowan summer 2013 schedule.pdf"; path = "pdfs/Rowan summer 2013 schedule.pdf"; sourceTree = SOURCE_ROOT; };
+		E70C5DE717999F02008D1B81 /* Rutherford County.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "Rutherford County.pdf"; path = "pdfs/Rutherford County.pdf"; sourceTree = SOURCE_ROOT; };
+		E70C5DE817999F02008D1B81 /* Rutherford Fall 2013 Schedule.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "Rutherford Fall 2013 Schedule.pdf"; path = "pdfs/Rutherford Fall 2013 Schedule.pdf"; sourceTree = SOURCE_ROOT; };
+		E70C5DE917999F02008D1B81 /* Sampson County.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "Sampson County.pdf"; path = "pdfs/Sampson County.pdf"; sourceTree = SOURCE_ROOT; };
+		E70C5DEA17999F02008D1B81 /* Stanly County.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "Stanly County.pdf"; path = "pdfs/Stanly County.pdf"; sourceTree = SOURCE_ROOT; };
+		E70C5DEB17999F02008D1B81 /* student packet2013.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "student packet2013.pdf"; path = "pdfs/student packet2013.pdf"; sourceTree = SOURCE_ROOT; };
+		E70C5DEC17999F02008D1B81 /* Union County.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "Union County.pdf"; path = "pdfs/Union County.pdf"; sourceTree = SOURCE_ROOT; };
+		E70C5DED17999F02008D1B81 /* Warren County.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "Warren County.pdf"; path = "pdfs/Warren County.pdf"; sourceTree = SOURCE_ROOT; };
+		E70C5DEE17999F02008D1B81 /* Wayne County.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "Wayne County.pdf"; path = "pdfs/Wayne County.pdf"; sourceTree = SOURCE_ROOT; };
+		E70C5DEF17999F02008D1B81 /* Wilson County.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = "Wilson County.pdf"; path = "pdfs/Wilson County.pdf"; sourceTree = SOURCE_ROOT; };
 		E7BB6BE81795D4D1008334D7 /* CGPDFDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CGPDFDocument.h; path = reader/Sources/CGPDFDocument.h; sourceTree = SOURCE_ROOT; };
 		E7BB6BE91795D4D1008334D7 /* ReaderConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReaderConstants.h; path = reader/Sources/ReaderConstants.h; sourceTree = SOURCE_ROOT; };
 		E7BB6BEA1795D4D1008334D7 /* ReaderContentPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReaderContentPage.h; path = reader/Sources/ReaderContentPage.h; sourceTree = SOURCE_ROOT; };
@@ -327,11 +420,6 @@
 		E7C3057817986458007357C5 /* iphoneAboutMenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iphoneAboutMenuScene.m; sourceTree = "<group>"; };
 		E7C3057B179866CB007357C5 /* about_menu_bg-hd.pvr.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; name = "about_menu_bg-hd.pvr.gz"; path = "images/about_menu_bg-hd.pvr.gz"; sourceTree = SOURCE_ROOT; };
 		E7C3057C179866CB007357C5 /* about_menu_bg.pvr.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; name = about_menu_bg.pvr.gz; path = images/about_menu_bg.pvr.gz; sourceTree = SOURCE_ROOT; };
-		E7C3057F17986CD6007357C5 /* student packet2013.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "student packet2013.pdf"; sourceTree = SOURCE_ROOT; };
-		E7C3058017986CD6007357C5 /* brochure_students1.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = brochure_students1.pdf; sourceTree = SOURCE_ROOT; };
-		E7C3058117986CD6007357C5 /* Overview of the ASPIRE program fall 2013.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "Overview of the ASPIRE program fall 2013.pdf"; sourceTree = SOURCE_ROOT; };
-		E7C3058217986CD6007357C5 /* ASPIRE Student Application.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "ASPIRE Student Application.pdf"; sourceTree = SOURCE_ROOT; };
-		E7C3058717987433007357C5 /* ASPIREbooklet.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ASPIREbooklet.pdf; sourceTree = SOURCE_ROOT; };
 		E7F526901795CC9B00859253 /* aspirearc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = aspirearc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7F526931795CC9B00859253 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		E7F526951795CC9B00859253 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -685,6 +773,58 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E70C5DC217999EF8008D1B81 /* pdfs */ = {
+			isa = PBXGroup;
+			children = (
+				E70C5DC317999F02008D1B81 /* Alexander County.pdf */,
+				E70C5DC417999F02008D1B81 /* Ashe County.pdf */,
+				E70C5DC517999F02008D1B81 /* Ashefall2013schedule.pdf */,
+				E70C5DC617999F02008D1B81 /* ASPIRE Student Application.pdf */,
+				E70C5DC717999F02008D1B81 /* ASPIREbooklet.pdf */,
+				E70C5DC817999F02008D1B81 /* brochure_students1.pdf */,
+				E70C5DC917999F02008D1B81 /* Burke County.pdf */,
+				E70C5DCA17999F02008D1B81 /* Camden County.pdf */,
+				E70C5DCB17999F02008D1B81 /* Catawba County.pdf */,
+				E70C5DCC17999F02008D1B81 /* Cherokee County.pdf */,
+				E70C5DCD17999F02008D1B81 /* Chowan County.pdf */,
+				E70C5DCE17999F02008D1B81 /* Davidson County.pdf */,
+				E70C5DCF17999F02008D1B81 /* Davie County.pdf */,
+				E70C5DD017999F02008D1B81 /* DavieCountyASPIREfall2013.pdf */,
+				E70C5DD117999F02008D1B81 /* Haywood County.pdf */,
+				E70C5DD217999F02008D1B81 /* Haywood fall 2013 schedule.pdf */,
+				E70C5DD317999F02008D1B81 /* Hertford County.pdf */,
+				E70C5DD417999F02008D1B81 /* HertfordFall2013Schedule.pdf */,
+				E70C5DD517999F02008D1B81 /* Johnston County.pdf */,
+				E70C5DD617999F02008D1B81 /* Lincoln County.pdf */,
+				E70C5DD717999F02008D1B81 /* LincolnCharter2013fallschedule.pdf */,
+				E70C5DD817999F02008D1B81 /* LincolnPublicSchedulefall2013.pdf */,
+				E70C5DD917999F02008D1B81 /* Madison County.pdf */,
+				E70C5DDA17999F02008D1B81 /* Madisonfall2013schedule.pdf */,
+				E70C5DDB17999F02008D1B81 /* Mitchell County.pdf */,
+				E70C5DDC17999F02008D1B81 /* Montgomery County.pdf */,
+				E70C5DDD17999F02008D1B81 /* Northampton County.pdf */,
+				E70C5DDE17999F02008D1B81 /* Northampton fall 2013 schedule.pdf */,
+				E70C5DDF17999F02008D1B81 /* Overview of the ASPIRE program fall 2013.pdf */,
+				E70C5DE017999F02008D1B81 /* Pasquotank County.pdf */,
+				E70C5DE117999F02008D1B81 /* Pasquotank Fall 2013 schedule.pdf */,
+				E70C5DE217999F02008D1B81 /* Person County.pdf */,
+				E70C5DE317999F02008D1B81 /* Pitt County.pdf */,
+				E70C5DE417999F02008D1B81 /* Robeson County.pdf */,
+				E70C5DE517999F02008D1B81 /* Rowan County.pdf */,
+				E70C5DE617999F02008D1B81 /* Rowan summer 2013 schedule.pdf */,
+				E70C5DE717999F02008D1B81 /* Rutherford County.pdf */,
+				E70C5DE817999F02008D1B81 /* Rutherford Fall 2013 Schedule.pdf */,
+				E70C5DE917999F02008D1B81 /* Sampson County.pdf */,
+				E70C5DEA17999F02008D1B81 /* Stanly County.pdf */,
+				E70C5DEB17999F02008D1B81 /* student packet2013.pdf */,
+				E70C5DEC17999F02008D1B81 /* Union County.pdf */,
+				E70C5DED17999F02008D1B81 /* Warren County.pdf */,
+				E70C5DEE17999F02008D1B81 /* Wayne County.pdf */,
+				E70C5DEF17999F02008D1B81 /* Wilson County.pdf */,
+			);
+			name = pdfs;
+			sourceTree = "<group>";
+		};
 		E7BB6BE51795D4B2008334D7 /* pdf reader */ = {
 			isa = PBXGroup;
 			children = (
@@ -838,11 +978,6 @@
 		E7F526A81795CC9B00859253 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E7C3058717987433007357C5 /* ASPIREbooklet.pdf */,
-				E7C3057F17986CD6007357C5 /* student packet2013.pdf */,
-				E7C3058017986CD6007357C5 /* brochure_students1.pdf */,
-				E7C3058117986CD6007357C5 /* Overview of the ASPIRE program fall 2013.pdf */,
-				E7C3058217986CD6007357C5 /* ASPIRE Student Application.pdf */,
 				E7F528431795CE1800859253 /* assets */,
 				E7F526A91795CC9B00859253 /* Default.png */,
 				E7F526AB1795CC9B00859253 /* Default@2x.png */,
@@ -1223,6 +1358,7 @@
 		E7F528431795CE1800859253 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				E70C5DC217999EF8008D1B81 /* pdfs */,
 				E7F5286C1795CE4200859253 /* images */,
 				E7F528471795CE2D00859253 /* fonts */,
 				E7F528441795CE1D00859253 /* sounds */,
@@ -1233,6 +1369,8 @@
 		E7F528441795CE1D00859253 /* sounds */ = {
 			isa = PBXGroup;
 			children = (
+				E70C5D6A179982E4008D1B81 /* short_whoosh.caf */,
+				E70C5D6B179982E4008D1B81 /* knock.caf */,
 				E7F528451795CE2700859253 /* click2.caf */,
 			);
 			name = sounds;
@@ -1266,6 +1404,8 @@
 		E7F5286C1795CE4200859253 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				E70C5D841799967A008D1B81 /* settings-hd.pvr.gz */,
+				E70C5D851799967A008D1B81 /* settings.pvr.gz */,
 				E7C3057B179866CB007357C5 /* about_menu_bg-hd.pvr.gz */,
 				E7C3057C179866CB007357C5 /* about_menu_bg.pvr.gz */,
 				E7C3057217984A0A007357C5 /* dot-hd.png */,
@@ -1446,11 +1586,55 @@
 				E7C3057517984A0A007357C5 /* dot.png in Resources */,
 				E7C3057D179866CB007357C5 /* about_menu_bg-hd.pvr.gz in Resources */,
 				E7C3057E179866CB007357C5 /* about_menu_bg.pvr.gz in Resources */,
-				E7C3058317986CD6007357C5 /* student packet2013.pdf in Resources */,
-				E7C3058417986CD6007357C5 /* brochure_students1.pdf in Resources */,
-				E7C3058517986CD6007357C5 /* Overview of the ASPIRE program fall 2013.pdf in Resources */,
-				E7C3058617986CD6007357C5 /* ASPIRE Student Application.pdf in Resources */,
-				E7C3058817987433007357C5 /* ASPIREbooklet.pdf in Resources */,
+				E70C5D6C179982E4008D1B81 /* short_whoosh.caf in Resources */,
+				E70C5D6D179982E4008D1B81 /* knock.caf in Resources */,
+				E70C5D861799967A008D1B81 /* settings-hd.pvr.gz in Resources */,
+				E70C5D871799967A008D1B81 /* settings.pvr.gz in Resources */,
+				E70C5DF017999F02008D1B81 /* Alexander County.pdf in Resources */,
+				E70C5DF117999F02008D1B81 /* Ashe County.pdf in Resources */,
+				E70C5DF217999F02008D1B81 /* Ashefall2013schedule.pdf in Resources */,
+				E70C5DF317999F02008D1B81 /* ASPIRE Student Application.pdf in Resources */,
+				E70C5DF417999F02008D1B81 /* ASPIREbooklet.pdf in Resources */,
+				E70C5DF517999F02008D1B81 /* brochure_students1.pdf in Resources */,
+				E70C5DF617999F02008D1B81 /* Burke County.pdf in Resources */,
+				E70C5DF717999F02008D1B81 /* Camden County.pdf in Resources */,
+				E70C5DF817999F02008D1B81 /* Catawba County.pdf in Resources */,
+				E70C5DF917999F02008D1B81 /* Cherokee County.pdf in Resources */,
+				E70C5DFA17999F02008D1B81 /* Chowan County.pdf in Resources */,
+				E70C5DFB17999F02008D1B81 /* Davidson County.pdf in Resources */,
+				E70C5DFC17999F02008D1B81 /* Davie County.pdf in Resources */,
+				E70C5DFD17999F02008D1B81 /* DavieCountyASPIREfall2013.pdf in Resources */,
+				E70C5DFE17999F02008D1B81 /* Haywood County.pdf in Resources */,
+				E70C5DFF17999F02008D1B81 /* Haywood fall 2013 schedule.pdf in Resources */,
+				E70C5E0017999F02008D1B81 /* Hertford County.pdf in Resources */,
+				E70C5E0117999F02008D1B81 /* HertfordFall2013Schedule.pdf in Resources */,
+				E70C5E0217999F02008D1B81 /* Johnston County.pdf in Resources */,
+				E70C5E0317999F02008D1B81 /* Lincoln County.pdf in Resources */,
+				E70C5E0417999F02008D1B81 /* LincolnCharter2013fallschedule.pdf in Resources */,
+				E70C5E0517999F02008D1B81 /* LincolnPublicSchedulefall2013.pdf in Resources */,
+				E70C5E0617999F02008D1B81 /* Madison County.pdf in Resources */,
+				E70C5E0717999F02008D1B81 /* Madisonfall2013schedule.pdf in Resources */,
+				E70C5E0817999F02008D1B81 /* Mitchell County.pdf in Resources */,
+				E70C5E0917999F02008D1B81 /* Montgomery County.pdf in Resources */,
+				E70C5E0A17999F02008D1B81 /* Northampton County.pdf in Resources */,
+				E70C5E0B17999F02008D1B81 /* Northampton fall 2013 schedule.pdf in Resources */,
+				E70C5E0C17999F02008D1B81 /* Overview of the ASPIRE program fall 2013.pdf in Resources */,
+				E70C5E0D17999F02008D1B81 /* Pasquotank County.pdf in Resources */,
+				E70C5E0E17999F02008D1B81 /* Pasquotank Fall 2013 schedule.pdf in Resources */,
+				E70C5E0F17999F02008D1B81 /* Person County.pdf in Resources */,
+				E70C5E1017999F02008D1B81 /* Pitt County.pdf in Resources */,
+				E70C5E1117999F02008D1B81 /* Robeson County.pdf in Resources */,
+				E70C5E1217999F02008D1B81 /* Rowan County.pdf in Resources */,
+				E70C5E1317999F02008D1B81 /* Rowan summer 2013 schedule.pdf in Resources */,
+				E70C5E1417999F02008D1B81 /* Rutherford County.pdf in Resources */,
+				E70C5E1517999F02008D1B81 /* Rutherford Fall 2013 Schedule.pdf in Resources */,
+				E70C5E1617999F02008D1B81 /* Sampson County.pdf in Resources */,
+				E70C5E1717999F02008D1B81 /* Stanly County.pdf in Resources */,
+				E70C5E1817999F02008D1B81 /* student packet2013.pdf in Resources */,
+				E70C5E1917999F02008D1B81 /* Union County.pdf in Resources */,
+				E70C5E1A17999F02008D1B81 /* Warren County.pdf in Resources */,
+				E70C5E1B17999F02008D1B81 /* Wayne County.pdf in Resources */,
+				E70C5E1C17999F02008D1B81 /* Wilson County.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

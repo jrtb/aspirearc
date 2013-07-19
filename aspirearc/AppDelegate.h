@@ -20,6 +20,9 @@
 #define SOCIAL 154
 #define ABOUT 155
 
+#define TEACHER 200
+#define SCHEDULE 201
+
 // Added only for iOS 6 support
 @interface MyNavigationController : UINavigationController <CCDirectorDelegate>
 @end
@@ -39,6 +42,9 @@
     NSString            *selectedCounty;
     
     int                 currentMenuItem;
+    
+    int                 afterCounty;
+    BOOL                loadPDFInMenu;
 
 	UIWindow *window_;
 	MyNavigationController *navController_;
@@ -46,7 +52,10 @@
 	CCDirectorIOS	*__unsafe_unretained director_;							// weak ref
 }
 
+@property BOOL loadPDFInMenu;
 @property int currentMenuItem;
+
+@property int afterCounty;
 
 @property int screenToggle;
 @property int nextScreen;

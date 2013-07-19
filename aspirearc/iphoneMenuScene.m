@@ -73,6 +73,8 @@ enum nodeTags
 		
         printf("menu scene loading\n");
         
+        touched = NO;
+        
         pages = [[NSMutableArray alloc] init];
         items = [[NSMutableArray alloc] init];
 
@@ -94,7 +96,21 @@ enum nodeTags
         sliderLine.position = ccp(160.0,68.0+iphoneAddY*2);
         [self addChild:sliderLine z:0];
 
+        CCSprite *aSmall1 = [CCSprite spriteWithFile:@"settings.pvr.gz"];
+        aSmall1.opacity = 128;
+
+        CCSprite *aSmall2 = [CCSprite spriteWithFile:@"settings.pvr.gz"];
+        aSmall2.opacity = 255;
+
+        CCMenuItemSprite *itemA = [CCMenuItemSprite itemWithNormalSprite:aSmall1
+                                                          selectedSprite:aSmall2
+                                                                  target:self
+                                                                selector:@selector(settingsAction:)];
         
+        CCMenu  *menuA = [CCMenu menuWithItems:itemA, nil];
+        [menuA setPosition:ccp(22,22)];
+        [self addChild:menuA z:70];
+
         /*
         float menuStartY = 300.5+iphoneAddY*2;
         float sepY = 38.0;
@@ -197,6 +213,18 @@ enum nodeTags
 
 	}
 	return self;
+}
+
+- (void) settingsAction: (id) sender
+{
+    [[SimpleAudioEngine sharedEngine] playEffect:@"click2.caf"];
+
+    AppController *delegate  = (AppController*) [[UIApplication sharedApplication] delegate];
+    
+    [delegate setScreenToggle:COUNTY];
+    
+    [delegate replaceTheScene];
+    
 }
 
 - (void)dismissReaderViewController:(ReaderViewController *)viewController
@@ -309,7 +337,13 @@ enum nodeTags
     CCMenuItemSprite *label = [items objectAtIndex:2];
     
     label.color = ccWHITE;
+
     
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Coming soon!" message:@"Currently waiting on ACT questions before ready to implement"
+                                                   delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil,nil];
+    [alert show];
+    //[alert release];
+
     //AppController *delegate  = (AppController*) [[UIApplication sharedApplication] delegate];
     
     //[delegate setScreenToggle:INTRO];
@@ -334,6 +368,181 @@ enum nodeTags
     
 }
 
+- (void) loadTeacher
+{
+    AppController *delegate  = (AppController*) [[UIApplication sharedApplication] delegate];
+    
+    if ([[delegate selectedCounty] isEqualToString:@""]) {
+        
+        printf("county has not yet been selected\n");
+        
+        [delegate setAfterCounty:TEACHER];
+        [delegate setLoadPDFInMenu:YES];
+        
+        [delegate setScreenToggle:COUNTY];
+        [delegate replaceTheScene];
+        
+    } else {
+        
+        printf("county has already been selected\n");
+        NSLog(@"Currently selected county: %@",[delegate selectedCounty]);
+        
+        NSString *pdfName = @"";
+        
+        if ([[delegate selectedCounty] isEqualToString:@"Alexander"] || 
+            [[delegate selectedCounty] isEqualToString:@"Ashe"] ||
+            [[delegate selectedCounty] isEqualToString:@"Burke"] ||
+            [[delegate selectedCounty] isEqualToString:@"Camden"] ||
+            [[delegate selectedCounty] isEqualToString:@"Catawba"] ||
+            [[delegate selectedCounty] isEqualToString:@"Cherokee"] ||
+            [[delegate selectedCounty] isEqualToString:@"Chowan"] ||
+            [[delegate selectedCounty] isEqualToString:@"Davidson"] ||
+            [[delegate selectedCounty] isEqualToString:@"Davie"] ||
+            [[delegate selectedCounty] isEqualToString:@"Haywood"] ||
+            [[delegate selectedCounty] isEqualToString:@"Hertford"] ||
+            [[delegate selectedCounty] isEqualToString:@"Johnston"] ||
+            [[delegate selectedCounty] isEqualToString:@"Lincoln"] ||
+            [[delegate selectedCounty] isEqualToString:@"Madison"] ||
+            [[delegate selectedCounty] isEqualToString:@"Mitchell"] ||
+            [[delegate selectedCounty] isEqualToString:@"Montgomery"] ||
+            [[delegate selectedCounty] isEqualToString:@"Northampton"] ||
+            [[delegate selectedCounty] isEqualToString:@"Pasquotank"] ||
+            [[delegate selectedCounty] isEqualToString:@"Person"] ||
+            [[delegate selectedCounty] isEqualToString:@"Pitt"] ||
+            [[delegate selectedCounty] isEqualToString:@"Robeson"] ||
+            [[delegate selectedCounty] isEqualToString:@"Rowan"] ||
+            [[delegate selectedCounty] isEqualToString:@"Rutherford"] ||
+            [[delegate selectedCounty] isEqualToString:@"Sampson"] ||
+            [[delegate selectedCounty] isEqualToString:@"Stanly"] ||
+            [[delegate selectedCounty] isEqualToString:@"Union"] ||
+            [[delegate selectedCounty] isEqualToString:@"Warren"] ||
+            [[delegate selectedCounty] isEqualToString:@"Wayne"] ||
+            [[delegate selectedCounty] isEqualToString:@"Wilson"]) {
+            
+            pdfName = [NSString stringWithFormat:@"%@ County",[delegate selectedCounty]];
+            
+        } else {
+            
+            /*
+             - (id)initWithTitle:(NSString *)title message:(NSString *)message delegate:(id)delegate cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitles:(NSString *)otherButtonTitles, ... NS_REQUIRES_NIL_TERMINATION;
+             */
+            
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"There isn't currently a teacher for your county"
+                                                           delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil,nil];
+            [alert show];
+            //[alert release];
+        }
+        
+        if (![pdfName isEqualToString:@""]) {
+            
+            NSString *phrase = nil; // Document password (for unlocking most encrypted PDF files)
+            
+            NSString *filePath = [[NSBundle mainBundle] pathForResource:pdfName ofType:@"pdf"]; assert(filePath != nil); // Path to last PDF file
+            
+            ReaderDocument *document = [ReaderDocument withDocumentFilePath:filePath password:phrase];
+            
+            if (document != nil) // Must have a valid ReaderDocument object in order to proceed with things
+            {
+                readerViewController = [[ReaderViewController alloc] initWithReaderDocument:document];
+                
+                readerViewController.delegate = self; // Set the ReaderViewController delegate to self
+                
+                //[self.navigationController pushViewController:readerViewController animated:YES];
+                
+                readerViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+                readerViewController.modalPresentationStyle = UIModalPresentationFullScreen;
+                
+                [[CCDirector sharedDirector] presentViewController:readerViewController animated:YES completion:nil];
+                
+            }
+            
+        }
+        
+    }
+    
+}
+
+- (void) loadSchedule
+{
+    AppController *delegate  = (AppController*) [[UIApplication sharedApplication] delegate];
+    
+    if ([[delegate selectedCounty] isEqualToString:@""]) {
+        
+        printf("county has not yet been selected\n");
+        
+        [delegate setAfterCounty:SCHEDULE];
+        [delegate setLoadPDFInMenu:YES];
+        
+        [delegate setScreenToggle:COUNTY];
+        [delegate replaceTheScene];
+        
+    } else {
+        
+        printf("county has already been selected\n");
+        NSLog(@"Currently selected county: %@",[delegate selectedCounty]);
+        
+        NSString *pdfName = @"";
+        if ([[delegate selectedCounty] isEqualToString:@"Ashe"]) {
+            pdfName = @"Ashefall2013schedule";
+        } else if ([[delegate selectedCounty] isEqualToString:@"Davie"]) {
+            pdfName = @"DavieCountyASPIREfall2013";
+        } else if ([[delegate selectedCounty] isEqualToString:@"Haywood"]) {
+            pdfName = @"Haywood fall 2013 schedule";
+        } else if ([[delegate selectedCounty] isEqualToString:@"Hertford"]) {
+            pdfName = @"HertfordFall2013Schedule";
+        } else if ([[delegate selectedCounty] isEqualToString:@"Lincoln"]) {
+            pdfName = @"LincolnCharter2013fallschedule";
+        } else if ([[delegate selectedCounty] isEqualToString:@"Madison"]) {
+            pdfName = @"Madisonfall2013schedule";
+        } else if ([[delegate selectedCounty] isEqualToString:@"Northhampton"]) {
+            pdfName = @"Northampton fall 2013 schedule";
+        } else if ([[delegate selectedCounty] isEqualToString:@"Pasquotank"]) {
+            pdfName = @"Pasquotank Fall 2013 schedule";
+        } else if ([[delegate selectedCounty] isEqualToString:@"Rowan"]) {
+            pdfName = @"Rowan summer 2013 schedule";
+        } else if ([[delegate selectedCounty] isEqualToString:@"Rutherford"]) {
+            pdfName = @"Rutherford Fall 2013 Schedule";
+        } else {
+            
+            /*
+             - (id)initWithTitle:(NSString *)title message:(NSString *)message delegate:(id)delegate cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitles:(NSString *)otherButtonTitles, ... NS_REQUIRES_NIL_TERMINATION;
+             */
+            
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"There isn't currently a schedule for your county"
+                                                           delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil,nil];
+            [alert show];
+            //[alert release];
+        }
+        
+        if (![pdfName isEqualToString:@""]) {
+            
+            NSString *phrase = nil; // Document password (for unlocking most encrypted PDF files)
+            
+            NSString *filePath = [[NSBundle mainBundle] pathForResource:pdfName ofType:@"pdf"]; assert(filePath != nil); // Path to last PDF file
+            
+            ReaderDocument *document = [ReaderDocument withDocumentFilePath:filePath password:phrase];
+            
+            if (document != nil) // Must have a valid ReaderDocument object in order to proceed with things
+            {
+                readerViewController = [[ReaderViewController alloc] initWithReaderDocument:document];
+                
+                readerViewController.delegate = self; // Set the ReaderViewController delegate to self
+                
+                //[self.navigationController pushViewController:readerViewController animated:YES];
+                
+                readerViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+                readerViewController.modalPresentationStyle = UIModalPresentationFullScreen;
+                
+                [[CCDirector sharedDirector] presentViewController:readerViewController animated:YES completion:nil];
+                
+            }
+            
+        }
+        
+    }
+
+}
+
 - (void) buttonPressedD: (ccTime)sender
 {
     [self unschedule:@selector(buttonPressedD:)];
@@ -342,11 +551,7 @@ enum nodeTags
     
     label.color = ccWHITE;
     
-    AppController *delegate  = (AppController*) [[UIApplication sharedApplication] delegate];
-    
-    [delegate setScreenToggle:COUNTY];
-    
-    [delegate replaceTheScene];
+    [self loadSchedule];
     
 }
 
@@ -406,11 +611,7 @@ enum nodeTags
     
     label.color = ccWHITE;
     
-    AppController *delegate  = (AppController*) [[UIApplication sharedApplication] delegate];
-    
-    [delegate setScreenToggle:COUNTY];
-    
-    [delegate replaceTheScene];
+    [self loadTeacher];
     
 }
 
@@ -420,11 +621,62 @@ enum nodeTags
     
     //CGSize screenSize = [CCDirector sharedDirector].winSize;
 
-    [self schedule:@selector(checkTouches:) interval:4.0];
+    AppController *delegate  = (AppController*) [[UIApplication sharedApplication] delegate];
 
-    [self setTouchEnabled:YES];
-         
+    if ([delegate loadPDFInMenu]) {
+        
+        [delegate setLoadPDFInMenu:NO];
+        
+        if ([delegate afterCounty] == SCHEDULE) {
+            
+            [self loadSchedule];
+            
+        } else {
+            
+            
+        }
+        
+    } else {
+    
+        [self schedule:@selector(checkTouches:) interval:4.0];
+        
+        [self schedule:@selector(slideInFirstCard:) interval:0.2];
+        
+    }
+    
 }
+
+- (void) slideInFirstCard: (ccTime) sender
+{
+    [self unschedule:@selector(slideInFirstCard:)];
+    
+    AppController *delegate  = (AppController*) [[UIApplication sharedApplication] delegate];
+
+    if ([delegate currentMenuItem] == 0) {
+    
+        printf("slide in first card\n");
+        
+        [[SimpleAudioEngine sharedEngine] playEffect:@"short_whoosh.caf"];
+
+        float duration = 0.2;
+        
+        id drop = [CCMoveBy actionWithDuration:duration position:ccp(-320,0)];
+        id drop1 = [CCMoveBy actionWithDuration:.2 position:ccp(20,0)];
+        id actionByBack = [drop1 reverse];
+        id drop2 = [CCMoveBy actionWithDuration:.1 position:ccp(10,0)];
+        id actionByBack2 = [drop2 reverse];
+        
+        CCAction *repC1 = [CCSequence actions:drop,drop1, actionByBack, drop2, actionByBack2, nil];
+        
+        CCLayer *pageOne = [pages objectAtIndex:[delegate currentMenuItem]];
+        
+        [pageOne runAction:repC1];
+    }
+    
+    [self setTouchEnabled:YES];
+    
+}
+
 
 - (void) checkTouches: (ccTime) sender
 {
@@ -510,6 +762,13 @@ enum nodeTags
         
     CCLayer *page01 = [CCLayer node];
     
+    float extra = 0;
+    
+    AppController *delegate  = (AppController*) [[UIApplication sharedApplication] delegate];
+    
+    if ([delegate currentMenuItem] == 0)
+        extra = 320;
+    
     CCSprite *small01 = [CCSprite spriteWithFile:@"slider_01.pvr.gz"];
     small01.color = ccc3(255,255,255);
     
@@ -521,7 +780,7 @@ enum nodeTags
     [items addObject:item01];
     
     CCMenu  *menu01 = [CCMenu menuWithItems:item01, nil];
-    [menu01 setPosition:ccp(160.0,196.0+iphoneAddY*2)];
+    [menu01 setPosition:ccp(160.0+extra,196.0+iphoneAddY*2)];
     [page01 addChild:menu01 z:2];
     
     [pages addObject:page01];
@@ -717,10 +976,19 @@ enum nodeTags
 	}
 }
 
+- (void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    printf("touch\n");
+    touched = YES;
+}
+
 - (void) scrollLayerScrollingStarted:(CustomScrollLayer *) sender
 {
 	NSLog(@"CustomScrollLayerTestLayer#scrollLayerScrollingStarted: %@", sender);
 	
+    //if (touched)
+        [[SimpleAudioEngine sharedEngine] playEffect:@"short_whoosh.caf"];
+    
     [self unschedule:@selector(checkTouches:)];
     [self schedule:@selector(checkTouches:) interval:8.0];
 

@@ -108,8 +108,8 @@ enum
 		self.stealTouches = YES;
 		
 		// Set default minimum touch length to scroll.
-		self.minimumTouchLengthToSlide = 30.0f;
-		self.minimumTouchLengthToChangePage = 100.0f;
+		self.minimumTouchLengthToSlide = 20.0f;
+		self.minimumTouchLengthToChangePage = 40.0f;
 		
 		self.marginOffset = [[CCDirector sharedDirector] winSize].width;
 		
@@ -275,7 +275,7 @@ enum
 		return;
     }
 
-	id changePage = [CCMoveTo actionWithDuration:0.3 position: [self positionForPageWithNumber: page]];
+	id changePage = [CCMoveTo actionWithDuration:0.1 position: [self positionForPageWithNumber: page]];
 	changePage = [CCSequence actions: changePage,[CCCallFunc actionWithTarget:self selector:@selector(moveToPageEnded)], nil];
     [self runAction:changePage];
     currentScreen_ = page;

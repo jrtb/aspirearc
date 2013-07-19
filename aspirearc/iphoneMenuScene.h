@@ -29,6 +29,7 @@
     NSMutableArray              *pages;
     NSMutableArray              *items;
     
+    BOOL                        touched;
 }
 
 // returns a CCScene that contains the HelloWorldLayer as the only child

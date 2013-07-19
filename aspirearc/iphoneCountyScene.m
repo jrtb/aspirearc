@@ -331,10 +331,20 @@
                 
                 touchedItem = index;
                 
+                AppController *delegate  = (AppController*) [[UIApplication sharedApplication] delegate];
+
                 CCLabelBMFont *label = [items objectAtIndex:index];
                 
                 label.color = ccc3(170, 170, 170);
+
+                [delegate setSelectedCounty:label.string];
                 
+                NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+                [userDefaults setObject:label.string forKey:@"selectedCounty"];
+                [userDefaults synchronize];
+
+                NSLog(@"Setting current county to %@",label.string);
+
                 [self schedule:@selector(buttonPressed:) interval:0.2];
                 
             }

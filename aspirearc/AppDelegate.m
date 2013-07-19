@@ -91,7 +91,7 @@
 
 @synthesize window=window_, navController=navController_, director=director_;
 
-@synthesize screenToggle, deviceMode, deviceLevel, isRetina, muted, nextScreen, selectedCounty, currentMenuItem;
+@synthesize screenToggle, deviceMode, deviceLevel, isRetina, muted, nextScreen, selectedCounty, currentMenuItem, afterCounty, loadPDFInMenu;
 
 -(void) replaceTheScene
 {
@@ -124,6 +124,20 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    loadPDFInMenu = NO;
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    if (![userDefaults stringForKey:@"selectedCounty"]) {
+        printf("selectedCounty preference doesn't exist, setting to blank\n");
+        [userDefaults setObject:@"" forKey:@"selectedCounty"];
+        [userDefaults synchronize];
+        selectedCounty = @"";
+    } else {
+        selectedCounty = [userDefaults stringForKey:@"selectedCounty"];
+        NSLog(@"selectedCounty preference does exist, setting to %@",selectedCounty);
+    }
+
 	// Create the main window
 	window_ = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 	
@@ -224,6 +238,8 @@
 	[window_ makeKeyAndVisible];
 	
     [[SimpleAudioEngine sharedEngine] preloadEffect:@"click2.caf"];
+    [[SimpleAudioEngine sharedEngine] preloadEffect:@"knock.caf"];
+    [[SimpleAudioEngine sharedEngine] preloadEffect:@"short_whoosh.caf"];
 
 	return YES;
 }
