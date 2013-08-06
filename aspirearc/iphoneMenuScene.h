@@ -12,8 +12,10 @@
 #import "ReaderViewController.h"
 #import "CustomScrollLayer.h"
 
+#import <StoreKit/StoreKit.h>
+
 // HelloWorldLayer
-@interface iphoneMenuScene : CCLayer <ReaderViewControllerDelegate, CCScrollLayerDelegate>
+@interface iphoneMenuScene : CCLayer <ReaderViewControllerDelegate, CCScrollLayerDelegate, SKStoreProductViewControllerDelegate>
 {
     
     ALuint                      soundID;
@@ -30,6 +32,11 @@
     NSMutableArray              *items;
     
     BOOL                        touched;
+    
+    UIActivityIndicatorView     *spinner;
+    
+    BOOL                        showingSpinner;
+
 }
 
 // returns a CCScene that contains the HelloWorldLayer as the only child

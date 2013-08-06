@@ -29,6 +29,8 @@
 #import "SimpleAudioEngine.h"
 #import "AppDelegate.h"
 
+#import "Flurry.h"
+
 @implementation iphoneCountyScene
 
 +(id) scene
@@ -345,6 +347,13 @@
 
                 NSLog(@"Setting current county to %@",label.string);
 
+                NSDictionary *articleParams =
+                [NSDictionary dictionaryWithObjectsAndKeys:
+                 label.string, @"County", 
+                 nil];
+                
+                [Flurry logEvent:@"County_Selected" withParameters:articleParams];
+                
                 [self schedule:@selector(buttonPressed:) interval:0.2];
                 
             }

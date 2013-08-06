@@ -73,6 +73,8 @@ enum nodeTags
 		
         printf("menu scene loading\n");
         
+        showingSpinner = NO;
+        
         touched = NO;
         
         pages = [[NSMutableArray alloc] init];
@@ -338,18 +340,102 @@ enum nodeTags
     
     label.color = ccWHITE;
 
-    
+
+    /*
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Coming soon!" message:@"Currently waiting on ACT questions before ready to implement"
                                                    delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil,nil];
     [alert show];
     //[alert release];
+     */
+    
+    if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 6.0) {
+        // do iOS6+ stuff, using SKStoreProductViewController as shown above
+        
+        printf("heading to iOS6 sell product\n");
+        
+        [self viewSellProduct:431920584]; 
+        
+    } else {
+        printf("redirecting to app store\n");
+        NSURL *appStoreUrl = [NSURL URLWithString:@"itms-apps://itunes.com/app/actstudent/id431920584?mt=8"];
+        [[UIApplication sharedApplication] openURL:appStoreUrl];
+    }
 
+    
     //AppController *delegate  = (AppController*) [[UIApplication sharedApplication] delegate];
     
     //[delegate setScreenToggle:INTRO];
     
     //[delegate replaceTheScene];
     
+}
+
+- (void)viewSellProduct:(NSInteger)appId {
+    if (!NSClassFromString(@"SKStoreProductViewController")) {
+        
+        printf("redirecting to app store\n");
+        NSURL *appStoreUrl = [NSURL URLWithString:@"itms-apps://itunes.com/apps/fairladymedia"];
+        [[UIApplication sharedApplication] openURL:appStoreUrl];
+        
+        return;
+        
+    }
+    
+    if (showingSpinner) {
+        showingSpinner = NO;
+        [spinner stopAnimating];
+        [spinner removeFromSuperview];
+        //[spinner release];
+        spinner = nil;
+    }
+    
+    showingSpinner = YES;
+    spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    spinner.color = [UIColor grayColor];
+    spinner.hidesWhenStopped = YES;
+    [spinner startAnimating];
+    spinner.frame = CGRectMake(160-60, 240-60, 120, 120);
+    
+    [[[CCDirector sharedDirector] view] addSubview:spinner];
+    
+    SKStoreProductViewController *viewController = [[SKStoreProductViewController alloc] init];
+    viewController.delegate = self;
+    
+    NSDictionary *parameters = @{SKStoreProductParameterITunesItemIdentifier: [NSNumber numberWithInteger:appId]};
+    
+    [viewController loadProductWithParameters:parameters completionBlock: ^(BOOL result, NSError *error) {
+        if (result) {
+            
+            [[CCDirector sharedDirector] presentViewController:viewController animated:YES completion:nil];
+            //[self presentViewController:viewController animated:YES completion:nil];
+            
+        } else {
+            NSLog(@"description: %@", [error localizedDescription]);
+            NSLog(@"failure reason: %@", [error localizedFailureReason]);
+            NSLog(@"code: %d", [error code]);
+            
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops!" message:[error localizedDescription]
+                                                           delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+            [alert show];
+            //[alert release];
+            
+        }
+    }];
+    
+    //[viewController release];
+}
+
+- (void)productViewControllerDidFinish:(SKStoreProductViewController *)viewController {
+    [viewController dismissViewControllerAnimated:YES completion:^{
+        NSLog(@"closed");
+        if (showingSpinner) {
+            showingSpinner = NO;
+            [spinner stopAnimating];
+            [spinner removeFromSuperview];
+            //[spinner release];
+            spinner = nil;
+        }
+    }];
 }
 
 - (void) dAction: (id)sender

@@ -11,6 +11,8 @@
 #import "AppDelegate.h"
 #import "SimpleAudioEngine.h"
 
+#import "Flurry.h"
+
 // HelloWorldLayer implementation
 @implementation iphoneSocialScene
 
@@ -150,6 +152,8 @@
 {
     //AppController *delegate  = (AppController*) [[UIApplication sharedApplication] delegate];
     
+    [Flurry logEvent:@"Accessed Twitter"];
+    
     //if (![appDelegate muted]) {
     [[SimpleAudioEngine sharedEngine] playEffect:@"click2.caf"];
     //}
@@ -193,6 +197,8 @@
 {
     //AppController *delegate  = (AppController*) [[UIApplication sharedApplication] delegate];
     
+    [Flurry logEvent:@"Accessed Facebook"];
+
     //if (![appDelegate muted]) {
     [[SimpleAudioEngine sharedEngine] playEffect:@"click2.caf"];
     //}
@@ -256,6 +262,8 @@
 {
     //AppController *delegate  = (AppController*) [[UIApplication sharedApplication] delegate];
     
+    [Flurry logEvent:@"Accessed ASPIRE Website"];
+
     //if (![appDelegate muted]) {
     [[SimpleAudioEngine sharedEngine] playEffect:@"click2.caf"];
     //}

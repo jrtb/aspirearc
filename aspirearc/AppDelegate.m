@@ -19,6 +19,8 @@
 
 #import "SimpleAudioEngine.h"
 
+#import "Flurry.h"
+
 // http://bentrengrove.com/blog/2012/10/23/the-easiest-way-to-enable-arc-for-cocos2d
 
 /*
@@ -124,6 +126,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+ 
+#ifdef ANDROID
+    [UIScreen mainScreen].currentMode =
+    [UIScreenMode emulatedMode:UIScreenAspectFitEmulationMode];
+#endif
     
     loadPDFInMenu = NO;
     
@@ -241,7 +248,9 @@
     [[SimpleAudioEngine sharedEngine] preloadEffect:@"knock.caf"];
     [[SimpleAudioEngine sharedEngine] preloadEffect:@"short_whoosh.caf"];
 
-	return YES;
+    [Flurry startSession:@"NWKS59N3N2PZBH2QGKP2"];
+	
+    return YES;
 }
 
 // getting a call, pause the game
