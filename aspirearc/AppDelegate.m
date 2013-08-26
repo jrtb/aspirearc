@@ -15,11 +15,15 @@
 #import "iphoneSocialScene.h"
 #import "iphoneAboutMenuScene.h"
 
+#import "iphoneQuestionScene.h"
+
 #import "iphoneIntroNode.h"
 
 #import "SimpleAudioEngine.h"
 
 #import "Flurry.h"
+
+#import "NSMutableArray+Shuffling.h"
 
 // http://bentrengrove.com/blog/2012/10/23/the-easiest-way-to-enable-arc-for-cocos2d
 
@@ -95,6 +99,47 @@
 
 @synthesize screenToggle, deviceMode, deviceLevel, isRetina, muted, nextScreen, selectedCounty, currentMenuItem, afterCounty, loadPDFInMenu;
 
+@synthesize questions, currentQuestionIndex, doneWithAssessment, currentCategory, numQuestions;
+
+- (NSDictionary *) getNextQuestion {
+    
+	// figure out how many questions there are in the current category
+    
+	numQuestions = 0;
+	
+	NSDictionary *question;
+	
+	if ([currentCategory isEqualToString:@"All categories"]) {
+		numQuestions = [questions count];
+	} else {
+		for (question in questions) {
+			
+			if ([[question objectForKey:@"category"] isEqualToString:currentCategory]) {
+				numQuestions++;
+			}
+			
+		}
+	}
+	
+	int i=0;
+	printf("total questions: %i\n",numQuestions);
+    
+	for (question in questions) {
+		if (i == currentQuestionIndex && ([[question objectForKey:@"category"] isEqualToString:currentCategory] || [currentCategory isEqualToString:@"All categories"])) {
+			currentQuestionIndex++;
+			if (currentQuestionIndex == numQuestions) {
+				doneWithAssessment = YES;
+			}
+			return question;
+		} else if (i == currentQuestionIndex) {
+			// go to the next question
+		} else {
+			i++;
+		}
+	}
+	return nil;
+}		
+
 -(void) replaceTheScene
 {
     
@@ -117,6 +162,9 @@
                 break;
             case SOCIAL:
                 [[CCDirector sharedDirector] replaceScene: [iphoneSocialScene scene]];
+                break;
+            case QUESTIONS:
+                [[CCDirector sharedDirector] replaceScene: [iphoneQuestionScene scene]];
                 break;
         }
         
@@ -205,6 +253,43 @@
 	[director_ setProjection:kCCDirectorProjection2D];
 	//	[director setProjection:kCCDirectorProjection3D];
 	
+    // load questions
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"questions" ofType:@"plist"];
+	
+	questions = [[NSMutableArray alloc] initWithContentsOfFile:path];
+    
+	// randomize questions
+	[questions shuffle];
+    
+	currentQuestionIndex = 0;
+	
+	doneWithAssessment = NO;
+	
+    currentCategory = @"All categories";
+	
+	// figure out how many questions there are in the current category
+	
+	NSDictionary *question;
+	printf("total questions: %i\n",[questions count]);
+	
+	numQuestions = 0;
+	
+	if ([currentCategory isEqualToString:@"All categories"]) {
+		numQuestions = [questions count];
+	} else {
+		for (question in questions) {
+			
+			if ([[question objectForKey:@"category"] isEqualToString:currentCategory]) {
+				numQuestions++;
+			}
+			
+		}
+	}
+    
+	printf("total questions in current category: %i\n",numQuestions);
+
+    
 	// Enables High Res mode (Retina Display) on iPhone 4 and maintains low res on all other devices
 	if( ! [director_ enableRetinaDisplay:YES] ) {
 		CCLOG(@"Retina Display Not supported");

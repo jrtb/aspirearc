@@ -23,6 +23,8 @@
 #define TEACHER 200
 #define SCHEDULE 201
 
+#define QUESTIONS 202
+
 // Added only for iOS 6 support
 @interface MyNavigationController : UINavigationController <CCDirectorDelegate>
 @end
@@ -50,6 +52,13 @@
 	MyNavigationController *navController_;
 
 	CCDirectorIOS	*__unsafe_unretained director_;							// weak ref
+    
+    NSMutableArray      *questions;
+	int                 currentQuestionIndex;
+	BOOL                doneWithAssessment;
+	NSString            *currentCategory;
+	int                 numQuestions;
+
 }
 
 @property BOOL loadPDFInMenu;
@@ -73,6 +82,14 @@
 @property (readonly) MyNavigationController *navController;
 @property (unsafe_unretained, readonly) CCDirectorIOS *director;
 
+@property (nonatomic, retain) NSMutableArray *questions;
+@property int currentQuestionIndex;
+@property BOOL doneWithAssessment;
+@property (nonatomic, retain) NSString *currentCategory;
+@property int numQuestions;
+
 -(void) replaceTheScene;
+
+- (NSDictionary *) getNextQuestion;
 
 @end

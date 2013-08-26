@@ -340,14 +340,7 @@ enum nodeTags
     
     label.color = ccWHITE;
 
-
     /*
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Coming soon!" message:@"Currently waiting on ACT questions before ready to implement"
-                                                   delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil,nil];
-    [alert show];
-    //[alert release];
-     */
-    
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 6.0) {
         // do iOS6+ stuff, using SKStoreProductViewController as shown above
         
@@ -360,13 +353,13 @@ enum nodeTags
         NSURL *appStoreUrl = [NSURL URLWithString:@"itms-apps://itunes.com/app/actstudent/id431920584?mt=8"];
         [[UIApplication sharedApplication] openURL:appStoreUrl];
     }
-
+     */
     
-    //AppController *delegate  = (AppController*) [[UIApplication sharedApplication] delegate];
+    AppController *delegate  = (AppController*) [[UIApplication sharedApplication] delegate];
     
-    //[delegate setScreenToggle:INTRO];
+    [delegate setScreenToggle:QUESTIONS];
     
-    //[delegate replaceTheScene];
+    [delegate replaceTheScene];
     
 }
 
