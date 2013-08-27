@@ -45,10 +45,12 @@
 		
 		CCSprite *bg = [CCSprite spriteWithTexture:[[CCTextureCache sharedTextureCache] addImage: @"white.png"]];
 		bg.position = CGPointMake(size.width/2, size.height/2);
+        bg.scale = 2.0;
 		[self addChild:bg z:0];
 		
 		overlay = [CCSprite spriteWithTexture:[[CCTextureCache sharedTextureCache] addImage: @"white.png"]];
 		overlay.position = CGPointMake(size.width/2, size.height/2);
+        overlay.scale = 2.0;
 		[self addChild:overlay z:10];
 		
 		[overlay runAction:[CCFadeTo actionWithDuration:0.4f opacity:0]];
@@ -63,7 +65,7 @@
 	CGSize maxSize = { containerWidth, 20000.0f };		// Start off with an actual width and a really large height.
 	
 	// Calculate the actual size of the text with the font, size and line break mode.
-	CGSize actualSize = [aString sizeWithFont:[UIFont fontWithName:@"Arial" size:fontSize]
+	CGSize actualSize = [aString sizeWithFont:[UIFont fontWithName:@"Helvetica" size:fontSize]
 							constrainedToSize:maxSize
 								lineBreakMode:UILineBreakModeWordWrap];
 	
@@ -81,7 +83,7 @@
 	while (actualHeight > containerHeight) {
 		
 		// Calculate the actual size of the text with the font, size and line break mode.
-		CGSize actualSize = [aString sizeWithFont:[UIFont fontWithName:@"Arial" size:fontSize]
+		CGSize actualSize = [aString sizeWithFont:[UIFont fontWithName:@"Helvetica" size:fontSize]
 								constrainedToSize:maxSize
 									lineBreakMode:UILineBreakModeWordWrap];
 		
@@ -116,12 +118,12 @@
 	category = [[NSString alloc] initWithString:[currentQuestion objectForKey:@"category"]];
 	correctAnswer = [[NSString alloc] initWithString:[currentQuestion objectForKey:@"correctAnswer"]];
 	
-	CCLabelTTF* titleLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Question %i",[delegate currentQuestionIndex]] fontName:@"Arial" fontSize:32 dimensions:CGSizeMake(size.width, 80) hAlignment:UITextAlignmentCenter];
-	titleLabel.position = ccp(size.width/2, size.height-50);
+	CCLabelTTF* titleLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Question %i",[delegate currentQuestionIndex]] fontName:@"Helvetica" fontSize:16 dimensions:CGSizeMake(size.width, 40) hAlignment:UITextAlignmentCenter];
+	titleLabel.position = ccp(size.width/2, size.height-25);
 	titleLabel.color = ccc3(61,101,157);
 	[self addChild:titleLabel z:20];
 	
-	questionView = [[UIWebView alloc] initWithFrame:CGRectMake(6.0, 52.0, 320-12.0, 170.0)];
+	questionView = [[UIWebView alloc] initWithFrame:CGRectMake(6.0, 28.0, 320-12.0, 204.0)];
 	//questionView.scrollEnabled = YES;
 	questionView.userInteractionEnabled = YES;
     questionView.backgroundColor = [UIColor clearColor];
@@ -216,13 +218,18 @@
 		[dButton setIsEnabled:NO];
 	}
 	
+    float top2 = (158.0/480)*size.height;
+    float diff2 = 15.0;
+    if ([delegate isRetina])
+        diff2 = 30.0;
+
 	questionMenu = [CCMenu menuWithItems:aButton, bButton, cButton, dButton, nil];
-	[questionMenu alignItemsVerticallyWithPadding:15.0];
+	[questionMenu alignItemsVerticallyWithPadding:diff2];
 	//[aButton jrtbSelected];
-	questionMenu.position = ccp(30,size.height/2-82);
+	questionMenu.position = ccp(30,top2);
 	[self addChild: questionMenu z:3];
 	
-	explanationLabel = [CCLabelTTF labelWithString:explanation fontName:@"Arial" fontSize:[self getFontSizeForString:explanation :300 :290] dimensions:CGSizeMake(size.width-30, 300) hAlignment:UITextAlignmentLeft ];
+	explanationLabel = [CCLabelTTF labelWithString:explanation fontName:@"Helvetica" fontSize:[self getFontSizeForString:explanation :300 :290] dimensions:CGSizeMake(size.width-30, 300) hAlignment:UITextAlignmentLeft ];
 	explanationLabel.position = ccp(size.width/2, size.height/2+40);
 	explanationLabel.color = ccc3(0,0,0);
 	explanationLabel.opacity = 0;
@@ -233,12 +240,17 @@
 	//aLabel.color = ccc3(0,0,0);
 	//[self addChild:aLabel z:2];
 	
-	aView = [[UITextView alloc] initWithFrame:CGRectMake(41.0, 227.0, size.width-40, 50.0)];
+    float top = (227.0/480)*size.height;
+    float diff = 50.0;
+    //if ([delegate isRetina])
+    //    diff = 100.0;
+    
+	aView = [[UITextView alloc] initWithFrame:CGRectMake(41.0, top, size.width-40, diff)];
 	aView.scrollEnabled = YES;
 	aView.userInteractionEnabled = YES;
 	aView.editable = NO;
 	aView.text = answerA;
-	aView.font = [UIFont fontWithName:@"Arial" size:16.0f];
+	aView.font = [UIFont fontWithName:@"Helvetica" size:16.0f];
     aView.backgroundColor = [UIColor clearColor];
 	
     CCUIViewWrapper *aViewWrapper = [CCUIViewWrapper wrapperForUIView:aView];
@@ -249,12 +261,12 @@
 	//bLabel.color = ccc3(0,0,0);
 	//[self addChild:bLabel z:2];
 	
-	bView = [[UITextView alloc] initWithFrame:CGRectMake(41.0, 227.0+50, size.width-40, 50.0)];
+	bView = [[UITextView alloc] initWithFrame:CGRectMake(41.0, top+50, size.width-40, diff)];
 	bView.scrollEnabled = YES;
 	bView.userInteractionEnabled = YES;
 	bView.editable = NO;
 	bView.text = answerB;
-	bView.font = [UIFont fontWithName:@"Arial" size:16.0f];
+	bView.font = [UIFont fontWithName:@"Helvetica" size:16.0f];
     bView.backgroundColor = [UIColor clearColor];
 	
     CCUIViewWrapper *bViewWrapper = [CCUIViewWrapper wrapperForUIView:bView];
@@ -265,12 +277,12 @@
 	//cLabel.color = ccc3(0,0,0);
 	//[self addChild:cLabel z:2];
 	
-	cView = [[UITextView alloc] initWithFrame:CGRectMake(41.0, 227.0+100, size.width-40, 50.0)];
+	cView = [[UITextView alloc] initWithFrame:CGRectMake(41.0, top+100, size.width-40, diff)];
 	cView.scrollEnabled = YES;
 	cView.userInteractionEnabled = YES;
 	cView.editable = NO;
 	cView.text = answerC;
-	cView.font = [UIFont fontWithName:@"Arial" size:16.0f];
+	cView.font = [UIFont fontWithName:@"Helvetica" size:16.0f];
     cView.backgroundColor = [UIColor clearColor];
 	
     CCUIViewWrapper *cViewWrapper = [CCUIViewWrapper wrapperForUIView:cView];
@@ -281,12 +293,12 @@
 	//dLabel.color = ccc3(0,0,0);
 	//[self addChild:dLabel z:2];
 	
-	dView = [[UITextView alloc] initWithFrame:CGRectMake(41.0, 227.0+150, size.width-40, 50.0)];
+	dView = [[UITextView alloc] initWithFrame:CGRectMake(41.0, top+150, size.width-40, diff)];
 	dView.scrollEnabled = YES;
 	dView.userInteractionEnabled = YES;
 	dView.editable = NO;
 	dView.text = answerD;
-	dView.font = [UIFont fontWithName:@"Arial" size:16.0f];
+	dView.font = [UIFont fontWithName:@"Helvetica" size:16.0f];
     dView.backgroundColor = [UIColor clearColor];
     
     CCUIViewWrapper *dViewWrapper = [CCUIViewWrapper wrapperForUIView:dView];
@@ -337,15 +349,19 @@
 	explanationBG = [CCSprite spriteWithTexture:[[CCTextureCache sharedTextureCache] addImage: @"white.png"]];
 	explanationBG.position = CGPointMake(size.width/2, size.height/2);
 	explanationBG.opacity = 0;
+    explanationBG.scale = 2.0;
 	[self addChild:explanationBG z:10];
 	
 }
 
 - (void) nextButtonPressed: (id)sender
 {
+    [[SimpleAudioEngine sharedEngine] playEffect:@"click2.caf"];
+
 	CCSprite *bg = [CCSprite spriteWithTexture:[[CCTextureCache sharedTextureCache] addImage: @"white.png"]];
 	bg.position = CGPointMake(size.width/2, size.height/2);
 	bg.opacity = 0;
+    bg.scale = 2.0;
 	[self addChild:bg z:30];
 	
 	[bg runAction:[CCFadeTo actionWithDuration:0.4f opacity:255]];
@@ -364,6 +380,8 @@
 
 - (void) explanationButtonPressed: (id)sender
 {
+    [[SimpleAudioEngine sharedEngine] playEffect:@"click2.caf"];
+
 	[explanationBG runAction:[CCFadeTo actionWithDuration:0.4f opacity:255]];
 	[explanationLabel runAction:[CCFadeTo actionWithDuration:0.4f opacity:255]];
 	
@@ -386,6 +404,8 @@
 
 - (void) backButtonPressed: (id)sender
 {
+    [[SimpleAudioEngine sharedEngine] playEffect:@"click2.caf"];
+
 	[explanationBG runAction:[CCFadeTo actionWithDuration:0.4f opacity:0]];
 	[explanationLabel runAction:[CCFadeTo actionWithDuration:0.4f opacity:0]];
 	
@@ -399,6 +419,8 @@
 
 - (void) submitButtonPressed: (id)sender
 {
+    [[SimpleAudioEngine sharedEngine] playEffect:@"click2.caf"];
+
 	submitButton.opacity = 0;
     submitMenu.enabled = NO;
 	nextButton.opacity = 255;
@@ -467,6 +489,8 @@
 
 - (void) aButtonPressed: (id)sender
 {
+    [[SimpleAudioEngine sharedEngine] playEffect:@"click2.caf"];
+
 	[aButton selected];
 	[bButton unselected];
 	[cButton unselected];
@@ -475,6 +499,8 @@
 
 - (void) bButtonPressed: (id)sender
 {
+    [[SimpleAudioEngine sharedEngine] playEffect:@"click2.caf"];
+
 	[aButton unselected];
 	[bButton selected];
 	[cButton unselected];
@@ -483,6 +509,8 @@
 
 - (void) cButtonPressed: (id)sender
 {
+    [[SimpleAudioEngine sharedEngine] playEffect:@"click2.caf"];
+
 	[aButton unselected];
 	[bButton unselected];
 	[cButton selected];
@@ -491,6 +519,8 @@
 
 - (void) dButtonPressed: (id)sender
 {
+    [[SimpleAudioEngine sharedEngine] playEffect:@"click2.caf"];
+
 	[aButton unselected];
 	[bButton unselected];
 	[cButton unselected];
