@@ -104,16 +104,16 @@
         [menuWeb setPosition:ccp(160.0,122.0+iphoneAddY*2)];
         [self addChild:menuWeb z:2];
 
-        CCSprite *aSmall = [CCSprite spriteWithFile:@"home_button.pvr.gz"];
+        CCSprite *aSmall = [CCSprite spriteWithFile:@"home_button.png"];
         aSmall.color = ccGRAY;
         
-        CCMenuItemSprite *itemA = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithFile:@"home_button.pvr.gz"]
+        CCMenuItemSprite *itemA = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithFile:@"home_button.png"]
                                                           selectedSprite:aSmall
                                                                   target:self
                                                                 selector:@selector(closeAction:)];
         
         CCMenu  *menuA = [CCMenu menuWithItems:itemA, nil];
-        [menuA setPosition:ccp(size.width-29,size.height-28)];
+        [menuA setPosition:ccp(size.width-40,size.height-20)];
         [self addChild:menuA z:70];
 
         

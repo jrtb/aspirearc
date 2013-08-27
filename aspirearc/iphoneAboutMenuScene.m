@@ -146,16 +146,16 @@
         [self addChild:labelE z:3];
         [items addObject:labelE];
                 
-        CCSprite *a1Small = [CCSprite spriteWithFile:@"home_button.pvr.gz"];
+        CCSprite *a1Small = [CCSprite spriteWithFile:@"home_button.png"];
         a1Small.color = ccGRAY;
         
-        CCMenuItemSprite *itemA1 = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithFile:@"home_button.pvr.gz"]
+        CCMenuItemSprite *itemA1 = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithFile:@"home_button.png"]
                                                           selectedSprite:a1Small
                                                                   target:self
                                                                 selector:@selector(closeAction:)];
         
         CCMenu  *menuA1 = [CCMenu menuWithItems:itemA1, nil];
-        [menuA1 setPosition:ccp(size.width-29,size.height-28)];
+        [menuA1 setPosition:ccp(size.width-40,size.height-20)];
         [self addChild:menuA1 z:70];
 
 	}

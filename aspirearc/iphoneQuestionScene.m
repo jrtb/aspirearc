@@ -55,8 +55,34 @@
 		
 		[overlay runAction:[CCFadeTo actionWithDuration:0.4f opacity:0]];
 		
+        CCSprite *a1Small = [CCSprite spriteWithFile:@"home_button.png"];
+        a1Small.color = ccGRAY;
+        
+        CCMenuItemSprite *itemA1 = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithFile:@"home_button.png"]
+                                                           selectedSprite:a1Small
+                                                                   target:self
+                                                                 selector:@selector(closeAction:)];
+        
+        CCMenu  *menuA1 = [CCMenu menuWithItems:itemA1, nil];
+        [menuA1 setPosition:ccp(size.width-40,size.height-20)];
+        [self addChild:menuA1 z:70];
+
 	}
 	return self;
+}
+
+- (void) closeAction: (id)sender
+{
+    
+    AppController *delegate  = (AppController*) [[UIApplication sharedApplication] delegate];
+    
+    //if (![appDelegate muted]) {
+    [[SimpleAudioEngine sharedEngine] playEffect:@"click2.caf"];
+    //}
+    
+    [delegate setScreenToggle:MENU];
+    
+    [delegate replaceTheScene];
 }
 
 - (CGSize) getSizeForString :(NSString *)aString :(int)containerHeight :(int)containerWidth :(float)fontSize
@@ -118,15 +144,16 @@
 	category = [[NSString alloc] initWithString:[currentQuestion objectForKey:@"category"]];
 	correctAnswer = [[NSString alloc] initWithString:[currentQuestion objectForKey:@"correctAnswer"]];
 	
-	CCLabelTTF* titleLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Question %i",[delegate currentQuestionIndex]] fontName:@"Helvetica" fontSize:16 dimensions:CGSizeMake(size.width, 40) hAlignment:UITextAlignmentCenter];
+	CCLabelTTF* titleLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"Question %i",[delegate currentQuestionIndex]] fontName:@"HelveticaNeue-Light" fontSize:16 dimensions:CGSizeMake(size.width, 40) hAlignment:UITextAlignmentCenter];
 	titleLabel.position = ccp(size.width/2, size.height-25);
-	titleLabel.color = ccc3(61,101,157);
+	titleLabel.color = ccc3(28,126,251);
 	[self addChild:titleLabel z:20];
 	
 	questionView = [[UIWebView alloc] initWithFrame:CGRectMake(6.0, 28.0, 320-12.0, 204.0)];
 	//questionView.scrollEnabled = YES;
 	questionView.userInteractionEnabled = YES;
     questionView.backgroundColor = [UIColor clearColor];
+    questionView.opaque = NO;
 	//questionView.text = question;
 	//questionView.editable = NO;
 	//questionView.font = [UIFont fontWithName:@"Arial" size:20.0f];
@@ -188,7 +215,7 @@
 	 [sclViewQuestion addChild:questionLabel];
 	 [self addChild:sclViewQuestion z:22];
 	 */
-	
+	   
     aButton = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithFile:@"button_unchecked.png"]
                                       selectedSprite:[CCSprite spriteWithFile:@"button_checked.png"]
                                               target:self
@@ -220,8 +247,8 @@
 	
     float top2 = (158.0/480)*size.height;
     float diff2 = 15.0;
-    if ([delegate isRetina])
-        diff2 = 30.0;
+    //if ([delegate isRetina])
+    //    diff2 = 30.0;
 
 	questionMenu = [CCMenu menuWithItems:aButton, bButton, cButton, dButton, nil];
 	[questionMenu alignItemsVerticallyWithPadding:diff2];
@@ -304,8 +331,11 @@
     CCUIViewWrapper *dViewWrapper = [CCUIViewWrapper wrapperForUIView:dView];
 	[self addChild:dViewWrapper z:2];
 	
+    CCSprite *submitButtonH = [CCSprite spriteWithFile:@"btn_submit.png"];
+    submitButtonH.color = ccGRAY;
+
     submitButton = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithFile:@"btn_submit.png"]
-                                      selectedSprite:[CCSprite spriteWithFile:@"btn_submit_hl.png"]
+                                      selectedSprite:submitButtonH
                                               target:self
                                             selector:@selector(submitButtonPressed:)];
 
@@ -313,8 +343,11 @@
 	submitMenu.position = ccp(size.width/2,30);
 	[self addChild: submitMenu z:3];
 
+    CCSprite *nextButtonH = [CCSprite spriteWithFile:@"btn_next.png"];
+    nextButtonH.color = ccGRAY;
+
     nextButton = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithFile:@"btn_next.png"]
-                                           selectedSprite:[CCSprite spriteWithFile:@"btn_next_hl.png"]
+                                           selectedSprite:nextButtonH
                                                    target:self
                                                  selector:@selector(nextButtonPressed:)];
 
@@ -324,8 +357,11 @@
     nextMenu.enabled = NO;
 	[self addChild: nextMenu z:11];
 	
+    CCSprite *explanationButtonH = [CCSprite spriteWithFile:@"btn_explain.png"];
+    explanationButtonH.color = ccGRAY;
+
     explanationButton = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithFile:@"btn_explain.png"]
-                                         selectedSprite:[CCSprite spriteWithFile:@"btn_explain_hl.png"]
+                                         selectedSprite:explanationButtonH
                                                  target:self
                                                selector:@selector(explanationButtonPressed:)];
 
@@ -335,8 +371,11 @@
     explanationMenu.enabled = NO;
 	[self addChild: explanationMenu z:11];
 
+    CCSprite *backButtonH = [CCSprite spriteWithFile:@"btn_next.png"];
+    backButtonH.color = ccGRAY;
+
     backButton = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithFile:@"btn_next.png"]
-                                                selectedSprite:[CCSprite spriteWithFile:@"btn_next_hl.png"]
+                                                selectedSprite:backButtonH
                                                         target:self
                                                       selector:@selector(backButtonPressed:)];
 
