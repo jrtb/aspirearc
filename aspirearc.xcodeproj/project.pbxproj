@@ -65,6 +65,11 @@
 		E77E2C9117CD37AF001CAA09 /* btn_next-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E77E2C8F17CD37AE001CAA09 /* btn_next-hd.png */; };
 		E77E2C9417CD3B07001CAA09 /* home_button.png in Resources */ = {isa = PBXBuildFile; fileRef = E77E2C9217CD3B07001CAA09 /* home_button.png */; };
 		E77E2C9517CD3B07001CAA09 /* home_button-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E77E2C9317CD3B07001CAA09 /* home_button-hd.png */; };
+		E789AC2017CE42BF009D2FFF /* iphoneACTCategoryScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E789AC1F17CE42BF009D2FFF /* iphoneACTCategoryScene.m */; };
+		E789AC2517CE42CE009D2FFF /* act_questions_background-hd.pvr.gz in Resources */ = {isa = PBXBuildFile; fileRef = E789AC2117CE42CE009D2FFF /* act_questions_background-hd.pvr.gz */; };
+		E789AC2617CE42CE009D2FFF /* act_questions_background.pvr.gz in Resources */ = {isa = PBXBuildFile; fileRef = E789AC2217CE42CE009D2FFF /* act_questions_background.pvr.gz */; };
+		E789AC2717CE42CE009D2FFF /* act_questions_english_button-hd.pvr.gz in Resources */ = {isa = PBXBuildFile; fileRef = E789AC2317CE42CE009D2FFF /* act_questions_english_button-hd.pvr.gz */; };
+		E789AC2817CE42CE009D2FFF /* act_questions_english_button.pvr.gz in Resources */ = {isa = PBXBuildFile; fileRef = E789AC2417CE42CE009D2FFF /* act_questions_english_button.pvr.gz */; };
 		E7B57E0117CBCFE300FA8951 /* NSMutableArray+Shuffling.m in Sources */ = {isa = PBXBuildFile; fileRef = E7B57E0017CBCFE300FA8951 /* NSMutableArray+Shuffling.m */; };
 		E7BB6C101795D4D1008334D7 /* CGPDFDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BB6BFC1795D4D1008334D7 /* CGPDFDocument.m */; };
 		E7BB6C111795D4D1008334D7 /* ReaderConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = E7BB6BFD1795D4D1008334D7 /* ReaderConstants.m */; };
@@ -368,6 +373,12 @@
 		E77E2C8F17CD37AE001CAA09 /* btn_next-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_next-hd.png"; path = "questionimages/btn_next-hd.png"; sourceTree = SOURCE_ROOT; };
 		E77E2C9217CD3B07001CAA09 /* home_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home_button.png; path = images/home_button.png; sourceTree = SOURCE_ROOT; };
 		E77E2C9317CD3B07001CAA09 /* home_button-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "home_button-hd.png"; path = "images/home_button-hd.png"; sourceTree = SOURCE_ROOT; };
+		E789AC1E17CE42BF009D2FFF /* iphoneACTCategoryScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iphoneACTCategoryScene.h; sourceTree = "<group>"; };
+		E789AC1F17CE42BF009D2FFF /* iphoneACTCategoryScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iphoneACTCategoryScene.m; sourceTree = "<group>"; };
+		E789AC2117CE42CE009D2FFF /* act_questions_background-hd.pvr.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; name = "act_questions_background-hd.pvr.gz"; path = "images/act_questions_background-hd.pvr.gz"; sourceTree = SOURCE_ROOT; };
+		E789AC2217CE42CE009D2FFF /* act_questions_background.pvr.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; name = act_questions_background.pvr.gz; path = images/act_questions_background.pvr.gz; sourceTree = SOURCE_ROOT; };
+		E789AC2317CE42CE009D2FFF /* act_questions_english_button-hd.pvr.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; name = "act_questions_english_button-hd.pvr.gz"; path = "images/act_questions_english_button-hd.pvr.gz"; sourceTree = SOURCE_ROOT; };
+		E789AC2417CE42CE009D2FFF /* act_questions_english_button.pvr.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; name = act_questions_english_button.pvr.gz; path = images/act_questions_english_button.pvr.gz; sourceTree = SOURCE_ROOT; };
 		E7B57DFF17CBCFE300FA8951 /* NSMutableArray+Shuffling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Shuffling.h"; sourceTree = "<group>"; };
 		E7B57E0017CBCFE300FA8951 /* NSMutableArray+Shuffling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Shuffling.m"; sourceTree = "<group>"; };
 		E7BB6BE81795D4D1008334D7 /* CGPDFDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CGPDFDocument.h; path = reader/Sources/CGPDFDocument.h; sourceTree = SOURCE_ROOT; };
@@ -1030,6 +1041,8 @@
 				E7C3057A1798646A007357C5 /* Support Classes */,
 				E7EA70FD17CBCDEA00244994 /* iphoneQuestionScene.h */,
 				E7EA70FE17CBCDEA00244994 /* iphoneQuestionScene.m */,
+				E789AC1E17CE42BF009D2FFF /* iphoneACTCategoryScene.h */,
+				E789AC1F17CE42BF009D2FFF /* iphoneACTCategoryScene.m */,
 				E7C3057717986458007357C5 /* iphoneAboutMenuScene.h */,
 				E7C3057817986458007357C5 /* iphoneAboutMenuScene.m */,
 				E7F528A91795CF6400859253 /* CCUIViewWrapper.h */,
@@ -1480,6 +1493,10 @@
 		E7F5286C1795CE4200859253 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				E789AC2117CE42CE009D2FFF /* act_questions_background-hd.pvr.gz */,
+				E789AC2217CE42CE009D2FFF /* act_questions_background.pvr.gz */,
+				E789AC2317CE42CE009D2FFF /* act_questions_english_button-hd.pvr.gz */,
+				E789AC2417CE42CE009D2FFF /* act_questions_english_button.pvr.gz */,
 				E77E2C9217CD3B07001CAA09 /* home_button.png */,
 				E77E2C9317CD3B07001CAA09 /* home_button-hd.png */,
 				E70C5D841799967A008D1B81 /* settings-hd.pvr.gz */,
@@ -1723,6 +1740,10 @@
 				E77E2C9117CD37AF001CAA09 /* btn_next-hd.png in Resources */,
 				E77E2C9417CD3B07001CAA09 /* home_button.png in Resources */,
 				E77E2C9517CD3B07001CAA09 /* home_button-hd.png in Resources */,
+				E789AC2517CE42CE009D2FFF /* act_questions_background-hd.pvr.gz in Resources */,
+				E789AC2617CE42CE009D2FFF /* act_questions_background.pvr.gz in Resources */,
+				E789AC2717CE42CE009D2FFF /* act_questions_english_button-hd.pvr.gz in Resources */,
+				E789AC2817CE42CE009D2FFF /* act_questions_english_button.pvr.gz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1872,6 +1893,7 @@
 				E7C3057117984866007357C5 /* CustomScrollLayer.m in Sources */,
 				E7C3057917986458007357C5 /* iphoneAboutMenuScene.m in Sources */,
 				E7B57E0117CBCFE300FA8951 /* NSMutableArray+Shuffling.m in Sources */,
+				E789AC2017CE42BF009D2FFF /* iphoneACTCategoryScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

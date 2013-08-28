@@ -23,6 +23,7 @@
 #define TEACHER 200
 #define SCHEDULE 201
 
+#define CATEGORY 203
 #define QUESTIONS 202
 
 // Added only for iOS 6 support

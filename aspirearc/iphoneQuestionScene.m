@@ -149,7 +149,11 @@
 	titleLabel.color = ccc3(28,126,251);
 	[self addChild:titleLabel z:20];
 	
-	questionView = [[UIWebView alloc] initWithFrame:CGRectMake(6.0, 28.0, 320-12.0, 204.0)];
+    float bot = 204;
+    if (IS_IPHONE5)
+        bot = 278;
+    
+	questionView = [[UIWebView alloc] initWithFrame:CGRectMake(6.0, 28.0, 320-12.0, bot)];
 	//questionView.scrollEnabled = YES;
 	questionView.userInteractionEnabled = YES;
     questionView.backgroundColor = [UIColor clearColor];
@@ -247,6 +251,8 @@
 	
     float top2 = (158.0/480)*size.height;
     float diff2 = 15.0;
+    if (IS_IPHONE5)
+        top2 = top2 - 30;
     //if ([delegate isRetina])
     //    diff2 = 30.0;
 
@@ -271,7 +277,9 @@
     float diff = 50.0;
     //if ([delegate isRetina])
     //    diff = 100.0;
-    
+    if (IS_IPHONE5)
+        top = top + 44;
+
 	aView = [[UITextView alloc] initWithFrame:CGRectMake(41.0, top, size.width-40, diff)];
 	aView.scrollEnabled = YES;
 	aView.userInteractionEnabled = YES;
@@ -450,8 +458,10 @@
 	
 	backButton.opacity = 0;
     backMenu.enabled = NO;
-	explanationButton.opacity = 255;
-    explanationMenu.enabled = YES;
+    if (![explanation isEqualToString:@""]) {
+        explanationButton.opacity = 255;
+        explanationMenu.enabled = YES;
+    }
 	
 }
 
@@ -464,8 +474,10 @@
     submitMenu.enabled = NO;
 	nextButton.opacity = 255;
     nextMenu.enabled = YES;
-	explanationButton.opacity = 255;
-    explanationMenu.enabled = YES;
+    if (![explanation isEqualToString:@""]) {
+        explanationButton.opacity = 255;
+        explanationMenu.enabled = YES;
+    }
 	
 	[aButton runAction:[CCFadeTo actionWithDuration:0.0f opacity:128]];
 	[bButton runAction:[CCFadeTo actionWithDuration:0.0f opacity:128]];

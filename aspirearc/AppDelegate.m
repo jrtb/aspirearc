@@ -16,6 +16,7 @@
 #import "iphoneAboutMenuScene.h"
 
 #import "iphoneQuestionScene.h"
+#import "iphoneACTCategoryScene.h"
 
 #import "iphoneIntroNode.h"
 
@@ -165,6 +166,9 @@
                 break;
             case QUESTIONS:
                 [[CCDirector sharedDirector] replaceScene: [iphoneQuestionScene scene]];
+                break;
+            case CATEGORY:
+                [[CCDirector sharedDirector] replaceScene: [iphoneACTCategoryScene scene]];
                 break;
         }
         

@@ -357,7 +357,7 @@ enum nodeTags
     
     AppController *delegate  = (AppController*) [[UIApplication sharedApplication] delegate];
     
-    [delegate setScreenToggle:QUESTIONS];
+    [delegate setScreenToggle:CATEGORY];
     
     [delegate replaceTheScene];
     
