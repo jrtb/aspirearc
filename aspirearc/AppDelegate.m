@@ -100,7 +100,7 @@
 
 @synthesize screenToggle, deviceMode, deviceLevel, isRetina, muted, nextScreen, selectedCounty, currentMenuItem, afterCounty, loadPDFInMenu;
 
-@synthesize questions, currentQuestionIndex, doneWithAssessment, currentCategory, numQuestions;
+@synthesize questions, currentQuestionIndex, doneWithAssessment, currentCategory, numQuestions, numCorrect;
 
 - (NSDictionary *) getNextQuestion {
     
@@ -218,6 +218,7 @@
 	}
     
     currentMenuItem = 0;
+    numCorrect = 0;
 
 	// CCGLView creation
 	// viewWithFrame: size of the OpenGL view. For full screen use [_window bounds]

@@ -15,6 +15,8 @@
 
 #import "iphoneMenuScene.h"
 
+#import "iphoneACTResultsScene.h"
+
 // Questions implementation
 @implementation iphoneQuestionScene
 
@@ -79,6 +81,9 @@
     //if (![appDelegate muted]) {
     [[SimpleAudioEngine sharedEngine] playEffect:@"click2.caf"];
     //}
+    
+    [delegate setNumCorrect:0];
+    [delegate setCurrentQuestionIndex:0];
     
     [delegate setScreenToggle:MENU];
     
@@ -491,6 +496,20 @@
 	
     questionMenu.enabled = NO;
 	
+    AppController *delegate  = (AppController*) [[UIApplication sharedApplication] delegate];
+
+    if (([correctAnswer isEqualToString:@"A"] && aButton.isSelected) ||
+        ([correctAnswer isEqualToString:@"B"] && bButton.isSelected) ||
+        ([correctAnswer isEqualToString:@"C"] && cButton.isSelected) ||
+        ([correctAnswer isEqualToString:@"D"] && dButton.isSelected)) {
+        
+        printf("correct\n");
+        [delegate setNumCorrect:[delegate numCorrect]+1];
+        
+        printf("num correct: %i\n",[delegate numCorrect]);
+        
+    }
+
 	if ([correctAnswer isEqualToString:@"A"]) {
 		//	aLabel.color = ccc3(61,157,66);
 		[aView setTextColor:[UIColor colorWithRed:61/255.0 green:157/255.0 blue:66/255.0 alpha:1]];
@@ -501,21 +520,21 @@
 	if ([correctAnswer isEqualToString:@"B"]) {
 		//bLabel.color = ccc3(61,157,66);
 		[bView setTextColor:[UIColor colorWithRed:61/255.0 green:157/255.0 blue:66/255.0 alpha:1]];
-	} else {
+    } else {
 		//bLabel.color = ccc3(157,61,61);
 		[bView setTextColor:[UIColor colorWithRed:157/255.0 green:61/255.0 blue:61/255.0 alpha:1]];
 	}
 	if ([correctAnswer isEqualToString:@"C"]) {
 		//cLabel.color = ccc3(61,157,66);
 		[cView setTextColor:[UIColor colorWithRed:61/255.0 green:157/255.0 blue:66/255.0 alpha:1]];
-	} else {
+    } else {
 		//cLabel.color = ccc3(157,61,61);
 		[cView setTextColor:[UIColor colorWithRed:157/255.0 green:61/255.0 blue:61/255.0 alpha:1]];
 	}
 	if ([correctAnswer isEqualToString:@"D"]) {
 		//dLabel.color = ccc3(61,157,66);
 		[dView setTextColor:[UIColor colorWithRed:61/255.0 green:157/255.0 blue:66/255.0 alpha:1]];
-	} else {
+    } else {
 		//dLabel.color = ccc3(157,61,61);
 		[dView setTextColor:[UIColor colorWithRed:157/255.0 green:61/255.0 blue:61/255.0 alpha:1]];
 	}
@@ -531,7 +550,7 @@
 	if ([delegate doneWithAssessment]) {
 		[delegate setCurrentQuestionIndex:0];
 		[delegate setDoneWithAssessment:NO];
-		[[CCDirector sharedDirector] replaceScene:[iphoneMenuScene scene]];
+		[[CCDirector sharedDirector] replaceScene:[iphoneACTResultsScene scene]];
 	} else {		
 		[[CCDirector sharedDirector] replaceScene:[iphoneQuestionScene scene]];
 	}

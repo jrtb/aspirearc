@@ -59,6 +59,7 @@
 	BOOL                doneWithAssessment;
 	NSString            *currentCategory;
 	int                 numQuestions;
+    int                 numCorrect;
 
 }
 
@@ -88,6 +89,7 @@
 @property BOOL doneWithAssessment;
 @property (nonatomic, retain) NSString *currentCategory;
 @property int numQuestions;
+@property int numCorrect;
 
 -(void) replaceTheScene;
 
