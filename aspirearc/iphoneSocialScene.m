@@ -162,35 +162,45 @@
     
     wrapperOpen = YES;
     
-    CGSize size = [CCDirector sharedDirector].winSize;
+    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"twitter://"]]) {
+        
+        // twitter installed natively, use it
+        
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"twitter://user?screen_name=aspirencstate"]];
+        
+    } else {
     
-    CGRect frame = CGRectMake(0, 64, size.width, size.height-64-24);
-    webView = [[UIWebView alloc] initWithFrame:frame];
-    webView.delegate = self;
-    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://twitter.com/aspirencstate"]]];
-    
-    // put a wrappar around the slider
-	webViewWrapper = [CCUIViewWrapper wrapperForUIView:webView];
-	[self addChild:webViewWrapper];
-    
-    if (showingSpinner) {
-        showingSpinner = NO;
-        [spinner stopAnimating];
-        [spinner removeFromSuperview];
-        //[spinner release];
-        //spinner = nil;
+        CGSize size = [CCDirector sharedDirector].winSize;
+        
+        CGRect frame = CGRectMake(0, 64, size.width, size.height-64-24);
+        webView = [[UIWebView alloc] initWithFrame:frame];
+        webView.delegate = self;
+        [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://twitter.com/aspirencstate"]]];
+        
+        // put a wrappar around the slider
+        webViewWrapper = [CCUIViewWrapper wrapperForUIView:webView];
+        [self addChild:webViewWrapper];
+        
+        if (showingSpinner) {
+            showingSpinner = NO;
+            [spinner stopAnimating];
+            [spinner removeFromSuperview];
+            //[spinner release];
+            //spinner = nil;
+        }
+        showingSpinner = YES;
+        spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+        spinner.color = [UIColor grayColor];
+        spinner.hidesWhenStopped = YES;
+        [spinner startAnimating];
+        spinner.frame = CGRectMake(160-60, 240-60, 120, 120);
+        
+        [[[CCDirector sharedDirector] view] addSubview:spinner];
+
+        //[webView release];
+
     }
-    showingSpinner = YES;
-    spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    spinner.color = [UIColor grayColor];
-    spinner.hidesWhenStopped = YES;
-    [spinner startAnimating];
-    spinner.frame = CGRectMake(160-60, 240-60, 120, 120);
-    
-    [[[CCDirector sharedDirector] view] addSubview:spinner];
-    
-    //[webView release];
-    
+
 }
 
 - (void) fbAction: (id)sender
@@ -227,35 +237,45 @@
 
     wrapperOpen = YES;
     
-    CGSize size = [CCDirector sharedDirector].winSize;
-
-    CGRect frame = CGRectMake(0, 64, size.width, size.height-64-24);
-    webView = [[UIWebView alloc] initWithFrame:frame];
-    webView.delegate = self;
-    [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.facebook.com/pages/ACT-Supplemental-Preparation-in-Rural-Education/436155226481887?fref=ts"]]];
+    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:@"fb://"]]) {
+        
+        // twitter installed natively, use it
+        
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"fb://profile?id=436155226481887"]];
+        
+    } else {
     
-    // put a wrappar around the slider
-	webViewWrapper = [CCUIViewWrapper wrapperForUIView:webView];
-	[self addChild:webViewWrapper];
+        CGSize size = [CCDirector sharedDirector].winSize;
+        
+        CGRect frame = CGRectMake(0, 64, size.width, size.height-64-24);
+        webView = [[UIWebView alloc] initWithFrame:frame];
+        webView.delegate = self;
+        [webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.facebook.com/pages/ACT-Supplemental-Preparation-in-Rural-Education/436155226481887?fref=ts"]]];
+        
+        // put a wrappar around the slider
+        webViewWrapper = [CCUIViewWrapper wrapperForUIView:webView];
+        [self addChild:webViewWrapper];
+        
+        if (showingSpinner) {
+            showingSpinner = NO;
+            [spinner stopAnimating];
+            [spinner removeFromSuperview];
+            //[spinner release];
+            //spinner = nil;
+        }
+        showingSpinner = YES;
+        spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+        spinner.color = [UIColor grayColor];
+        spinner.hidesWhenStopped = YES;
+        [spinner startAnimating];
+        spinner.frame = CGRectMake(160-60, 240-60, 120, 120);
+        
+        [[[CCDirector sharedDirector] view] addSubview:spinner];
+        
+        //[webView release];
 
-    if (showingSpinner) {
-        showingSpinner = NO;
-        [spinner stopAnimating];
-        [spinner removeFromSuperview];
-        //[spinner release];
-        //spinner = nil;
     }
-    showingSpinner = YES;
-    spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
-    spinner.color = [UIColor grayColor];
-    spinner.hidesWhenStopped = YES;
-    [spinner startAnimating];
-    spinner.frame = CGRectMake(160-60, 240-60, 120, 120);
     
-    [[[CCDirector sharedDirector] view] addSubview:spinner];
-
-    //[webView release];
-
 }
 
 - (void) webAction: (id)sender
