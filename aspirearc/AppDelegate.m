@@ -102,6 +102,37 @@
 
 @synthesize questions, currentQuestionIndex, doneWithAssessment, currentCategory, numQuestions, numCorrect;
 
+- (void) resetQuestions {
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"questions" ofType:@"plist"];
+	
+    NSMutableArray *temp = [[NSMutableArray alloc] initWithContentsOfFile:path];
+    
+	questions = [[NSMutableArray alloc] init];
+
+    NSDictionary *question;
+
+    if ([currentCategory isEqualToString:@"All categories"]) {
+		numQuestions = [temp count];
+        questions = temp;
+	} else {
+		for (question in temp) {
+			
+			if ([[question objectForKey:@"category"] isEqualToString:currentCategory]) {
+				numQuestions++;
+                [questions addObject:question];
+			}
+			
+		}
+	}
+
+    printf("count of questions: %i\n",[questions count]);
+    
+	// randomize questions
+	[questions shuffle];
+    
+}
+
 - (NSDictionary *) getNextQuestion {
     
 	// figure out how many questions there are in the current category
@@ -131,6 +162,9 @@
 			if (currentQuestionIndex == numQuestions) {
 				doneWithAssessment = YES;
 			}
+            
+            NSLog(@"returning question %@",[question objectForKey:@"question"]);
+
 			return question;
 		} else if (i == currentQuestionIndex) {
 			// go to the next question
@@ -138,6 +172,9 @@
 			i++;
 		}
 	}
+    
+    NSLog(@"returning question blank");
+
 	return nil;
 }		
 
@@ -257,44 +294,13 @@
 	// 2D projection
 	[director_ setProjection:kCCDirectorProjection2D];
 	//	[director setProjection:kCCDirectorProjection3D];
-	
-    // load questions
-    
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"questions" ofType:@"plist"];
-	
-	questions = [[NSMutableArray alloc] initWithContentsOfFile:path];
-    
-	// randomize questions
-	[questions shuffle];
-    
+	    
 	currentQuestionIndex = 0;
 	
 	doneWithAssessment = NO;
 	
     currentCategory = @"All categories";
-	
-	// figure out how many questions there are in the current category
-	
-	NSDictionary *question;
-	printf("total questions: %i\n",[questions count]);
-	
-	numQuestions = 0;
-	
-	if ([currentCategory isEqualToString:@"All categories"]) {
-		numQuestions = [questions count];
-	} else {
-		for (question in questions) {
-			
-			if ([[question objectForKey:@"category"] isEqualToString:currentCategory]) {
-				numQuestions++;
-			}
-			
-		}
-	}
-    
-	printf("total questions in current category: %i\n",numQuestions);
-
-    
+	    
 	// Enables High Res mode (Retina Display) on iPhone 4 and maintains low res on all other devices
 	if( ! [director_ enableRetinaDisplay:YES] ) {
 		CCLOG(@"Retina Display Not supported");

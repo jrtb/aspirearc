@@ -94,5 +94,6 @@
 -(void) replaceTheScene;
 
 - (NSDictionary *) getNextQuestion;
+- (void) resetQuestions;
 
 @end

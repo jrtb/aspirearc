@@ -88,6 +88,18 @@
         [menuReading setPosition:ccp(160.0,size.height-200.0-70.0)];
         [self addChild:menuReading z:2];
 
+        CCSprite *sSmall = [CCSprite spriteWithFile:@"act_questions_science_button.pvr.gz"];
+        sSmall.color = ccGRAY;
+        
+        CCMenuItemSprite *itemScience = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithFile:@"act_questions_science_button.pvr.gz"]
+                                                                selectedSprite:sSmall
+                                                                        target:self
+                                                                      selector:@selector(scienceAction:)];
+        
+        CCMenu  *menuScience = [CCMenu menuWithItems:itemScience, nil];
+        [menuScience setPosition:ccp(160.0,size.height-200.0-70.0*2)];
+        [self addChild:menuScience z:2];
+
         CCSprite *aSmall = [CCSprite spriteWithFile:@"home_button.png"];
         aSmall.color = ccGRAY;
         
@@ -116,6 +128,8 @@
     
     [delegate setCurrentCategory:@"ACT English"];
     
+    [delegate resetQuestions];
+
     [delegate setScreenToggle:QUESTIONS];
     
     [delegate replaceTheScene];
@@ -131,6 +145,26 @@
     //}
     
     [delegate setCurrentCategory:@"ACT Reading"];
+    
+    [delegate resetQuestions];
+
+    [delegate setScreenToggle:QUESTIONS];
+    
+    [delegate replaceTheScene];
+}
+
+- (void) scienceAction: (id)sender
+{
+    
+    AppController *delegate  = (AppController*) [[UIApplication sharedApplication] delegate];
+    
+    //if (![appDelegate muted]) {
+    [[SimpleAudioEngine sharedEngine] playEffect:@"click2.caf"];
+    //}
+    
+    [delegate setCurrentCategory:@"ACT Science"];
+    
+    [delegate resetQuestions];
     
     [delegate setScreenToggle:QUESTIONS];
     

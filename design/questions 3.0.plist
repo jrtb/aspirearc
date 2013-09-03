@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>answerA</key>
+		<string>Scientist 1 only.</string>
+		<key>answerB</key>
+		<string>Scientist 2 only.</string>
+		<key>answerC</key>
+		<string>both Scientist 1 and Scientist 2.</string>
+		<key>answerD</key>
+		<string>neither Scientist 1 nor Scientist 2.</string>
+		<key>category</key>
+		<string>ACT Science</string>
+		<key>correctAnswer</key>
+		<string>C</string>
+		<key>explanation</key>
+		<string></string>
+		<key>question</key>
+		<string>The existence of life on other planets is one of the most compelling ideas in science. Mars, the nearest planet to Earth, has been the focus of much speculation in this regard, in fiction and folklore as well as in scientific circles. Two planetary scientists appraise the possibility of the existence of Martian life.&lt;br/&gt;&lt;br/&gt;
+&lt;i&gt;Planetary Scientist 1&lt;/i&gt;&lt;br/&gt;&lt;br/&gt;
+The existence of Martian life is quite probable. True, the visions of Martian civilizations entertained by early astronomers, who observed artificial canal systems on Mars, proved false; these ÒcanalsÓ were only illusions produced by flawed telescope lenses. Life, however, can take simpler forms than the humanoid creatures envisioned by early scientists. Although Mars could probably not support large fauna, organisms as complex as bacteria or even small insects are quite plausible. Many environmental factors favor the development of Martian life. Spectrographic analysis has shown the white polar caps of Mars to be large ice deposits, potentially supplying life-supporting water to regions near the Martian poles, as polar ice melts and re-freezes with changing temperatures. Although atmospheric oxygen is extremely thin on Mars, Martian organisms might have correspondingly slow metabolisms, or take advantage of the abundant oxygen trapped in the Martian surface in the form of mineral oxides. Finally, Mars occupies an orbital position similar to that of Earth, thereby benefiting from similar levels of the sunlight which is necessary to life. Water, oxygen, and sunlight are the principle requirements of life as we know it. It is to be expected therefore that life has developed on Mars as on Earth, if only in simpler forms.&lt;br/&gt;&lt;br/&gt;
+&lt;i&gt;Planetary Scientist 2&lt;/i&gt;&lt;br/&gt;&lt;br/&gt;
+Those who hope someday to discover alien life on Mars are sadly misguided. To begin with, the red planet&apos;s atmosphere is too thin to support respiration. More importantly, the sparse Martian atmosphere fails to absorb a large proportion of stellar radiation as Earth&apos;s atmosphere does, with the result that the daylight surface of Mars is constantly bombarded by deadly ultraviolet radiation from the sun and other cosmic sources. Temperature stabilization, another function of atmosphere, is lacking on Mars, so that the surface temperature varies within a range of 200 degrees Fahrenheit from day to night: a torturous environment for life.
+Living organisms also require an environment rich in organic compounds. The ideal circumstances for the origination of life include a kind of organic soup in which simple compounds may combine to form proteins, which are the building blocks of life. These compounds should ideally be suspended in water, to permit them to circulate and combine more readily. The Martian surface is largely devoid of organic compounds, as well as the moisture which encourages microscopic life. Given its poverty of oxygen, its organically poor soil and its high levels of solar radiation, Mars is an unlikely home for life of any kind.&lt;br/&gt;&lt;br/&gt;
+New observations indicate the presence of certain chemical compounds in the Martian atmosphere that are known to reflect some of the incoming solar radiation back into space, which results in a lowering of the surface temperature of a planet. Based on the information provided, this finding would most likely weaken the viewpoint(s) of:</string>
+	</dict>
+</array>
+</plist>
