@@ -75,7 +75,19 @@
         CCMenu  *menuEnglish = [CCMenu menuWithItems:itemEnglish, nil];
         [menuEnglish setPosition:ccp(160.0,size.height-200.0)];
         [self addChild:menuEnglish z:2];
-                
+
+        CCSprite *rSmall = [CCSprite spriteWithFile:@"act_questions_reading_button.pvr.gz"];
+        rSmall.color = ccGRAY;
+        
+        CCMenuItemSprite *itemReading = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithFile:@"act_questions_reading_button.pvr.gz"]
+                                                                selectedSprite:rSmall
+                                                                        target:self
+                                                                      selector:@selector(readingAction:)];
+        
+        CCMenu  *menuReading = [CCMenu menuWithItems:itemReading, nil];
+        [menuReading setPosition:ccp(160.0,size.height-200.0-70.0)];
+        [self addChild:menuReading z:2];
+
         CCSprite *aSmall = [CCSprite spriteWithFile:@"home_button.png"];
         aSmall.color = ccGRAY;
         
@@ -103,6 +115,22 @@
     //}
     
     [delegate setCurrentCategory:@"ACT English"];
+    
+    [delegate setScreenToggle:QUESTIONS];
+    
+    [delegate replaceTheScene];
+}
+
+- (void) readingAction: (id)sender
+{
+    
+    AppController *delegate  = (AppController*) [[UIApplication sharedApplication] delegate];
+    
+    //if (![appDelegate muted]) {
+    [[SimpleAudioEngine sharedEngine] playEffect:@"click2.caf"];
+    //}
+    
+    [delegate setCurrentCategory:@"ACT Reading"];
     
     [delegate setScreenToggle:QUESTIONS];
     

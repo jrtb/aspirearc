@@ -154,7 +154,7 @@
 	titleLabel.color = ccc3(28,126,251);
 	[self addChild:titleLabel z:20];
 	
-    float bot = 204;
+    float bot = 198;
     if (IS_IPHONE5)
         bot = 278;
     

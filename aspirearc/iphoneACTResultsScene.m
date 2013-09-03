@@ -78,7 +78,7 @@
         
         AppController *delegate  = (AppController*) [[UIApplication sharedApplication] delegate];
 
-        CCLabelTTF* titleLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"You scored %i out of %i.",[delegate numCorrect],[delegate numQuestions]] fontName:@"HelveticaNeue-Light" fontSize:32 dimensions:CGSizeMake(size.width-20, 240) hAlignment:UITextAlignmentCenter];
+        CCLabelTTF* titleLabel = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"You scored %i out of %i in the %@ category.",[delegate numCorrect],[delegate numQuestions],[delegate currentCategory]] fontName:@"HelveticaNeue-Light" fontSize:32 dimensions:CGSizeMake(size.width-20, 240) hAlignment:UITextAlignmentCenter];
         titleLabel.position = ccp(size.width/2, size.height-320);
         titleLabel.color = ccc3(0,0,0);
         [self addChild:titleLabel z:20];
