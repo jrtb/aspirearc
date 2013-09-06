@@ -158,6 +158,9 @@
     if (IS_IPHONE5)
         bot = 278;
     
+    NSString *path = [[NSBundle mainBundle] bundlePath];
+    NSURL *baseURL = [NSURL fileURLWithPath:path];
+    
 	questionView = [[UIWebView alloc] initWithFrame:CGRectMake(6.0, 28.0, 320-12.0, bot)];
 	//questionView.scrollEnabled = YES;
 	questionView.userInteractionEnabled = YES;
@@ -166,7 +169,7 @@
 	//questionView.text = question;
 	//questionView.editable = NO;
 	//questionView.font = [UIFont fontWithName:@"Arial" size:20.0f];
-    [questionView loadHTMLString:question baseURL:nil];
+    [questionView loadHTMLString:question baseURL:baseURL];
     
 	CCUIViewWrapper *viewWrapper = [CCUIViewWrapper wrapperForUIView:questionView];
 	[self addChild:viewWrapper];
@@ -267,12 +270,28 @@
 	questionMenu.position = ccp(30,top2);
 	[self addChild: questionMenu z:3];
 	
+    /*
 	explanationLabel = [CCLabelTTF labelWithString:explanation fontName:@"Helvetica" fontSize:[self getFontSizeForString:explanation :300 :290] dimensions:CGSizeMake(size.width-30, 300) hAlignment:UITextAlignmentLeft ];
 	explanationLabel.position = ccp(size.width/2, size.height/2+40);
 	explanationLabel.color = ccc3(0,0,0);
 	explanationLabel.opacity = 0;
 	[self addChild:explanationLabel z:11];
-	
+	*/
+    
+    explanationView = [[UIWebView alloc] initWithFrame:CGRectMake(6.0, 28.0, 320-12.0, bot)];
+	//questionView.scrollEnabled = YES;
+	explanationView.userInteractionEnabled = YES;
+    explanationView.backgroundColor = [UIColor clearColor];
+    explanationView.opaque = NO;
+	//questionView.text = question;
+	//questionView.editable = NO;
+	//questionView.font = [UIFont fontWithName:@"Arial" size:20.0f];
+    [explanationView loadHTMLString:explanation baseURL:baseURL];
+
+	explanationViewWrapper = [CCUIViewWrapper wrapperForUIView:explanationView];
+    explanationViewWrapper.opacity = 0;
+	[self addChild:explanationViewWrapper z:11];
+
 	//aLabel = [CCLabel labelWithString:answerA dimensions:CGSizeMake(size.width-60, 40) alignment:UITextAlignmentLeft fontName:@"Arial" fontSize:[self getFontSizeForString:answerA :40 :240]];
 	//aLabel.position = ccp(size.width/2+21, size.height/2-50);
 	//aLabel.color = ccc3(0,0,0);
@@ -435,7 +454,7 @@
     [[SimpleAudioEngine sharedEngine] playEffect:@"click2.caf"];
 
 	[explanationBG runAction:[CCFadeTo actionWithDuration:0.4f opacity:255]];
-	[explanationLabel runAction:[CCFadeTo actionWithDuration:0.4f opacity:255]];
+	[explanationViewWrapper runAction:[CCFadeTo actionWithDuration:0.4f opacity:255]];
 	
 	//backButton.opacity = 255;
 	//[backMenu setIsTouchEnabled:YES];
@@ -459,7 +478,7 @@
     [[SimpleAudioEngine sharedEngine] playEffect:@"click2.caf"];
 
 	[explanationBG runAction:[CCFadeTo actionWithDuration:0.4f opacity:0]];
-	[explanationLabel runAction:[CCFadeTo actionWithDuration:0.4f opacity:0]];
+	[explanationViewWrapper runAction:[CCFadeTo actionWithDuration:0.4f opacity:0]];
 	
 	backButton.opacity = 0;
     backMenu.enabled = NO;

@@ -100,6 +100,18 @@
         [menuScience setPosition:ccp(160.0,size.height-200.0-70.0*2)];
         [self addChild:menuScience z:2];
 
+        CCSprite *mSmall = [CCSprite spriteWithFile:@"act_questions_math_button.pvr.gz"];
+        mSmall.color = ccGRAY;
+        
+        CCMenuItemSprite *itemMath = [CCMenuItemSprite itemWithNormalSprite:[CCSprite spriteWithFile:@"act_questions_math_button.pvr.gz"]
+                                                                selectedSprite:mSmall
+                                                                        target:self
+                                                                      selector:@selector(mathAction:)];
+        
+        CCMenu  *menuMath = [CCMenu menuWithItems:itemMath, nil];
+        [menuMath setPosition:ccp(160.0,size.height-200.0-70.0*3)];
+        [self addChild:menuMath z:2];
+
         CCSprite *aSmall = [CCSprite spriteWithFile:@"home_button.png"];
         aSmall.color = ccGRAY;
         
@@ -115,6 +127,24 @@
         
 	}
 	return self;
+}
+
+- (void) mathAction: (id)sender
+{
+    
+    AppController *delegate  = (AppController*) [[UIApplication sharedApplication] delegate];
+    
+    //if (![appDelegate muted]) {
+    [[SimpleAudioEngine sharedEngine] playEffect:@"click2.caf"];
+    //}
+    
+    [delegate setCurrentCategory:@"ACT Math"];
+    
+    [delegate resetQuestions];
+    
+    [delegate setScreenToggle:QUESTIONS];
+    
+    [delegate replaceTheScene];
 }
 
 - (void) englishAction: (id)sender

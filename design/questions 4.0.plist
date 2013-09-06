@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>answerA</key>
+		<string>45</string>
+		<key>answerB</key>
+		<string>75</string>
+		<key>answerC</key>
+		<string>100</string>
+		<key>answerD</key>
+		<string>145</string>
+		<key>category</key>
+		<string>ACT Math</string>
+		<key>correctAnswer</key>
+		<string>A</string>
+		<key>explanation</key>
+		<string>The maximum rate for the 15-year-old is 205 and for the 60-year-old is 160, so the difference is 45.</string>
+		<key>question</key>
+		<string>A person&apos;s maximum heart rate can be calculated approximately by subtracting the person&apos;s age from 220. Using this method, what is the difference between the maximum heart rate of a 15-year-old and that of a 60-year-old?</string>
+	</dict>
+	<dict>
+		<key>answerA</key>
+		<string>$17.80 </string>
+		<key>answerB</key>
+		<string>$17.64 </string>
+		<key>answerC</key>
+		<string>$16.20 </string>
+		<key>answerD</key>
+		<string>$14.40 </string>
+		<key>category</key>
+		<string>ACT Math</string>
+		<key>correctAnswer</key>
+		<string>D</string>
+		<key>explanation</key>
+		<string></string>
+		<key>question</key>
+		<string>A regular ticket to Six Flags costs $18, but as a season opening special, tickets are available for a 20% discount. What is the cost of a discounted ticket?</string>
+	</dict>
+	<dict>
+		<key>answerA</key>
+		<string>30 degrees</string>
+		<key>answerB</key>
+		<string>35 degrees</string>
+		<key>answerC</key>
+		<string>37 degrees</string>
+		<key>answerD</key>
+		<string>143 degrees</string>
+		<key>category</key>
+		<string>ACT Math</string>
+		<key>correctAnswer</key>
+		<string>C</string>
+		<key>explanation</key>
+		<string>When parallel lines are crossed by a third line, you should use FRED&apos;S THEOREM: all little angles are equal. So you know that y = 37 degrees.</string>
+		<key>question</key>
+		<string>&lt;img src=&quot;act_math_03.png&quot;&gt;&lt;br/&gt;
+In the figure above lines a and b are parallel, and lines c and d are parallel. If angle x = 37 degrees, what is the value of y?</string>
+	</dict>
+	<dict>
+		<key>answerA</key>
+		<string>2</string>
+		<key>answerB</key>
+		<string>8</string>
+		<key>answerC</key>
+		<string>10</string>
+		<key>answerD</key>
+		<string>14</string>
+		<key>category</key>
+		<string>ACT Math</string>
+		<key>correctAnswer</key>
+		<string>D</string>
+		<key>explanation</key>
+		<string>&lt;img src=&quot;act_math_04a.png&quot;&gt; and &lt;img src=&quot;act_math_04b.png&quot;&gt; So 6 + 8 = 14.</string>
+		<key>question</key>
+		<string>&lt;img src=&quot;act_math_04.png&quot;&gt;</string>
+	</dict>
+	<dict>
+		<key>answerA</key>
+		<string>8</string>
+		<key>answerB</key>
+		<string>4</string>
+		<key>answerC</key>
+		<string>-4</string>
+		<key>answerD</key>
+		<string> -12</string>
+		<key>category</key>
+		<string>ACT Math</string>
+		<key>correctAnswer</key>
+		<string>D</string>
+		<key>explanation</key>
+		<string>Plug in  -2 everywhere you see r, and 1 everywhere you see s in the equation. Careful with those negatives!</string>
+		<key>question</key>
+		<string>What is the value of &lt;img src=&quot;act_math_05.png&quot;&gt; if r = -2 and s= 1? </string>
+	</dict>
+	<dict>
+		<key>answerA</key>
+		<string>2</string>
+		<key>answerB</key>
+		<string>4</string>
+		<key>answerC</key>
+		<string>8</string>
+		<key>answerD</key>
+		<string>16</string>
+		<key>category</key>
+		<string>ACT Math</string>
+		<key>correctAnswer</key>
+		<string>B</string>
+		<key>explanation</key>
+		<string>Watch your math! If A + B = 12, then C = 16 since there are 28 minutes total. If B + C = 20, B = 4 sinceC = 16.</string>
+		<key>question</key>
+		<string>A certain task has three steps A, B, and C which must be performed in order, one after the next, with no break in between. If steps A and B together take a total of 12 minutes, steps B and C take a total of 20 minutes and the entire task takes a total of 28 minutes, then how many minutes are required to perform step B only?</string>
+	</dict>
+	<dict>
+		<key>answerA</key>
+		<string>320</string>
+		<key>answerB</key>
+		<string>160</string>
+		<key>answerC</key>
+		<string>40</string>
+		<key>answerD</key>
+		<string>20</string>
+		<key>category</key>
+		<string>ACT Math</string>
+		<key>correctAnswer</key>
+		<string>C</string>
+		<key>explanation</key>
+		<string></string>
+		<key>question</key>
+		<string>&lt;img src=&quot;act_math_07.png&quot;&gt;&lt;br/&gt;In the figure above, lines p and q are parallel. Transversal r intersects both p and q as shown. What is the sum of the measures of angle a and angle b?</string>
+	</dict>
+	<dict>
+		<key>answerA</key>
+		<string>2 by 20</string>
+		<key>answerB</key>
+		<string>4 by 10</string>
+		<key>answerC</key>
+		<string>5 by 8</string>
+		<key>answerD</key>
+		<string>5 by 9</string>
+		<key>category</key>
+		<string>ACT Math</string>
+		<key>correctAnswer</key>
+		<string>C</string>
+		<key>explanation</key>
+		<string></string>
+		<key>question</key>
+		<string>If a rectangle&apos;s width is 3 centimeters shorter than its length, and its area is 40, what are its dimensions?</string>
+	</dict>
+	<dict>
+		<key>answerA</key>
+		<string> -4</string>
+		<key>answerB</key>
+		<string>-1</string>
+		<key>answerC</key>
+		<string>0</string>
+		<key>answerD</key>
+		<string>4</string>
+		<key>category</key>
+		<string>ACT Math</string>
+		<key>correctAnswer</key>
+		<string>C</string>
+		<key>explanation</key>
+		<string></string>
+		<key>question</key>
+		<string>&lt;img src=&quot;act_math_09.png&quot;&gt;</string>
+	</dict>
+	<dict>
+		<key>answerA</key>
+		<string> -33</string>
+		<key>answerB</key>
+		<string> -9</string>
+		<key>answerC</key>
+		<string>21</string>
+		<key>answerD</key>
+		<string>35</string>
+		<key>category</key>
+		<string>ACT Math</string>
+		<key>correctAnswer</key>
+		<string>C</string>
+		<key>explanation</key>
+		<string></string>
+		<key>question</key>
+		<string>What is the value of &lt;img src=&quot;act_math_10.png&quot;&gt; when x = 3?</string>
+	</dict>
+</array>
+</plist>
