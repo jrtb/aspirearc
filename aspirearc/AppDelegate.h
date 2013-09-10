@@ -26,6 +26,8 @@
 #define CATEGORY 203
 #define QUESTIONS 202
 
+#define CONTACT 204
+
 // Added only for iOS 6 support
 @interface MyNavigationController : UINavigationController <CCDirectorDelegate>
 @end

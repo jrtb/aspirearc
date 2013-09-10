@@ -20,6 +20,8 @@
 
 #import "iphoneIntroNode.h"
 
+#import "iphoneContactScene.h"
+
 #import "SimpleAudioEngine.h"
 
 #import "Flurry.h"
@@ -206,6 +208,9 @@
                 break;
             case CATEGORY:
                 [[CCDirector sharedDirector] replaceScene: [iphoneACTCategoryScene scene]];
+                break;
+            case CONTACT:
+                [[CCDirector sharedDirector] replaceScene: [iphoneContactScene scene]];
                 break;
         }
         

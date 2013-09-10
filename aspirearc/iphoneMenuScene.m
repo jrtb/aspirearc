@@ -466,6 +466,7 @@ enum nodeTags
         printf("county has already been selected\n");
         NSLog(@"Currently selected county: %@",[delegate selectedCounty]);
         
+        /*
         NSString *pdfName = @"";
         
         if ([[delegate selectedCounty] isEqualToString:@"Alexander"] || 
@@ -501,11 +502,7 @@ enum nodeTags
             pdfName = [NSString stringWithFormat:@"%@ County",[delegate selectedCounty]];
             
         } else {
-            
-            /*
-             - (id)initWithTitle:(NSString *)title message:(NSString *)message delegate:(id)delegate cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitles:(NSString *)otherButtonTitles, ... NS_REQUIRES_NIL_TERMINATION;
-             */
-            
+                     
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"There isn't currently a teacher for your county"
                                                            delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil,nil];
             [alert show];
@@ -536,6 +533,14 @@ enum nodeTags
             }
             
         }
+         
+         */
+        
+        AppController *delegate  = (AppController*) [[UIApplication sharedApplication] delegate];
+        
+        [delegate setScreenToggle:CONTACT];
+        
+        [delegate replaceTheScene];
         
     }
     
@@ -712,6 +717,7 @@ enum nodeTags
             
         } else {
             
+            [self loadTeacher];
             
         }
         

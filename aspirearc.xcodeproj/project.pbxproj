@@ -72,6 +72,10 @@
 		E737412017DA252000C8C8E8 /* act_questions_math_button.pvr.gz in Resources */ = {isa = PBXBuildFile; fileRef = E737411E17DA252000C8C8E8 /* act_questions_math_button.pvr.gz */; };
 		E738B76C17B1273800ECB07E /* libFlurry_4.2.2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E738B76B17B1273800ECB07E /* libFlurry_4.2.2.a */; };
 		E738B76E17B128D400ECB07E /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E738B76D17B128D400ECB07E /* StoreKit.framework */; };
+		E779502117DF9E7300B50662 /* countyinfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = E779502017DF9E7300B50662 /* countyinfo.plist */; };
+		E779502417DFA54E00B50662 /* iphoneContactScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E779502317DFA54E00B50662 /* iphoneContactScene.m */; };
+		E779502717DFA67600B50662 /* contact_menu_bg-hd.pvr.gz in Resources */ = {isa = PBXBuildFile; fileRef = E779502517DFA67600B50662 /* contact_menu_bg-hd.pvr.gz */; };
+		E779502817DFA67600B50662 /* contact_menu_bg.pvr.gz in Resources */ = {isa = PBXBuildFile; fileRef = E779502617DFA67600B50662 /* contact_menu_bg.pvr.gz */; };
 		E77E2C8B17CD33FD001CAA09 /* button_checked-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E77E2C8817CD33FC001CAA09 /* button_checked-hd.png */; };
 		E77E2C8C17CD33FD001CAA09 /* button_unchecked-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E77E2C8917CD33FC001CAA09 /* button_unchecked-hd.png */; };
 		E77E2C8D17CD33FD001CAA09 /* btn_submit-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = E77E2C8A17CD33FC001CAA09 /* btn_submit-hd.png */; };
@@ -401,6 +405,11 @@
 		E737411E17DA252000C8C8E8 /* act_questions_math_button.pvr.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; name = act_questions_math_button.pvr.gz; path = images/act_questions_math_button.pvr.gz; sourceTree = SOURCE_ROOT; };
 		E738B76B17B1273800ECB07E /* libFlurry_4.2.2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFlurry_4.2.2.a; path = Flurry/libFlurry_4.2.2.a; sourceTree = SOURCE_ROOT; };
 		E738B76D17B128D400ECB07E /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		E779502017DF9E7300B50662 /* countyinfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = countyinfo.plist; sourceTree = SOURCE_ROOT; };
+		E779502217DFA54E00B50662 /* iphoneContactScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iphoneContactScene.h; sourceTree = "<group>"; };
+		E779502317DFA54E00B50662 /* iphoneContactScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iphoneContactScene.m; sourceTree = "<group>"; };
+		E779502517DFA67600B50662 /* contact_menu_bg-hd.pvr.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; name = "contact_menu_bg-hd.pvr.gz"; path = "images/contact_menu_bg-hd.pvr.gz"; sourceTree = SOURCE_ROOT; };
+		E779502617DFA67600B50662 /* contact_menu_bg.pvr.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; name = contact_menu_bg.pvr.gz; path = images/contact_menu_bg.pvr.gz; sourceTree = SOURCE_ROOT; };
 		E77E2C8817CD33FC001CAA09 /* button_checked-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button_checked-hd.png"; path = "questionimages/button_checked-hd.png"; sourceTree = SOURCE_ROOT; };
 		E77E2C8917CD33FC001CAA09 /* button_unchecked-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button_unchecked-hd.png"; path = "questionimages/button_unchecked-hd.png"; sourceTree = SOURCE_ROOT; };
 		E77E2C8A17CD33FC001CAA09 /* btn_submit-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "btn_submit-hd.png"; path = "questionimages/btn_submit-hd.png"; sourceTree = SOURCE_ROOT; };
@@ -1108,6 +1117,8 @@
 				E7F528A21795CEA600859253 /* iphoneMenuScene.m */,
 				E7F528A31795CEA600859253 /* iphoneSocialScene.h */,
 				E7F528A41795CEA600859253 /* iphoneSocialScene.m */,
+				E779502217DFA54E00B50662 /* iphoneContactScene.h */,
+				E779502317DFA54E00B50662 /* iphoneContactScene.m */,
 				E7F526A81795CC9B00859253 /* Resources */,
 				E7F526C01795CC9B00859253 /* libs */,
 				E7F528311795CC9D00859253 /* Supporting Files */,
@@ -1498,6 +1509,7 @@
 		E7F528431795CE1800859253 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				E779502017DF9E7300B50662 /* countyinfo.plist */,
 				E7EA70F517CBCDC100244994 /* questions.plist */,
 				E7E5AB2317CE88F900FA20EA /* Icon-72@2x.png */,
 				E7E5AB2417CE88F900FA20EA /* Icon-Small-50@2x.png */,
@@ -1550,6 +1562,8 @@
 		E7F5286C1795CE4200859253 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				E779502517DFA67600B50662 /* contact_menu_bg-hd.pvr.gz */,
+				E779502617DFA67600B50662 /* contact_menu_bg.pvr.gz */,
 				E737411D17DA252000C8C8E8 /* act_questions_math_button-hd.pvr.gz */,
 				E737411E17DA252000C8C8E8 /* act_questions_math_button.pvr.gz */,
 				E735F4DE17D6755400885C84 /* act_questions_science_button-hd.pvr.gz */,
@@ -1829,6 +1843,9 @@
 				E737411C17DA1CDE00C8C8E8 /* act_math_04.png in Resources */,
 				E737411F17DA252000C8C8E8 /* act_questions_math_button-hd.pvr.gz in Resources */,
 				E737412017DA252000C8C8E8 /* act_questions_math_button.pvr.gz in Resources */,
+				E779502117DF9E7300B50662 /* countyinfo.plist in Resources */,
+				E779502717DFA67600B50662 /* contact_menu_bg-hd.pvr.gz in Resources */,
+				E779502817DFA67600B50662 /* contact_menu_bg.pvr.gz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1980,6 +1997,7 @@
 				E7B57E0117CBCFE300FA8951 /* NSMutableArray+Shuffling.m in Sources */,
 				E789AC2017CE42BF009D2FFF /* iphoneACTCategoryScene.m in Sources */,
 				E78D7D3B17CE7C0F0098DA70 /* iphoneACTResultsScene.m in Sources */,
+				E779502417DFA54E00B50662 /* iphoneContactScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
