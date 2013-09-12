@@ -72,6 +72,8 @@
 		E737412017DA252000C8C8E8 /* act_questions_math_button.pvr.gz in Resources */ = {isa = PBXBuildFile; fileRef = E737411E17DA252000C8C8E8 /* act_questions_math_button.pvr.gz */; };
 		E738B76C17B1273800ECB07E /* libFlurry_4.2.2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E738B76B17B1273800ECB07E /* libFlurry_4.2.2.a */; };
 		E738B76E17B128D400ECB07E /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E738B76D17B128D400ECB07E /* StoreKit.framework */; };
+		E73C206517E2422900462DFA /* Icon-80.png in Resources */ = {isa = PBXBuildFile; fileRef = E73C206317E2422900462DFA /* Icon-80.png */; };
+		E73C206617E2422900462DFA /* Icon-120.png in Resources */ = {isa = PBXBuildFile; fileRef = E73C206417E2422900462DFA /* Icon-120.png */; };
 		E779502117DF9E7300B50662 /* countyinfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = E779502017DF9E7300B50662 /* countyinfo.plist */; };
 		E779502417DFA54E00B50662 /* iphoneContactScene.m in Sources */ = {isa = PBXBuildFile; fileRef = E779502317DFA54E00B50662 /* iphoneContactScene.m */; };
 		E779502717DFA67600B50662 /* contact_menu_bg-hd.pvr.gz in Resources */ = {isa = PBXBuildFile; fileRef = E779502517DFA67600B50662 /* contact_menu_bg-hd.pvr.gz */; };
@@ -405,6 +407,8 @@
 		E737411E17DA252000C8C8E8 /* act_questions_math_button.pvr.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; name = act_questions_math_button.pvr.gz; path = images/act_questions_math_button.pvr.gz; sourceTree = SOURCE_ROOT; };
 		E738B76B17B1273800ECB07E /* libFlurry_4.2.2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFlurry_4.2.2.a; path = Flurry/libFlurry_4.2.2.a; sourceTree = SOURCE_ROOT; };
 		E738B76D17B128D400ECB07E /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		E73C206317E2422900462DFA /* Icon-80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-80.png"; path = "Resources/Icon-80.png"; sourceTree = "<group>"; };
+		E73C206417E2422900462DFA /* Icon-120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-120.png"; path = "Resources/Icon-120.png"; sourceTree = "<group>"; };
 		E779502017DF9E7300B50662 /* countyinfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = countyinfo.plist; sourceTree = SOURCE_ROOT; };
 		E779502217DFA54E00B50662 /* iphoneContactScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iphoneContactScene.h; sourceTree = "<group>"; };
 		E779502317DFA54E00B50662 /* iphoneContactScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iphoneContactScene.m; sourceTree = "<group>"; };
@@ -1509,6 +1513,8 @@
 		E7F528431795CE1800859253 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				E73C206317E2422900462DFA /* Icon-80.png */,
+				E73C206417E2422900462DFA /* Icon-120.png */,
 				E779502017DF9E7300B50662 /* countyinfo.plist */,
 				E7EA70F517CBCDC100244994 /* questions.plist */,
 				E7E5AB2317CE88F900FA20EA /* Icon-72@2x.png */,
@@ -1701,6 +1707,7 @@
 				E7F528631795CE3C00859253 /* bottom-menu-14-hd.png in Resources */,
 				E7F528641795CE3C00859253 /* bottom-menu-14.fnt in Resources */,
 				E7F528651795CE3C00859253 /* bottom-menu-14.png in Resources */,
+				E73C206617E2422900462DFA /* Icon-120.png in Resources */,
 				E7F528661795CE3C00859253 /* county-menu-24-ipadhd.fnt in Resources */,
 				E7F528671795CE3C00859253 /* county-menu-24-ipadhd.png in Resources */,
 				E7F528681795CE3C00859253 /* county-menu-24-hd.fnt in Resources */,
@@ -1795,6 +1802,7 @@
 				E70C5E0A17999F02008D1B81 /* Northampton County.pdf in Resources */,
 				E70C5E0B17999F02008D1B81 /* Northampton fall 2013 schedule.pdf in Resources */,
 				E70C5E0C17999F02008D1B81 /* Overview of the ASPIRE program fall 2013.pdf in Resources */,
+				E73C206517E2422900462DFA /* Icon-80.png in Resources */,
 				E70C5E0D17999F02008D1B81 /* Pasquotank County.pdf in Resources */,
 				E70C5E0E17999F02008D1B81 /* Pasquotank Fall 2013 schedule.pdf in Resources */,
 				E70C5E0F17999F02008D1B81 /* Person County.pdf in Resources */,

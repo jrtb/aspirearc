@@ -592,7 +592,7 @@ enum nodeTags
              - (id)initWithTitle:(NSString *)title message:(NSString *)message delegate:(id)delegate cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitles:(NSString *)otherButtonTitles, ... NS_REQUIRES_NIL_TERMINATION;
              */
             
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"There isn't currently a schedule for your county"
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Oops!" message:@"There isn't currently a schedule for your county, press the settings button below to try a different county."
                                                            delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil,nil];
             [alert show];
             //[alert release];

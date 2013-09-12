@@ -121,9 +121,16 @@
 	
     AppController *delegate  = (AppController*) [[UIApplication sharedApplication] delegate];
 
+    BOOL gotOne = NO;
+    
     for (datum in data) {
-        
+
+        NSLog(@"county a: %@",[datum objectForKey:@"county"]);
+        NSLog(@"county b: %@",[delegate selectedCounty]);
+
         if ([[datum objectForKey:@"county"] isEqualToString:[delegate selectedCounty]]) {
+            
+            gotOne = YES;
             
             NSLog(@"county: %@",[datum objectForKey:@"county"]);
             NSLog(@"name1: %@",[datum objectForKey:@"name1"]);
@@ -172,6 +179,16 @@
                 aView.text = [aView.text stringByAppendingString:[NSString stringWithFormat:@"%@\n",[datum objectForKey:@"email1"]]];
             }
 
+            if ([datum objectForKey:@"phone1"] && ![[datum objectForKey:@"phone1"] isEqualToString:@""]
+                && [datum objectForKey:@"phone2"] && ![[datum objectForKey:@"phone2"] isEqualToString:@""]) {
+                aView.text = [aView.text stringByAppendingString:[NSString stringWithFormat:@"\n%@, %@\n",[datum objectForKey:@"phone1"],[datum objectForKey:@"phone2"]]];
+            }
+
+            if ([datum objectForKey:@"phone1"] && ![[datum objectForKey:@"phone1"] isEqualToString:@""]
+                && (![datum objectForKey:@"phone2"] || [[datum objectForKey:@"phone2"] isEqualToString:@""])) {
+                aView.text = [aView.text stringByAppendingString:[NSString stringWithFormat:@"\n%@\n",[datum objectForKey:@"phone1"]]];
+            }
+
             aView.editable = NO;
             aView.dataDetectorTypes = UIDataDetectorTypeAll;
             aView.font = [UIFont fontWithName:@"Helvetica" size:20.0f];
@@ -181,6 +198,25 @@
             [self addChild:aViewWrapper z:11];
             
         }
+
+    }
+    
+    if (!gotOne) {
+        
+        UITextView *aView = [[UITextView alloc] initWithFrame:CGRectMake(6.0, 130.0, 320-12.0, 200)];
+        aView.scrollEnabled = NO;
+        aView.userInteractionEnabled = YES;
+        aView.backgroundColor = [UIColor clearColor];
+        aView.opaque = NO;
+        aView.text = [NSString stringWithFormat:@"%@ County does not currently have any contact information.",[delegate selectedCounty]];
+
+        aView.editable = NO;
+        aView.dataDetectorTypes = UIDataDetectorTypeAll;
+        aView.font = [UIFont fontWithName:@"Helvetica" size:20.0f];
+        //[explanationView loadHTMLString:explanation baseURL:baseURL];
+        
+        CCUIViewWrapper *aViewWrapper = [CCUIViewWrapper wrapperForUIView:aView];
+        [self addChild:aViewWrapper z:11];
 
     }
     
