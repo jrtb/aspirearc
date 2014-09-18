@@ -38,14 +38,37 @@
 @property (nonatomic, strong, readonly) NSString *password;
 @property (nonatomic, strong, readonly) NSURL *fileURL;
 
-+ (ReaderDocument *)withDocumentFilePath:(NSString *)filename password:(NSString *)phrase;
+/**
+ *  Creates a new instance of ReaderDocument for the PDF document at the specific filePath. If the document has previously been archived, the archived instance will be resored and returned.
+ *
+ *  @param filePath The absolute filePath of the PDF document you wish to load.
+ *  @param phrase   The passphrase used to encrypt the pdf document. use nil if there is no password protection.
+ *
+ *  @return The ReaderDocument instance created or the unarhived object.
+ */
++ (ReaderDocument *)withDocumentFilePath:(NSString *)filePath password:(NSString *)phrase;
 
-+ (ReaderDocument *)unarchiveFromFileName:(NSString *)filename password:(NSString *)phrase;
+/**
+ *  Attempts to unarchive a ReaderDocument from the specified filePath.
+ *  @warning The filePath parameter *must* be the absolute filePath to the PDF Document. Previous versions allowed you to just specify the name of the PDF document but due to changes in the file system layout of app containers in iOS 8, this is no longer enough.
+ *
+ *  @param filePath The absolute filePath of the PDF Document you wish to load.
+ *  @param phrase   The passphrase used to encrypt the pdf document. use nil if there is no password protection.
+ *
+ *  @return The ReaderDocument loaded from an archive or nil if there was no archive for this document.
+ */
++ (ReaderDocument *)unarchiveFromFilePath:(NSString *)filePath password:(NSString *)phrase;
 
 - (id)initWithFilePath:(NSString *)fullFilePath password:(NSString *)phrase;
 
 - (void)saveReaderDocument;
 
 - (void)updateProperties;
+
+@end
+
+@interface ReaderDocument (Deprecated)
+
++ (ReaderDocument *)unarchiveFromFileName:(NSString *)filename password:(NSString *)phrase DEPRECATED_MSG_ATTRIBUTE("use narchiveFromFilePath:password: instead");
 
 @end

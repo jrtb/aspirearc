@@ -1,6 +1,6 @@
 //
 //	ReaderContentView.h
-//	Reader v2.6.0
+//	Reader v2.7.3
 //
 //	Created by Julius Oklamcak on 2011-07-01.
 //	Copyright © 2011-2013 Julius Oklamcak. All rights reserved.
@@ -39,9 +39,9 @@
 
 @end
 
-@interface ReaderContentView : UIScrollView <UIScrollViewDelegate>
+@interface ReaderContentView : UIScrollView
 
-@property (nonatomic, unsafe_unretained, readwrite) id <ReaderContentViewDelegate> message;
+@property (nonatomic, weak, readwrite) id <ReaderContentViewDelegate> message;
 
 - (id)initWithFrame:(CGRect)frame fileURL:(NSURL *)fileURL page:(NSUInteger)page password:(NSString *)phrase;
 

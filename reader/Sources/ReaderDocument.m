@@ -42,8 +42,8 @@
 	NSNumber *_pageNumber;
 
 	NSMutableIndexSet *_bookmarks;
-
-	NSString *_fileName;
+    
+    NSString *_filePath;
 
 	NSString *_password;
 
@@ -84,13 +84,6 @@
 	return [documentsPaths objectAtIndex:0]; // Path to the application's "~/Documents" directory
 }
 
-+ (NSString *)applicationPath
-{
-	NSArray *documentsPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-
-	return [[documentsPaths objectAtIndex:0] stringByDeletingLastPathComponent]; // Strip "Documents" component
-}
-
 + (NSString *)applicationSupportPath
 {
 	NSFileManager *fileManager = [NSFileManager new]; // File manager instance
@@ -98,19 +91,6 @@
 	NSURL *pathURL = [fileManager URLForDirectory:NSApplicationSupportDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:YES error:NULL];
 
 	return [pathURL path]; // Path to the application's "~/Library/Application Support" directory
-}
-
-+ (NSString *)relativeFilePath:(NSString *)fullFilePath
-{
-	assert(fullFilePath != nil); // Ensure that the full file path is not nil
-
-	NSString *applicationPath = [ReaderDocument applicationPath]; // Get the application path
-
-	NSRange range = [fullFilePath rangeOfString:applicationPath]; // Look for the application path
-
-	assert(range.location != NSNotFound); // Ensure that the application path is in the full file path
-
-	return [fullFilePath stringByReplacingCharactersInRange:range withString:@""]; // Strip it out
 }
 
 + (NSString *)archiveFilePath:(NSString *)filename
@@ -126,11 +106,11 @@
 	return [archivePath stringByAppendingPathComponent:archiveName]; // "{archivePath}/'filename'.plist"
 }
 
-+ (ReaderDocument *)unarchiveFromFileName:(NSString *)filename password:(NSString *)phrase
++ (ReaderDocument *)unarchiveFromFilePath:(NSString *)filePath password:(NSString *)phrase
 {
 	ReaderDocument *document = nil; // ReaderDocument object
 
-	NSString *withName = [filename lastPathComponent]; // File name only
+	NSString *withName = [filePath lastPathComponent]; // File name only
 
 	NSString *archiveFilePath = [ReaderDocument archiveFilePath:withName];
 
@@ -149,6 +129,11 @@
 			NSLog(@"%s Caught %@: %@", __FUNCTION__, [exception name], [exception reason]);
 		#endif
 	}
+    
+    // We don't archive the filePath on the document anymore due to iOS 8 Changes.
+    if (document) {
+        document->_filePath = filePath;
+    }
 
 	return document;
 }
@@ -157,7 +142,7 @@
 {
 	ReaderDocument *document = nil; // ReaderDocument object
 
-	document = [ReaderDocument unarchiveFromFileName:filePath password:phrase];
+	document = [ReaderDocument unarchiveFromFilePath:filePath password:phrase];
 
 	if (document == nil) // Unarchive failed so we create a new ReaderDocument object
 	{
@@ -210,7 +195,7 @@
 
 			_pageNumber = [NSNumber numberWithInteger:1]; // Start on page 1
 
-			_fileName = [ReaderDocument relativeFilePath:fullFilePath]; // File name
+            _filePath = fullFilePath; // We are no longer using a relative filePath due to the changes in iOS 8.
 
 			CFURLRef docURLRef = (__bridge CFURLRef)[self fileURL]; // CFURLRef from NSURL
 
@@ -250,16 +235,14 @@
 
 - (NSString *)fileName
 {
-	return [_fileName lastPathComponent];
+	return [_filePath lastPathComponent];
 }
 
 - (NSURL *)fileURL
 {
 	if (_fileURL == nil) // Create and keep the file URL the first time it is requested
 	{
-		NSString *fullFilePath = [[ReaderDocument applicationPath] stringByAppendingPathComponent:_fileName];
-
-		_fileURL = [[NSURL alloc] initFileURLWithPath:fullFilePath isDirectory:NO]; // File URL from full file path
+		_fileURL = [[NSURL alloc] initFileURLWithPath:_filePath isDirectory:NO]; // File URL from full file path
 	}
 
 	return _fileURL;
@@ -309,8 +292,6 @@
 {
 	[encoder encodeObject:_guid forKey:@"FileGUID"];
 
-	[encoder encodeObject:_fileName forKey:@"FileName"];
-
 	[encoder encodeObject:_fileDate forKey:@"FileDate"];
 
 	[encoder encodeObject:_pageCount forKey:@"PageCount"];
@@ -329,8 +310,6 @@
 	if ((self = [super init])) // Superclass init
 	{
 		_guid = [decoder decodeObjectForKey:@"FileGUID"];
-
-		_fileName = [decoder decodeObjectForKey:@"FileName"];
 
 		_fileDate = [decoder decodeObjectForKey:@"FileDate"];
 
@@ -353,6 +332,16 @@
 	}
 
 	return self;
+}
+
+@end
+
+@implementation ReaderDocument (Deprecated)
+
++ (ReaderDocument *)unarchiveFromFileName:(NSString *)filename password:(NSString *)phrase
+{
+    NSAssert(NO, @"This method has been immediatly depricated. Use [%@ %@] from now on.", NSStringFromClass([self class]), NSStringFromSelector(@selector(unarchiveFromFilePath:password:)));
+    return nil;
 }
 
 @end

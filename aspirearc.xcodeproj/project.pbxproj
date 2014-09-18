@@ -150,6 +150,8 @@
 		E7C3057D179866CB007357C5 /* about_menu_bg-hd.pvr.gz in Resources */ = {isa = PBXBuildFile; fileRef = E7C3057B179866CB007357C5 /* about_menu_bg-hd.pvr.gz */; };
 		E7C3057E179866CB007357C5 /* about_menu_bg.pvr.gz in Resources */ = {isa = PBXBuildFile; fileRef = E7C3057C179866CB007357C5 /* about_menu_bg.pvr.gz */; };
 		E7CE40DF17B12A0800EA5045 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7CE40DE17B12A0800EA5045 /* SystemConfiguration.framework */; };
+		E7D95DA719CB1FD1000F8BF2 /* Reader-Export.png in Resources */ = {isa = PBXBuildFile; fileRef = E7D95DA519CB1FD1000F8BF2 /* Reader-Export.png */; };
+		E7D95DA819CB1FD1000F8BF2 /* Reader-Export@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7D95DA619CB1FD1000F8BF2 /* Reader-Export@2x.png */; };
 		E7E5AB2717CE88F900FA20EA /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7E5AB2317CE88F900FA20EA /* Icon-72@2x.png */; };
 		E7E5AB2817CE88F900FA20EA /* Icon-Small-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E7E5AB2417CE88F900FA20EA /* Icon-Small-50@2x.png */; };
 		E7E5AB2917CE88F900FA20EA /* iTunesArtwork.png in Resources */ = {isa = PBXBuildFile; fileRef = E7E5AB2517CE88F900FA20EA /* iTunesArtwork.png */; };
@@ -513,6 +515,8 @@
 		E7C3057C179866CB007357C5 /* about_menu_bg.pvr.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; name = about_menu_bg.pvr.gz; path = images/about_menu_bg.pvr.gz; sourceTree = SOURCE_ROOT; };
 		E7CE40DD17B129C900EA5045 /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Flurry.h; path = Flurry/Flurry.h; sourceTree = SOURCE_ROOT; };
 		E7CE40DE17B12A0800EA5045 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		E7D95DA519CB1FD1000F8BF2 /* Reader-Export.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Reader-Export.png"; path = "reader/Graphics/Reader-Export.png"; sourceTree = SOURCE_ROOT; };
+		E7D95DA619CB1FD1000F8BF2 /* Reader-Export@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Reader-Export@2x.png"; path = "reader/Graphics/Reader-Export@2x.png"; sourceTree = SOURCE_ROOT; };
 		E7E5AB2317CE88F900FA20EA /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72@2x.png"; path = "Resources/Icon-72@2x.png"; sourceTree = "<group>"; };
 		E7E5AB2417CE88F900FA20EA /* Icon-Small-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small-50@2x.png"; path = "Resources/Icon-Small-50@2x.png"; sourceTree = "<group>"; };
 		E7E5AB2517CE88F900FA20EA /* iTunesArtwork.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = iTunesArtwork.png; path = Resources/iTunesArtwork.png; sourceTree = "<group>"; };
@@ -953,6 +957,8 @@
 		E7BB6BE61795D4BC008334D7 /* graphics */ = {
 			isa = PBXGroup;
 			children = (
+				E7D95DA519CB1FD1000F8BF2 /* Reader-Export.png */,
+				E7D95DA619CB1FD1000F8BF2 /* Reader-Export@2x.png */,
 				E7BB6C241795D4DE008334D7 /* Reader-Button-H.png */,
 				E7BB6C251795D4DE008334D7 /* Reader-Button-H@2x.png */,
 				E7BB6C261795D4DE008334D7 /* Reader-Button-N.png */,
@@ -1813,6 +1819,7 @@
 				E70C5E1417999F02008D1B81 /* Rutherford County.pdf in Resources */,
 				E70C5E1517999F02008D1B81 /* Rutherford Fall 2013 Schedule.pdf in Resources */,
 				E70C5E1617999F02008D1B81 /* Sampson County.pdf in Resources */,
+				E7D95DA719CB1FD1000F8BF2 /* Reader-Export.png in Resources */,
 				E70C5E1717999F02008D1B81 /* Stanly County.pdf in Resources */,
 				E7EA70F417CBCDB700244994 /* white.png in Resources */,
 				E70C5E1817999F02008D1B81 /* student packet2013.pdf in Resources */,
@@ -1820,6 +1827,7 @@
 				E70C5E1A17999F02008D1B81 /* Warren County.pdf in Resources */,
 				E70C5E1B17999F02008D1B81 /* Wayne County.pdf in Resources */,
 				E70C5E1C17999F02008D1B81 /* Wilson County.pdf in Resources */,
+				E7D95DA819CB1FD1000F8BF2 /* Reader-Export@2x.png in Resources */,
 				E77E2C8B17CD33FD001CAA09 /* button_checked-hd.png in Resources */,
 				E77E2C8C17CD33FD001CAA09 /* button_unchecked-hd.png in Resources */,
 				E77E2C8D17CD33FD001CAA09 /* btn_submit-hd.png in Resources */,
